@@ -64,6 +64,7 @@ public class ControllerFacade implements IController {
         }
         //this.getView().displayMessage(message.toString());
         this.model.CreateMap(ListTiles);
+        this.view.createFrame("Test", false);
     }
 
     /**

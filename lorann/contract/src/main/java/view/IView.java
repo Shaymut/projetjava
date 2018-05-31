@@ -15,4 +15,7 @@ public interface IView {
      *            the message
      */
     void displayMessage(String message);
+    
+    
+    void createFrame(String name, boolean decorated);
 }
