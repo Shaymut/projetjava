@@ -41,4 +41,13 @@ public interface IModel {
      *             the SQL exception
      */
     List<Example> getAllExamples() throws SQLException;
+    
+    /**
+     * Gets the all tiles by IDMap.
+     *
+     * @return the all tiles by IDMap
+     * @throws SQLException
+     *             the SQL exception
+     */
+    List<Tile> getAllTilesByMap() throws SQLException;
 }
