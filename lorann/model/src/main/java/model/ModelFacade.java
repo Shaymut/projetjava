@@ -13,7 +13,7 @@ import model.dao.MapDAO;
  * @version 1.0
  */
 public final class ModelFacade implements IModel {
-
+	
     /**
      * Instantiates a new model facade.
      */
