@@ -1,5 +1,8 @@
 package view;
 
+import java.util.List;
+import model.Tile;
+
 /**
  * <h1>The Interface IView.</h1>
  *
@@ -17,5 +20,7 @@ public interface IView {
     void displayMessage(String message);
     
     
-    void createFrame(String name, boolean decorated);
+	void createFrame(String name, boolean decorated);
+	
+	void showMapOnFrame(List<Tile> ListTiles);
 }

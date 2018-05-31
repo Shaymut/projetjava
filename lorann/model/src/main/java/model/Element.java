@@ -19,4 +19,8 @@ public class Element {
 		this.position = position;
 		this.icoImage = icoImage;
 	}
+	
+	public char getSprite() {
+		return this.sprite;		
+	}
 }

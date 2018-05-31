@@ -6,7 +6,7 @@ import javax.swing.ImageIcon;
 
 public class Stone extends MotionlessElement{
 
-	static char sprite = 'X';
+	static char sprite = 'S';
 	static Permeability permeability = Permeability.BLOCK;
 	static private ImageIcon icoImage = new ImageIcon(DoorClosed.class.getResource("/Pictures/bone.png"));
 	static private Image image = icoImage.getImage();

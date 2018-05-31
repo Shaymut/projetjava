@@ -37,7 +37,7 @@ public class BoardFrame extends JFrame implements IBoard {
     private static final int  defaultFrameheight = (32*12)*2;
 
     /** The board panel. */
-    private final BoardPanel  boardPanel;
+    private final BoardPanel boardPanel;
 
     /**
      * Instantiates a new board frame.
