@@ -46,5 +46,15 @@ public final class ModelFacade implements IModel {
     public List<Example> getAllExamples() throws SQLException {
         return ExampleDAO.getAllExamples();
     }
+    
+    /*
+     * (non-Javadoc)
+     * @see model.IModel#getAllTilesByMap()
+     */
+	@Override
+	public List<Tile> getAllTilesByMap() throws SQLException {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 }
