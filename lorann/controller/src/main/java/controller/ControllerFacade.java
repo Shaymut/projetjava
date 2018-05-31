@@ -5,6 +5,7 @@ import java.util.List;
 
 import model.Example;
 import model.IModel;
+import model.Tile;
 import view.IView;
 
 /**
@@ -42,7 +43,7 @@ public class ControllerFacade implements IController {
      *             the SQL exception
      */
     public void start() throws SQLException {
-        this.getView().displayMessage(this.getModel().getExampleById(1).toString());
+        /*this.getView().displayMessage(this.getModel().getExampleById(1).toString());
 
         this.getView().displayMessage(this.getModel().getExampleByName("Example 2").toString());
 
@@ -50,6 +51,14 @@ public class ControllerFacade implements IController {
         final StringBuilder message = new StringBuilder();
         for (final Example example : examples) {
             message.append(example);
+            message.append('\n');
+        }
+        this.getView().displayMessage(message.toString());*/
+    	
+        final List<Tile> ListTiles = this.getModel().getAllTilesByMap(1);
+        final StringBuilder message = new StringBuilder();
+        for (final Tile tile : ListTiles) {
+            message.append(tile);
             message.append('\n');
         }
         this.getView().displayMessage(message.toString());
