@@ -1,8 +1,5 @@
 package view;
 
-import java.util.List;
-import model.Tile;
-
 /**
  * <h1>The Interface IView.</h1>
  *
