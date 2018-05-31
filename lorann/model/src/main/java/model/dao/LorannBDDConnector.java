@@ -18,7 +18,7 @@ final class LorannBDDConnector {
     private static LorannBDDConnector instance;
 
     /** The login. */
-    private static String user     = "Joueur";
+    private static String user = "Joueur";
 
     /** The password. */
     private static String password = "root";
