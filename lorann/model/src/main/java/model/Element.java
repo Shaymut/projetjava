@@ -5,6 +5,7 @@ public class Element {
 	Permeability permeability;
 	char sprite;
 	String image;
+	Position position;
 	
 	Element(Permeability permeability, char sprite, String image){
 		this.permeability = permeability;
