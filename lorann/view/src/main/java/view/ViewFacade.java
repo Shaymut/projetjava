@@ -10,8 +10,6 @@ import javax.swing.JOptionPane;
  */
 public class ViewFacade implements IView {
 	
-	ViewFrame viewframe;
-	
     /**
      * Instantiates a new view facade.
      */
