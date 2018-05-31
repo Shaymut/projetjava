@@ -2,7 +2,6 @@ package view;
 
 import javax.swing.JOptionPane;
 
-
 /**
  * <h1>The Class ViewFacade provides a facade of the View component.</h1>
  *
@@ -10,6 +9,8 @@ import javax.swing.JOptionPane;
  * @version 1.0
  */
 public class ViewFacade implements IView {
+	
+	ViewFrame viewframe;
 	
     /**
      * Instantiates a new view facade.
