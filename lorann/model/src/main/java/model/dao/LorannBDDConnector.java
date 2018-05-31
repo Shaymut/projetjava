@@ -68,8 +68,7 @@ final class LorannBDDConnector {
      */
     private boolean open() {
         try {
-            this.connection = DriverManager.getConnection(LorannBDDConnector.url, LorannBDDConnector.user,
-                    LorannBDDConnector.password);
+            this.connection = DriverManager.getConnection(LorannBDDConnector.url, LorannBDDConnector.user, LorannBDDConnector.password);
             this.statement = this.connection.createStatement();
             return true;
         } catch (final SQLException exception) {
