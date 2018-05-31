@@ -44,13 +44,11 @@ public interface IModel {
     
     /**
      * Gets the all tiles by IDMap.
-     *
+     * @param id
+     *            the id
      * @return the all tiles by IDMap
      * @throws SQLException
      *             the SQL exception
-     */
-    List<Tile> getAllTilesByMap() throws SQLException;
-
-    
+     */    
 	List<Tile> getAllTilesByMap(final int id) throws SQLException;
 }
