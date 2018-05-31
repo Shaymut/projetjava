@@ -9,7 +9,7 @@ public class MotionlessElementFactory {
 			case 'G':
 				element = new Gold(position);
 				break;
-			case 'E':
+			case 'P':
 				element= new EnergyBubble(position);
 				break;
 			case 'X':
@@ -30,6 +30,9 @@ public class MotionlessElementFactory {
 			case 'C' :
 				 element = new DoorClosed(position);
 				 break;
+			default :
+				System.out.println("Il y a un sprite dans la BDD qui n'existe pas dans le switch case");
+				//element = new Ground(position);
 		}
 		return element;
 	}
