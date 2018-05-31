@@ -16,6 +16,9 @@ public class MotionlessElementFactory {
 			case 'S':
 				createStone(position);
 				break;
+			case 'V':
+				createVerticalBone(position);
+				break;
 			
 		}
 	}
@@ -39,5 +42,26 @@ public class MotionlessElementFactory {
 		MotionlessElement Stone = new Stone(position);
 		return Stone;
 	}
+	
+	public MotionlessElement createVerticalBone(Position position) {
+		MotionlessElement VerticalBone = new VerticalBone(position);
+		return VerticalBone;
+	}
+	
+	public MotionlessElement createHorizontalBone(Position position) {
+		MotionlessElement HorizontalBone = new HorizontalBone(position);
+		return HorizontalBone;
+	}
+	
+	public MotionlessElement createDoorOpened(Position position) {
+		MotionlessElement DoorOpened = new DoorOpened(position);
+		return DoorOpened;
+	}
+	
+	public MotionlessElement createDoorClosed(Position position) {
+		MotionlessElement DoorClosed = new DoorClosed(position);
+		return DoorClosed;
+	}
+	
 	
 }
