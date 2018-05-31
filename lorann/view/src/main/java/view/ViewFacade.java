@@ -26,4 +26,9 @@ public class ViewFacade implements IView {
         JOptionPane.showMessageDialog(null, message);
     }
 
+	@Override
+	public void createFrame(String name, boolean decorated) {
+		
+	}
+
 }
