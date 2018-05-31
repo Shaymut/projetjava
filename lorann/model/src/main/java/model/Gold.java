@@ -8,5 +8,6 @@ public class Gold extends MotionlessElement{
 	
 	Gold(Position position) {
 		super(permeability, sprite, image, position);
+		System.out.println("Création d'un objet Gold");
 	}
 }

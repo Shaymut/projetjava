@@ -8,5 +8,6 @@ public class DoorOpened extends MotionlessElement{
 	
 	DoorOpened(Position position) {
 		super(permeability, sprite, image, position);
+		System.out.println("Création d'un objet DoorOpened");
 	}
 } 

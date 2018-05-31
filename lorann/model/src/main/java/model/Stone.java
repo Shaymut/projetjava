@@ -8,5 +8,6 @@ public class Stone extends MotionlessElement{
 	
 	Stone(Position position) {
 		super(permeability, sprite, image, position);
+		System.out.println("Création d'un objet Stone");
 	}
 }

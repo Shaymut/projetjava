@@ -8,5 +8,6 @@ public class EnergyBubble extends MotionlessElement{
 	
 	EnergyBubble(Position position) {
 		super(permeability, sprite, image, position);
+		System.out.println("Création d'un objet EnergyBubble");
 	}
 }

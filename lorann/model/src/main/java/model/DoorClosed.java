@@ -8,5 +8,6 @@ public class DoorClosed extends MotionlessElement{
 	
 	DoorClosed(Position position) {
 		super(permeability, sprite, image, position);
+		System.out.println("Création d'un objet DoorClosed");
 	}
 }
