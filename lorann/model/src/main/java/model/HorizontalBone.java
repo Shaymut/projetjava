@@ -8,5 +8,6 @@ public class HorizontalBone extends MotionlessElement{
 	
 	HorizontalBone(Position position) {
 		super(permeability, sprite, image, position);
+		System.out.println("Création d'un objet HorizontalBone");
 	}
 }

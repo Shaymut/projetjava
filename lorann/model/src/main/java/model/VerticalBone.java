@@ -8,5 +8,6 @@ public class VerticalBone extends MotionlessElement{
 	
 	VerticalBone(Position position) {
 		super(permeability, sprite, image, position);
+		System.out.println("Création d'un objet VerticalBone");
 	}
 }
