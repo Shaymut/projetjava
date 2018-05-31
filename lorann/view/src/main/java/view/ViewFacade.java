@@ -31,7 +31,7 @@ public class ViewFacade implements IView {
 
 	@Override
 	public void createFrame(String name) {
-		Frame = new BoardFrame(name, false);
+		this.Frame = new BoardFrame(name, false);
 		
 	}
 
