@@ -6,37 +6,26 @@ import javax.swing.ImageIcon;
 
 public class Spell extends Mobile implements Hit{
 
-	private static boolean setAlive;
-
-	private char sprite = 'P';
+	static private char sprite = 'P';
+	static Permeability permeability= Permeability.BLOCK;
+	static private ImageIcon icoImage = new ImageIcon(Spell.class.getResource("/Pictures/fireball_1.png"));
+	static private Image image = icoImage.getImage();
 	
-	private String image = "";
 	
-	
-	Spell(Permeability permeability, char sprite, Image image, Position position,ImageIcon icoImage) {
+	Spell(Position position,ImageIcon icoImage) {
 		super(permeability, sprite, image, position, icoImage);
-		// TODO Auto-generated constructor stub
 	}
-
+	
 
 	public char getSprite() {
 		return sprite;
 	}
 
 
-	public void setSprite(char sprite) {
-		this.sprite = sprite;
-	}
-
-
-	public String getImage() {
+	public Image getImage() {
 		return image;
 	}
-
-
-	public void setImage(String image) {
-		this.image = image;
-	}
+	
 	/*
 	public static void hit() {
 		

@@ -23,4 +23,13 @@ public class Element {
 	public char getSprite() {
 		return this.sprite;		
 	}
+	
+	public int getX() {
+		return this.position.getX();
+	}
+	
+	public int getY() {
+		return this.position.getY();
+	}
+	
 }
