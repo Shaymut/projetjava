@@ -50,4 +50,7 @@ public interface IModel {
      *             the SQL exception
      */
     List<Tile> getAllTilesByMap() throws SQLException;
+
+    
+	List<Tile> getAllTilesByMap(final int id) throws SQLException;
 }

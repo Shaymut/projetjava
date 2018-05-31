@@ -4,6 +4,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 import model.dao.ExampleDAO;
+import model.dao.MapDAO;
 
 /**
  * <h1>The Class ModelFacade provides a facade of the Model component.</h1>
@@ -52,9 +53,8 @@ public final class ModelFacade implements IModel {
      * @see model.IModel#getAllTilesByMap()
      */
 	@Override
-	public List<Tile> getAllTilesByMap() throws SQLException {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Tile> getAllTilesByMap(final int id) throws SQLException {
+		return MapDAO.getAllTilesByMap(id);
 	}
 
 }
