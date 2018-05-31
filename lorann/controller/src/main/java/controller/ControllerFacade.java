@@ -2,6 +2,7 @@ package controller;
 
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Map;
 
 import model.Example;
 import model.IModel;
@@ -61,7 +62,8 @@ public class ControllerFacade implements IController {
             message.append(tile);
             message.append('\n');
         }
-        this.getView().displayMessage(message.toString());
+        //this.getView().displayMessage(message.toString());
+        this.model.CreateMap(ListTiles);
     }
 
     /**

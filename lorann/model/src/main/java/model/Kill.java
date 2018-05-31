@@ -3,7 +3,7 @@ package model;
 public interface Kill {
 	
 	static void kill() {
-		
+		/*
 		Position Evil_x = Evil.getX();
 		
 		Position Evil_y = Evil.getY();
@@ -14,7 +14,7 @@ public interface Kill {
 		
 		if (Evil_x == Lorann_x && Evil_y == Lorann_y) {
 			Lorann.setAlive = false;
-		}
+		}*/
 			
 	}
 	

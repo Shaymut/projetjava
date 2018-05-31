@@ -1,14 +1,13 @@
 package model;
 
-import java.util.ArrayList;
-
+import java.util.List;
 public class Map {
 	
 	Element[][] map;
 	
-	MotionlessElementFactory motionlessElementFactory;
+	MotionlessElementFactory motionlessElementFactory = new MotionlessElementFactory();
 	
-	public void CreateMap(ArrayList<Tile> ListTiles) {
+	public void CreateMap(List<Tile> ListTiles) {
 		for (Tile tile : ListTiles) {
 			motionlessElementFactory.createMotionlessElement(tile.getSprite(), new Position(tile.getX(),tile.getY()));
 			

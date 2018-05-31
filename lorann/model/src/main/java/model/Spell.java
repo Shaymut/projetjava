@@ -43,14 +43,14 @@ public class Spell extends Mobile implements Hit{
 		Position Spell_x = Spell.getX();
 		
 		Position Spell_y = Spell.getX();
-		
+		/*
 		if (Evil_x == Spell_x && Evil_y == Spell_y) {
 			Evil.setAlive = false;
 			
 			Spell.setAlive = false;
 			
 			Lorann.HaveASpell = true;
-		}
+		}*/
 		
 	}
 	
