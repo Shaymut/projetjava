@@ -18,19 +18,19 @@ final class LorannBDDConnector {
     private static LorannBDDConnector instance;
 
     /** The login. */
-    private static String                  user     = "root";
+    private static String user     = "Joueur";
 
     /** The password. */
-    private static String                  password = "89dc0fbcc691";
+    private static String password = "root";
 
     /** The url. */
-    private static String                  url      = "jdbc:mysql://localhost/lorann?useSSL=false&serverTimezone=UTC";
+    private static String url = "jdbc:mysql://localhost/lorann?useSSL=false&serverTimezone=UTC";
 
     /** The connection. */
-    private Connection                     connection;
+    private Connection connection;
 
     /** The statement. */
-    private Statement                      statement;
+    private Statement statement;
 
     /**
      * Instantiates a new boulder dash BDD connector.
