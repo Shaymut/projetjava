@@ -1,9 +1,23 @@
 package model;
 
-public class Evil extends Mobile implements EvilMove, Kill{
+public class Evil extends Mobile implements Kill{
 
-	Evil(Permeability permeability, char sprite, Position position) {
+	static Permeability permeability = Permeability.BLOCK;
+	
+	Evil(char sprite, Position position) {
 		super(permeability, sprite, position);
+		System.out.println("Création d'un objet Evil");
+	
 	}
+	
+	
+
+	public void kill() {
+		
+	
+		
+	}
+	
+
 
 }

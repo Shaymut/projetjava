@@ -5,11 +5,9 @@ public class Spell extends Mobile implements Hit{
 	static private char sprite = 'P';
 	static Permeability permeability= Permeability.BLOCK;
 	
-	
 	Spell(Position position) {
 		super(permeability, sprite, position);
 	}
-	
 
 	public char getSprite() {
 		return sprite;
@@ -19,7 +17,7 @@ public class Spell extends Mobile implements Hit{
 	/*
 	public static void hit() {
 		
-		Position Evil_x = Evil.getX();
+	/*	Position Evil_x = Evil.getX();
 		
 		Position Evil_y = Evil.getY();
 		
@@ -35,5 +33,5 @@ public class Spell extends Mobile implements Hit{
 		}
 		
 	}*/
-	
 }
+

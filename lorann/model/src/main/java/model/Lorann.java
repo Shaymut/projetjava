@@ -2,22 +2,33 @@ package model;
 
 public class Lorann extends Mobile{
 	
-	public static boolean setAlive;
-	public static boolean HaveASpell;
+	public long score;
+	public  boolean HaveASpell;
+	public boolean Recup;
 
 	Lorann(Permeability permeability, char sprite, Position position) {
 		super(permeability, sprite, position);
+		
 	}
 	
 	public boolean HaveASpell() {
-		
-		
-		
 		return true;
 	}
 	
-	public void PickUp() {
-		
-	}
 
+	public boolean PickUp() {
+		if(permeability == Permeability.COLLECTABLE) {
+			setScore(getScore()+650);
+		Recup = true;
+		}else if(permeability != Permeability.COLLECTABLE) {
+			Recup = false;
+		}
+		return Recup;
+	}
+	public long getScore() {
+		return score;
+	}
+	public void setScore(long score) {
+		this.score = score;
+	}
 }

@@ -3,7 +3,8 @@ package model;
 public class DoorClosed extends MotionlessElement{
 
 	static char sprite = 'C';
-	static Permeability permeability = Permeability.COLLECATBLE;
+	
+	static Permeability permeability = Permeability.BLOCK;
 	
 	DoorClosed(Position position) {
 		super(permeability, sprite, position);
