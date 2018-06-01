@@ -1,6 +1,5 @@
 package view;
 
-import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
 import model.*;
@@ -13,7 +12,7 @@ import model.*;
  */
 public class ViewFacade implements IView {
 	
-	JFrame frame;
+	Window frame;
 	
     /**
      * Instantiates a new view facade.
@@ -49,7 +48,11 @@ public class ViewFacade implements IView {
                 frame.setVisible(true);
             }
         });
-		
+	}
+	
+	@Override
+	public void updateFrame() {
+		frame.updateFrame();
 	}
 
 }

@@ -21,4 +21,6 @@ public interface IView {
     void createFrame(String name, int x, int y, Element[][] mapNiveau);
     
     void displayMap(Element[][] elements);
+    
+    void updateFrame();
 }

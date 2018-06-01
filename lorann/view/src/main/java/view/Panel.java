@@ -157,4 +157,8 @@ public class Panel extends JPanel implements ActionListener, KeyListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {		
 	}
+	
+	public void updatePanel() {
+		repaint();
+	}
 }
