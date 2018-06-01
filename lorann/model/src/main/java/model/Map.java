@@ -10,8 +10,19 @@ public class Map {
 	
 	public void CreateMap(List<Tile> ListTiles) {
 		for (Tile tile : ListTiles) {
-			//System.out.println(tile.getX() + "," + tile.getY());
-			mapNiveau[tile.getX()][tile.getY()] = motionlessElementFactory.createMotionlessElement(tile.getSprite(), new Position(tile.getX(),tile.getY()));
+			if (tile.getSprite() == 'S'||
+				tile.getSprite() == 'H' || 
+				tile.getSprite() == 'V' ||
+				tile.getSprite() == 'X' || 
+				tile.getSprite() == 'G' ||
+				tile.getSprite() == 'E' || 
+				tile.getSprite() == 'C' ||
+				tile.getSprite() == 'O') {
+				mapNiveau[tile.getX()][tile.getY()] = motionlessElementFactory.createMotionlessElement(tile.getSprite(), new Position(tile.getX(),tile.getY()));
+			}
+			else {
+				mapNiveau[tile.getX()][tile.getY()] = new Element(Permeability.PENETRABLE, tile.getSprite(), new Position(tile.getX(), tile.getY()));
+			}
 		}
 	}
 	

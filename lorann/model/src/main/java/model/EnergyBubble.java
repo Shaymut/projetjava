@@ -2,9 +2,9 @@ package model;
 
 public class EnergyBubble extends MotionlessElement{
 	
-	static char sprite = 'P';
+	static char sprite = 'E';
 	
-	static Permeability permeability = Permeability.COLLECTABLE;
+	static Permeability permeability = Permeability.PENETRABLE;
 
 	EnergyBubble(Position position) {
 		super(permeability, sprite, position);

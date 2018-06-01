@@ -3,6 +3,7 @@ package model;
 public class Gold extends MotionlessElement{
 
 	static char sprite = 'G';
+	
 	static Permeability permeability = Permeability.COLLECTABLE;
 	
 	Gold(Position position) {

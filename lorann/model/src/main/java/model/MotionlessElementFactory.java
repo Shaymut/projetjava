@@ -7,9 +7,10 @@ public class MotionlessElementFactory {
 	public Element createMotionlessElement(char sprite, Position position) {
 		switch(sprite) {
 			case 'G':
-				element = new Gold(position);
+				//element = new Gold(position);
+				element = new Ground(position);
 				break;
-			case 'P':
+			case 'E':
 				element= new EnergyBubble(position);
 				break;
 			case 'X':
@@ -31,7 +32,7 @@ public class MotionlessElementFactory {
 				 element = new DoorClosed(position);
 				 break;
 			default :
-				System.out.println("Il y a un sprite dans la BDD qui n'existe pas dans le switch case");
+				System.out.println("Il y a un sprite dans la BDD qui n'existe pas dans le switch case : " + sprite);
 				//element = new Ground(position);
 		}
 		return element;
