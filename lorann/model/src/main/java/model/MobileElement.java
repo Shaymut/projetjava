@@ -27,8 +27,7 @@ public class MobileElement extends Element implements IMobile{
 	
 	@Override
     public void moveUp() {
-    	  setNextY(position.getY()-1); //On Sauvegarde l'ancienne position dans une variable temporaire afin de sauvegardé et ensuite 
-          //Mettre les méthodes de collision
+    	  setNextY(position.getY()-1);
           position.setY(nextY);
     }
 

@@ -47,7 +47,11 @@ public class Map {
 		return this.mapNiveau[x][y].getSprite();
 	}
 	
+	
+	
 	//Partie Consacrée aux mouvements de Lorann : 
+	
+	
 	
 	public void LorannMoveUp() {
 		this.lorann.moveUp();
