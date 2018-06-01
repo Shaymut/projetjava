@@ -1,19 +1,13 @@
 package model;
 
-import java.awt.Image;
-
-import javax.swing.ImageIcon;
-
 public class Spell extends Mobile implements Hit{
 
 	static private char sprite = 'P';
 	static Permeability permeability= Permeability.BLOCK;
-	static private ImageIcon icoImage = new ImageIcon(Spell.class.getResource("/Pictures/fireball_1.png"));
-	static private Image image = icoImage.getImage();
 	
 	
-	Spell(Position position,ImageIcon icoImage) {
-		super(permeability, sprite, image, position, icoImage);
+	Spell(Position position) {
+		super(permeability, sprite, position);
 	}
 	
 
@@ -21,10 +15,6 @@ public class Spell extends Mobile implements Hit{
 		return sprite;
 	}
 
-
-	public Image getImage() {
-		return image;
-	}
 	
 	/*
 	public static void hit() {

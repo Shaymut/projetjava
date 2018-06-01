@@ -1,5 +1,7 @@
 package view;
 
+import model.*;
+
 /**
  * <h1>The Interface IView.</h1>
  *
@@ -16,5 +18,7 @@ public interface IView {
      */
     void displayMessage(String message);
     
-    void createFrame(String name);
+    void createFrame(String name, int x, int y, Element[][] mapNiveau);
+    
+    void displayMap(Element[][] elements);
 }

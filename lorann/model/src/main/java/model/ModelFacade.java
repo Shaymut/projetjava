@@ -1,7 +1,6 @@
 package model;
 
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
 
 import model.dao.ExampleDAO;
@@ -14,6 +13,8 @@ import model.dao.MapDAO;
  * @version 1.0
  */
 public final class ModelFacade implements IModel {
+	
+	Map Niveau;
 	
     /**
      * Instantiates a new model facade.
@@ -60,8 +61,14 @@ public final class ModelFacade implements IModel {
 
 	@Override
 	public void CreateMap(List<Tile> map) throws SQLException {
-		Map Niveau = new Map();
+		this.Niveau = new Map();
 		Niveau.CreateMap(map);
 	}
+
+	@Override
+	public Element[][] getMap() {
+		return Niveau.getMap();
+	}
+	
 
 }

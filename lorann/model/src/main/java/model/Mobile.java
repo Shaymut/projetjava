@@ -1,16 +1,12 @@
 package model;
 
-import java.awt.Image;
-
-import javax.swing.ImageIcon;
-
 public class Mobile extends Element implements IMobile{
 
     private int nextY;
     private int nextX;
 
-    Mobile(Permeability permeability, char sprite, Image image, Position position,ImageIcon icoImage) {
-        super(permeability, sprite, image, position, icoImage);
+    Mobile(Permeability permeability, char sprite, Position position) {
+        super(permeability, sprite, position);
     }
 
     public int getNextY() {

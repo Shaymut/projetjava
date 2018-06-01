@@ -1,8 +1,9 @@
 package view;
 
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
-
-import showboard.BoardFrame;
+import javax.swing.SwingUtilities;
+import model.*;
 
 /**
  * <h1>The Class ViewFacade provides a facade of the View component.</h1>
@@ -12,7 +13,6 @@ import showboard.BoardFrame;
  */
 public class ViewFacade implements IView {
 	
-	private BoardFrame Frame;
     /**
      * Instantiates a new view facade.
      */
@@ -28,10 +28,25 @@ public class ViewFacade implements IView {
     public final void displayMessage(final String message) {
         JOptionPane.showMessageDialog(null, message);
     }
+    
+    @Override
+    public void displayMap(Element[][] mapNiveau) {
+		for (int i = 0; i <= 11; i++) {
+			for (int j = 0; j <= 19; j++) {
+				System.out.print(mapNiveau[j][i].getSprite());
+			}
+			System.out.println();
+		}
+	}
 
 	@Override
-	public void createFrame(String name) {
-		this.Frame = new BoardFrame(name, false);
+	public void createFrame(String name, int x, int y, Element[][] mapNiveau) {
+		SwingUtilities.invokeLater(new Runnable() {
+            public void run() {
+                JFrame frame = new Window(name, x, y, mapNiveau);
+                frame.setVisible(true);
+            }
+        });
 		
 	}
 

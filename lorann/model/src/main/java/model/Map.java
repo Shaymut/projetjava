@@ -13,7 +13,6 @@ public class Map {
 			//System.out.println(tile.getX() + "," + tile.getY());
 			mapNiveau[tile.getX()][tile.getY()] = motionlessElementFactory.createMotionlessElement(tile.getSprite(), new Position(tile.getX(),tile.getY()));
 		}
-		AfficherMapNiveau(mapNiveau);
 	}
 	
 	public Element getElementInMap(int x, int y) {
@@ -27,6 +26,11 @@ public class Map {
 			}
 			System.out.println();
 		}
+	}
+	
+	
+	public Element[][] getMap(){
+		return this.mapNiveau;
 	}
 	
 }
