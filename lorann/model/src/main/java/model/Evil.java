@@ -1,6 +1,6 @@
 package model;
 
-public class Evil extends Mobile implements Kill{
+public class Evil extends MobileElement implements Kill{
 
 	static Permeability permeability = Permeability.BLOCK;
 	

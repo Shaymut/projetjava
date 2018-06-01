@@ -8,6 +8,7 @@ public class Map {
 	
 	MotionlessElementFactory motionlessElementFactory = new MotionlessElementFactory();
 	MobileElementFactory mobileElementFactory = new MobileElementFactory();
+	Lorann lorann;
 	
 	public void CreateMap(List<Tile> ListTiles) {
 		for (Tile tile : ListTiles) {
@@ -21,30 +22,22 @@ public class Map {
 				tile.getSprite() == 'O') {
 				mapNiveau[tile.getX()][tile.getY()] = motionlessElementFactory.createMotionlessElement(tile.getSprite(), new Position(tile.getX(),tile.getY()));
 			}
-			else if (tile.getSprite() == 'L' ||
-					 tile.getSprite() == 'P' ||
+			else if (tile.getSprite() == 'P' ||
 					 tile.getSprite() == 'F' ||
 					 tile.getSprite() == 'K' ||
 					 tile.getSprite() == 'B' ||
 					 tile.getSprite() == 'J'){
 				mapNiveau[tile.getX()][tile.getY()] = mobileElementFactory.createMobileElement(tile.getSprite(), new Position(tile.getX(),tile.getY()));
 			}
+			else if(tile.getSprite() == 'L') {
+				mapNiveau[tile.getX()][tile.getY()] = lorann = new Lorann(new Position(tile.getX(),tile.getY()));
+			}
 		}
 	}
 	
 	public Element getElementInMap(int x, int y) {
 		return this.mapNiveau[x][y];
-	}
-	
-	public void AfficherMapNiveau(Element[][] mapNiveau) {
-		for (int i = 0; i <= 11; i++) {
-			for (int j = 0; j <= 19; j++) {
-				System.out.print(mapNiveau[j][i].getSprite());
-			}
-			System.out.println();
-		}
-	}
-	
+	}	
 	
 	public Element[][] getMap(){
 		return this.mapNiveau;
@@ -52,5 +45,39 @@ public class Map {
 	
 	public char getElementByXY(int x, int y) {
 		return this.mapNiveau[x][y].getSprite();
+	}
+	
+	//Partie Consacrée aux mouvements de Lorann : 
+	
+	public void LorannMoveUp() {
+		this.lorann.moveUp();
+	}
+	
+	public void LorannMoveDown() {
+		this.lorann.moveDown();
+	}
+	
+	public void LorannMoveLeft() {
+		this.lorann.moveLeft();
+	}
+	
+	public void LorannMoveRight() {
+		this.lorann.moveRight();
+	}
+	
+	public void LorannMoveUpLeft() {
+		this.lorann.moveUpLeft();
+	}
+	
+	public void LorannMoveUpRight() {
+		this.lorann.moveUpRight();
+	}
+	
+	public void LorannMoveDownLeft() {
+		this.lorann.moveDownLeft();
+	}
+	
+	public void LorannMoveDownRight() {
+		this.lorann.moveDownRight();
 	}
 }

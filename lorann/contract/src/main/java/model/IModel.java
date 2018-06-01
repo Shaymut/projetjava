@@ -59,7 +59,6 @@ public interface IModel {
 	
 	Element[][] getMap();
 	
-	
 	char getElementByXY(int x, int y);
 	
 }

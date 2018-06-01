@@ -1,6 +1,6 @@
 package model;
 
-public class Lorann extends Mobile{
+public class Lorann extends MobileElement{
 	
 	public long score;
 	public  boolean HaveASpell;

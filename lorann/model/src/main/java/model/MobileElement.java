@@ -1,11 +1,11 @@
 package model;
 
-public class Mobile extends Element implements IMobile{
+public class MobileElement extends Element implements IMobile{
 
     private int nextY;
     private int nextX;
 
-    Mobile(Permeability permeability, char sprite, Position position) {
+    MobileElement(Permeability permeability, char sprite, Position position) {
         super(permeability, sprite, position);
     }
 
