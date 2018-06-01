@@ -106,42 +106,39 @@ public class Panel extends JPanel implements ActionListener, KeyListener {
         	}
         }
         
-		try {
+		/*try {
 			image = ImageIO.read(new File(getClass().getResource("/picture2/lorann_u.png").toURI()));
 		} catch (IOException | URISyntaxException e) {
 			e.printStackTrace();
 		}
-		g.drawImage(image, currentCol, currentRow, this);
+		g.drawImage(image, currentCol, currentRow, this);*/
 		
     }
 
     public void keyPressed(KeyEvent touche) {
         int Button = touche.getKeyCode();
-        int rowIncrement = 0;
-        int colIncrement = 0;
-
+        /*int rowIncrement = 0;
+        int colIncrement = 0;*/
         if(Button == KeyEvent.VK_LEFT) {
-        	colIncrement = colIncrement - 32;
+        	//colIncrement = colIncrement - 32;
         }
         else if(Button == KeyEvent.VK_RIGHT) {
-        	colIncrement = colIncrement + 32;
+        	//colIncrement = colIncrement + 32;
         }
         else if(Button == KeyEvent.VK_UP) {
-        	rowIncrement = rowIncrement - 32;
+        	//rowIncrement = rowIncrement - 32;
         }
-        else {
-            if(Button == KeyEvent.VK_DOWN) {
-            	rowIncrement = rowIncrement + 32;
-            }
+        else if(Button == KeyEvent.VK_DOWN) {
+        	//rowIncrement = rowIncrement + 32;            
         }
-
+        /*
         if(isInBounds(rowIncrement, colIncrement)) {
             currentRow += rowIncrement;
             currentCol += colIncrement;
             repaint();
-        }
+        }*/
     }
-
+    /*
     private boolean isInBounds(int rowIncrement, int colIncrement) {
         int top = currentRow + rowIncrement;
         int left = currentCol + colIncrement;
@@ -149,7 +146,7 @@ public class Panel extends JPanel implements ActionListener, KeyListener {
         int bottom = top + CHARACTER_WIDTH;
 
         return (top >= 0 && left >= 0 && right <= PANEL_SIZE.getWidth() && bottom <= PANEL_SIZE.getHeight());       
-    }
+    }*/
 
     public void keyTyped(KeyEvent e) {}
     public void keyReleased(KeyEvent e) {}
