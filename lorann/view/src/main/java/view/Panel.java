@@ -56,6 +56,7 @@ public class Panel extends JPanel implements ActionListener, KeyListener {
         
         g.drawOval(randomCol, randomRow, CHARACTER_WIDTH, CHARACTER_WIDTH);
         g.drawRect(currentCol, currentRow, CHARACTER_WIDTH, CHARACTER_WIDTH);
+        
         //System.out.println(String.valueOf(mapNiveau[0][0].getSprite()));
         /*try {
 			image = ImageIO.read(new File(getClass().getResource("/pictures/bone.png").toURI()));
