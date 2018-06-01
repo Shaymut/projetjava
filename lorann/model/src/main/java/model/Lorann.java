@@ -5,9 +5,6 @@ import java.awt.Image;
 import javax.swing.ImageIcon;
 
 public class Lorann extends Mobile{
-	
-	public static boolean setAlive;
-	public static boolean HaveASpell;
 
 	Lorann(Permeability permeability, char sprite, Image image, Position position,ImageIcon icoImage) {
 		super(permeability, sprite, image, position, icoImage);
@@ -22,6 +19,8 @@ public class Lorann extends Mobile{
 	}
 	
 	public void PickUp() {
+		
+		
 		
 	}
 

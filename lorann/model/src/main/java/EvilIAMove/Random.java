@@ -1,5 +1,12 @@
 package EvilIAMove;
 
-public class Random {
+import model.EvilMove;
 
+public class Random implements EvilMove{
+
+	public void move() {
+		
+	}
+	
+	
 }

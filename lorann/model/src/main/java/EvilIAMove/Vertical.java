@@ -1,5 +1,13 @@
 package EvilIAMove;
 
-public class Vertical {
+import model.EvilMove;
+
+public class Vertical implements EvilMove{
+	
+	public void move() {
+		
+		
+		
+	}
 
 }

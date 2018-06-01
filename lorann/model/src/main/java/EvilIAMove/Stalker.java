@@ -1,5 +1,12 @@
 package EvilIAMove;
 
-public class Stalker {
+import model.EvilMove;
 
+public class Stalker implements EvilMove{
+
+	public void move() {
+		
+	}
+	
+	
 }
