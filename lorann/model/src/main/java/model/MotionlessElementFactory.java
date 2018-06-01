@@ -2,26 +2,46 @@ package model;
 
 public class MotionlessElementFactory {
 	
-	public void createMotionlessElement(char sprite, Position position) {
+	Element element = null;
+	
+	public Element createMotionlessElement(char sprite, Position position) {
 		switch(sprite) {
 			case 'G':
-				createGold(position);
+				element = new Gold(position);
 				break;
-			case 'E':
-				createEnergy(position);
+			case 'P':
+				element= new EnergyBubble(position);
 				break;
 			case 'X':
-				createGround(position);
+				element = new Ground(position);
 				break;
 			case 'S':
-				createStone(position);
+				element = new Stone(position);
 				break;
 			case 'V':
-				createVerticalBone(position);
+				element = new VerticalBone(position);
 				break;
-			
+			case 'H' :
+				element = new HorizontalBone(position);
+				break;
+			case 'O' :
+				element = new DoorOpened(position);
+				break;
+			case 'C' :
+				 element = new DoorClosed(position);
+				 break;
+			default :
+				System.out.println("Il y a un sprite dans la BDD qui n'existe pas dans le switch case");
+				//element = new Ground(position);
 		}
+		return element;
 	}
+
+	
+	
+	
+	
+	/*
 	
 	public MotionlessElement createGold(Position position) {
 		MotionlessElement Gold = new Gold(position);
@@ -63,5 +83,5 @@ public class MotionlessElementFactory {
 		return DoorClosed;
 	}
 	
-	
+	*/
 }

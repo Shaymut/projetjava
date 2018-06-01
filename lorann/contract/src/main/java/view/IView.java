@@ -16,6 +16,5 @@ public interface IView {
      */
     void displayMessage(String message);
     
-    
-    void createFrame(String name, boolean decorated);
+    void createFrame(String name);
 }

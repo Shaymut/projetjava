@@ -2,6 +2,8 @@ package view;
 
 import javax.swing.JOptionPane;
 
+import showboard.BoardFrame;
+
 /**
  * <h1>The Class ViewFacade provides a facade of the View component.</h1>
  *
@@ -9,14 +11,15 @@ import javax.swing.JOptionPane;
  * @version 1.0
  */
 public class ViewFacade implements IView {
-
+	
+	private BoardFrame Frame;
     /**
      * Instantiates a new view facade.
      */
     public ViewFacade() {
         super();
     }
-
+    
     /*
      * (non-Javadoc)
      * @see view.IView#displayMessage(java.lang.String)
@@ -27,7 +30,8 @@ public class ViewFacade implements IView {
     }
 
 	@Override
-	public void createFrame(String name, boolean decorated) {
+	public void createFrame(String name) {
+		this.Frame = new BoardFrame(name, false);
 		
 	}
 

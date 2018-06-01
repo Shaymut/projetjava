@@ -4,11 +4,13 @@ import java.awt.Image;
 
 import javax.swing.ImageIcon;
 
+
 public class Lorann extends Mobile{
 	
 	public long score;
 	public  boolean HaveASpell;
 	public boolean Recup;
+
 
 	Lorann(Permeability permeability, char sprite, Image image, Position position,ImageIcon icoImage) {
 		super(permeability, sprite, image, position, icoImage);
@@ -19,6 +21,7 @@ public class Lorann extends Mobile{
 		return true;
 	}
 	
+
 	public boolean PickUp() {
 		if(permeability == Permeability.COLLECTABLE) {
 			setScore(getScore()+650);
@@ -31,7 +34,6 @@ public class Lorann extends Mobile{
 	public long getScore() {
 		return score;
 	}
-
 	public void setScore(long score) {
 		this.score = score;
 	}

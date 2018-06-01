@@ -11,4 +11,19 @@ public class Evil extends Mobile implements EvilMove, Kill{
 		// TODO Auto-generated constructor stub
 	}
 
+
+	public void move() {
+		
+		
+		
+	}
+
+	public void kill() {
+		
+	
+		
+	}
+	
+
+
 }

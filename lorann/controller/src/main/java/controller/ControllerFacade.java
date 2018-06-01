@@ -63,10 +63,9 @@ public class ControllerFacade implements IController {
             message.append('\n');
         }
         //this.getView().displayMessage(message.toString());
-        this.model.CreateMap(ListTiles);
-        this.view.createFrame("Test", false);
+        this.getModel().CreateMap(ListTiles);
+        //this.getView().createFrame("Lorann");
     }
-
     /**
      * Gets the view.
      *

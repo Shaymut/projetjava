@@ -19,4 +19,17 @@ public class Element {
 		this.position = position;
 		this.icoImage = icoImage;
 	}
+	
+	public char getSprite() {
+		return this.sprite;		
+	}
+	
+	public int getX() {
+		return this.position.getX();
+	}
+	
+	public int getY() {
+		return this.position.getY();
+	}
+	
 }
