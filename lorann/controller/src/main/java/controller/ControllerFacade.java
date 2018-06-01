@@ -56,7 +56,7 @@ public class ControllerFacade implements IController {
         }
         this.getView().displayMessage(message.toString());*/
     	
-        final List<Tile> ListTiles = this.getModel().getAllTilesByMap(1);
+        final List<Tile> ListTiles = this.getModel().getAllTilesByMap(5);
         final StringBuilder message = new StringBuilder();
         for (final Tile tile : ListTiles) {
             message.append(tile);
@@ -65,7 +65,7 @@ public class ControllerFacade implements IController {
         System.out.println(message.toString());
         this.getModel().CreateMap(ListTiles);
         this.getView().displayMap(this.getModel().getMap());
-        this.getView().createFrame("Lorann", 20, 12, null/*this.getModel().getMap()*/);
+        this.getView().createFrame("Lorann", 20, 12, this.getModel().getMap());
     }
     /**
      * Gets the view.

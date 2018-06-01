@@ -13,7 +13,7 @@ public class Element {
 	}
 	
 	public char getSprite() {
-		return this.sprite;		
+		return this.sprite;
 	}
 	
 	public int getX() {
