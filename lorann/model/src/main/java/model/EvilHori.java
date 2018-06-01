@@ -1,9 +1,5 @@
 package model;
 
-import java.awt.Image;
-
-import javax.swing.ImageIcon;
-
 public class EvilHori extends Evil implements EvilMove{
 	
 	static char sprite = 'A';
