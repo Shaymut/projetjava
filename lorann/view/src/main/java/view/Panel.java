@@ -22,14 +22,12 @@ import javax.swing.Timer;
 public class Panel extends JPanel implements ActionListener, KeyListener {
 	private static final long serialVersionUID = 1L;
     private static Dimension PANEL_SIZE;
-    private static final int REFRESH_RATE = 250;
-    private static final int CHARACTER_WIDTH = 32;
+    //private static final int CHARACTER_WIDTH = 32;
     
     Image Image;
     
-    private Timer timer = new Timer(REFRESH_RATE, this);
-    private int currentRow = 0;
-    private int currentCol = 0;
+    //private int currentRow = 0;
+    //private int currentCol = 0;
     
     Element[][] mapNiveau;
     
@@ -41,7 +39,6 @@ public class Panel extends JPanel implements ActionListener, KeyListener {
         addKeyListener(this);
         setFocusable(true);
         setFocusTraversalKeysEnabled(false);
-        timer.start();
     }
     
     public Dimension getPreferredSize() {
@@ -117,8 +114,8 @@ public class Panel extends JPanel implements ActionListener, KeyListener {
 
     public void keyPressed(KeyEvent touche) {
         int Button = touche.getKeyCode();
-        /*int rowIncrement = 0;
-        int colIncrement = 0;*/
+        int rowIncrement = 0;
+        int colIncrement = 0;
         if(Button == KeyEvent.VK_LEFT) {
         	System.out.println("keyPressed : gauche");
         	//colIncrement = colIncrement - 32;
