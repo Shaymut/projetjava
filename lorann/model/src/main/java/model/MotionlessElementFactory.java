@@ -7,8 +7,7 @@ public class MotionlessElementFactory {
 	public Element createMotionlessElement(char sprite, Position position) {
 		switch(sprite) {
 			case 'G':
-				//element = new Gold(position);
-				element = new Ground(position);
+				element = new Gold(position);
 				break;
 			case 'E':
 				element= new EnergyBubble(position);

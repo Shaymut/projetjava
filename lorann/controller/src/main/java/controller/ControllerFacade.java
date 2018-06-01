@@ -56,7 +56,7 @@ public class ControllerFacade implements IController {
         }
         this.getView().displayMessage(message.toString());*/
     	
-        final List<Tile> ListTiles = this.getModel().getAllTilesByMap(5);
+        final List<Tile> ListTiles = this.getModel().getAllTilesByMap(1);
         final StringBuilder message = new StringBuilder();
         for (final Tile tile : ListTiles) {
             message.append(tile);
