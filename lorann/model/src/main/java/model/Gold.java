@@ -9,10 +9,4 @@ public class Gold extends MotionlessElement{
 		super(permeability, sprite, position);
 		System.out.println("Création d'un objet Gold");
 	}
-	
-	public void Replace(){
-/*		if(Recup == true) {
-		
-		}*/
-	}
 }
