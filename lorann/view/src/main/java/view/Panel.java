@@ -120,15 +120,19 @@ public class Panel extends JPanel implements ActionListener, KeyListener {
         /*int rowIncrement = 0;
         int colIncrement = 0;*/
         if(Button == KeyEvent.VK_LEFT) {
+        	System.out.println("keyPressed : gauche");
         	//colIncrement = colIncrement - 32;
         }
         else if(Button == KeyEvent.VK_RIGHT) {
+        	System.out.println("keyPressed : droite");
         	//colIncrement = colIncrement + 32;
         }
         else if(Button == KeyEvent.VK_UP) {
+        	System.out.println("keyPressed : haut");
         	//rowIncrement = rowIncrement - 32;
         }
         else if(Button == KeyEvent.VK_DOWN) {
+        	System.out.println("keyPressed : bas");
         	//rowIncrement = rowIncrement + 32;            
         }
         /*
