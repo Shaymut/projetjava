@@ -13,7 +13,6 @@ public class Element {
 	}
 	
 	public char getSprite() {
-		System.out.println();
 		return this.sprite;		
 	}
 	

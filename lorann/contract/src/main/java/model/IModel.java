@@ -52,13 +52,14 @@ public interface IModel {
      *             the SQL exception
      */    
 	List<Tile> getAllTilesByMap(final int id) throws SQLException;
-
-	
 	
 	
 	void CreateMap(List<Tile> listTiles) throws SQLException;
 	
 	
 	Element[][] getMap();
+	
+	
+	char getElementByXY(int x, int y);
 	
 }

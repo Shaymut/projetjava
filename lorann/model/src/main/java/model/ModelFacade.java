@@ -69,6 +69,11 @@ public final class ModelFacade implements IModel {
 	public Element[][] getMap() {
 		return Niveau.getMap();
 	}
+
+	@Override
+	public char getElementByXY(int x, int y) {
+		return Niveau.getElementByXY(x, y);
+	}
 	
 
 }

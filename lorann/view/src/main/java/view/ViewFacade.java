@@ -13,6 +13,8 @@ import model.*;
  */
 public class ViewFacade implements IView {
 	
+	JFrame frame;
+	
     /**
      * Instantiates a new view facade.
      */
@@ -43,7 +45,7 @@ public class ViewFacade implements IView {
 	public void createFrame(String name, int x, int y, Element[][] mapNiveau) {
 		SwingUtilities.invokeLater(new Runnable() {
             public void run() {
-                JFrame frame = new Window(name, x, y, mapNiveau);
+                frame = new Window(name, x, y, mapNiveau);
                 frame.setVisible(true);
             }
         });

@@ -33,4 +33,7 @@ public class Map {
 		return this.mapNiveau;
 	}
 	
+	public char getElementByXY(int x, int y) {
+		return this.mapNiveau[x][y].getSprite();
+	}
 }
