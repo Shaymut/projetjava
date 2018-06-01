@@ -1,15 +1,12 @@
 package model;
 
-import java.awt.Image;
-
 public class EvilVertical extends Evil implements EvilMove{
 	
-	static char sprite = 'B';
+	static char sprite = 'K';
 	
-	
-	EvilVertical(Permeability permeability, char sprite, Image image, Position position) {
+	EvilVertical(Position position) {
 		super(sprite, position);
-		System.out.println("Création d'un objet EvilHori");
+		System.out.println("Création d'un objet EvilVertical");
 	}
 
 
@@ -17,15 +14,5 @@ public class EvilVertical extends Evil implements EvilMove{
 	public void move() {
 		
 	}
-
-	/*
-	public static Image getImage() {
-		return image;
-	}
-
-
-	public static void setImage(Image image) {
-		EvilHori.image = image;
-	}*/
 
 }

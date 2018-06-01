@@ -63,7 +63,6 @@ public class ControllerFacade implements IController {
         this.getModel().CreateMap(ListTiles);
         this.getView().displayMap(this.getModel().getMap());
         this.getView().createFrame("Lorann", 20, 12, this.getModel().getMap());
-        System.out.println("UPDATE");
         //this.getView().updateFrame();   <------ Erreur si lancé
     }
     /**

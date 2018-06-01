@@ -5,8 +5,11 @@ public class Lorann extends Mobile{
 	public long score;
 	public  boolean HaveASpell;
 	public boolean Recup;
+	static char sprite = 'L';
+	
+	static Permeability permeability = Permeability.BLOCK;
 
-	Lorann(Permeability permeability, char sprite, Position position) {
+	Lorann(Position position) {
 		super(permeability, sprite, position);
 		
 	}

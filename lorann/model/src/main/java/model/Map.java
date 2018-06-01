@@ -7,6 +7,7 @@ public class Map {
 	Element[][] mapNiveau = new Element[20][12];
 	
 	MotionlessElementFactory motionlessElementFactory = new MotionlessElementFactory();
+	MobileElementFactory mobileElementFactory = new MobileElementFactory();
 	
 	public void CreateMap(List<Tile> ListTiles) {
 		for (Tile tile : ListTiles) {
@@ -20,8 +21,13 @@ public class Map {
 				tile.getSprite() == 'O') {
 				mapNiveau[tile.getX()][tile.getY()] = motionlessElementFactory.createMotionlessElement(tile.getSprite(), new Position(tile.getX(),tile.getY()));
 			}
-			else {
-				mapNiveau[tile.getX()][tile.getY()] = new Element(Permeability.PENETRABLE, tile.getSprite(), new Position(tile.getX(), tile.getY()));
+			else if (tile.getSprite() == 'L' ||
+					 tile.getSprite() == 'P' ||
+					 tile.getSprite() == 'F' ||
+					 tile.getSprite() == 'K' ||
+					 tile.getSprite() == 'B' ||
+					 tile.getSprite() == 'J'){
+				mapNiveau[tile.getX()][tile.getY()] = mobileElementFactory.createMobileElement(tile.getSprite(), new Position(tile.getX(),tile.getY()));
 			}
 		}
 	}
