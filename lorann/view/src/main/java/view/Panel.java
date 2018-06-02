@@ -102,18 +102,18 @@ public class Panel extends JPanel implements ActionListener, KeyListener {
         }
         
 		/*try {
-			image = ImageIO.read(new File(getClass().getResource("/picture2/lorann_u.png").toURI()));
+			image = ImageIO.read(new File(getClass().getResource("/pictures/lorann_u.png").toURI()));
+			g.drawImage(image, currentCol, currentRow, this);
 		} catch (IOException | URISyntaxException e) {
 			e.printStackTrace();
-		}
-		g.drawImage(image, currentCol, currentRow, this);*/
+		}*/
 		
     }
 
     public void keyPressed(KeyEvent touche) {
         int Button = touche.getKeyCode();
-        /*int rowIncrement = 0;
-        int colIncrement = 0;*/
+        //int rowIncrement = 0;
+        //int colIncrement = 0;
         if(Button == KeyEvent.VK_LEFT) {
         	System.out.println("keyPressed : gauche");
         	//colIncrement = colIncrement - 32;
