@@ -20,22 +20,22 @@ public class EvilRandom extends Evil implements EvilMove{
 	         switch(ChoixMove) {
 	          case 0:
 	          {
-	              this.moveLeft(position);
+	              this.moveLeft();
 	          }
 	          break;
-	          case 1: this.moveRight(position);
+	          case 1: this.moveRight();
 	          break;
-	          case 2: this.moveDown(position);
+	          case 2: this.moveDown();
 	          break;
-	          case 3: this.moveUp(position);
+	          case 3: this.moveUp();
 	          break;
-	          case 4: this.moveUpRight(position);
+	          case 4: this.moveUpRight();
 	          break;
-	          case 5: this.moveUpLeft(position);
+	          case 5: this.moveUpLeft();
 	          break;
-	          case 6: this.moveDownRight(position);
+	          case 6: this.moveDownRight();
 	          break;
-	          case 7: this.moveDownLeft(position);
+	          case 7: this.moveDownLeft();
 	          break;
 	          default: 
 	         }

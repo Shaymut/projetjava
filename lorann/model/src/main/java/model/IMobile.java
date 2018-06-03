@@ -4,19 +4,19 @@ public interface IMobile {
 	
 	
 
-	void moveUp(Position position);
+	void moveUp();
 
-	void moveUpRight(Position position);
+	void moveUpRight();
 
-	void moveDown(Position position);
+	void moveDown();
 
-	void moveLeft(Position position);
+	void moveLeft();
 
-	void moveRight(Position position);
+	void moveRight();
 
-	void moveUpLeft(Position position);
+	void moveUpLeft();
 
-	void moveDownLeft(Position position);
+	void moveDownLeft();
 
-	void moveDownRight(Position position);
+	void moveDownRight();
 }

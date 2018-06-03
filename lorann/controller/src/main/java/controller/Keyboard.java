@@ -22,7 +22,7 @@ public class Keyboard implements KeyListener{
 		 
 			toucheRight = true;
 			if(toucheRight == true) {
-				setNextX(Lorann.position+1);
+				setNextX(Lorann.l);
 		    //	position.setX(nextX);
 				
 			}

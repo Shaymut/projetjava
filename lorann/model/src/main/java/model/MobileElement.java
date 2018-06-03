@@ -26,7 +26,7 @@ public class MobileElement extends Element implements IMobile{
 	}
 	
 	@Override
-    public void moveUp(Position position) {
+    public void moveUp() {
     	  setNextY(position.getY()-1);
           position.setY(nextY);
 
@@ -34,25 +34,25 @@ public class MobileElement extends Element implements IMobile{
     }
 
 	@Override
-    public void moveDown(Position position) {
+    public void moveDown() {
     	setNextY(position.getY()+1);
     	position.setY(nextY);
         }
 	
 	@Override
-    public void moveLeft(Position position) {
+    public void moveLeft() {
     	setNextX(position.getX()-1);
     	position.setX(nextX);
     }
 	
 	@Override
-    public void moveRight(Position position) {
+    public void moveRight() {
     	setNextX(position.getX()+1);
     	position.setX(nextX);
     }
 	
 	@Override
-    public void moveUpLeft(Position position) {
+    public void moveUpLeft() {
     	setNextY(position.getY()-1);
     	setNextX(position.getX()-1);
     	position.setX(nextX);
@@ -60,7 +60,7 @@ public class MobileElement extends Element implements IMobile{
     }
 	
 	@Override
-    public void moveUpRight(Position position) {
+    public void moveUpRight() {
     	setNextY(position.getY()-1); 
         setNextX(position.getX()+1);
      	position.setX(nextX);
@@ -68,7 +68,7 @@ public class MobileElement extends Element implements IMobile{
     }
 	
 	@Override
-    public void moveDownLeft(Position position) {
+    public void moveDownLeft() {
     	setNextY(position.getY()+1);
     	setNextX(position.getX()-1);
     	position.setX(nextX);
@@ -76,7 +76,7 @@ public class MobileElement extends Element implements IMobile{
     }
 	
 	@Override
-    public void moveDownRight(Position position) {
+    public void moveDownRight() {
     	setNextY(position.getY()+1);
     	setNextX(position.getX()+1);
     	position.setX(nextX);
