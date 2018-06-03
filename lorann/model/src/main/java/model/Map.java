@@ -56,34 +56,34 @@ public class Map {
 	
 	
 	public void LorannMoveUp() {
-		this.lorann.moveUp(null);
+		this.lorann.moveUp();
 	}
 	
 	public void LorannMoveDown() {
-		this.lorann.moveDown(null);
+		this.lorann.moveDown();
 	}
 	
 	public void LorannMoveLeft() {
-		this.lorann.moveLeft(null);
+		this.lorann.moveLeft();
 	}
 	
 	public void LorannMoveRight() {
-		this.lorann.moveRight(null);
+		this.lorann.moveRight();
 	}
 	
 	public void LorannMoveUpLeft() {
-		this.lorann.moveUpLeft(null);
+		this.lorann.moveUpLeft();
 	}
 	
 	public void LorannMoveUpRight() {
-		this.lorann.moveUpRight(null);
+		this.lorann.moveUpRight();
 	}
 	
 	public void LorannMoveDownLeft() {
-		this.lorann.moveDownLeft(null);
+		this.lorann.moveDownLeft();
 	}
 	
 	public void LorannMoveDownRight() {
-		this.lorann.moveDownRight(null);
+		this.lorann.moveDownRight();
 	}
 }
