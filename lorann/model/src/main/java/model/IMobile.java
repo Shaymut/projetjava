@@ -2,19 +2,21 @@ package model;
 
 public interface IMobile {
 	
-	void moveUp();
 	
-	void moveDown();
-	
-	void moveLeft();
-	
-	void moveRight();
-	
-	void moveUpLeft();
-	
-	void moveUpRight();
-	
-	void moveDownLeft();
-	
-	void moveDownRight();
+
+	void moveUp(Position position);
+
+	void moveUpRight(Position position);
+
+	void moveDown(Position position);
+
+	void moveLeft(Position position);
+
+	void moveRight(Position position);
+
+	void moveUpLeft(Position position);
+
+	void moveDownLeft(Position position);
+
+	void moveDownRight(Position position);
 }

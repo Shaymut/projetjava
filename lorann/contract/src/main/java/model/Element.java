@@ -16,7 +16,7 @@ public class Element {
 		return this.sprite;
 	}
 	
-	public int getX() {
+	public  int getX() {
 		return this.position.getX();
 	}
 	

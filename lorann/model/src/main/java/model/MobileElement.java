@@ -2,8 +2,8 @@ package model;
 
 public class MobileElement extends Element implements IMobile{
 
-    private int nextY;
-    private int nextX;
+    protected int nextY;
+    protected int nextX;
 
     MobileElement(Permeability permeability, char sprite, Position position) {
         super(permeability, sprite, position);
@@ -26,31 +26,33 @@ public class MobileElement extends Element implements IMobile{
 	}
 	
 	@Override
-    public void moveUp() {
+    public void moveUp(Position position) {
     	  setNextY(position.getY()-1);
           position.setY(nextY);
+
+          
     }
 
 	@Override
-    public void moveDown() {
+    public void moveDown(Position position) {
     	setNextY(position.getY()+1);
     	position.setY(nextY);
         }
 	
 	@Override
-    public void moveLeft() {
+    public void moveLeft(Position position) {
     	setNextX(position.getX()-1);
     	position.setX(nextX);
     }
 	
 	@Override
-    public void moveRight() {
+    public void moveRight(Position position) {
     	setNextX(position.getX()+1);
     	position.setX(nextX);
     }
 	
 	@Override
-    public void moveUpLeft() {
+    public void moveUpLeft(Position position) {
     	setNextY(position.getY()-1);
     	setNextX(position.getX()-1);
     	position.setX(nextX);
@@ -58,7 +60,7 @@ public class MobileElement extends Element implements IMobile{
     }
 	
 	@Override
-    public void moveUpRight() {
+    public void moveUpRight(Position position) {
     	setNextY(position.getY()-1); 
         setNextX(position.getX()+1);
      	position.setX(nextX);
@@ -66,7 +68,7 @@ public class MobileElement extends Element implements IMobile{
     }
 	
 	@Override
-    public void moveDownLeft() {
+    public void moveDownLeft(Position position) {
     	setNextY(position.getY()+1);
     	setNextX(position.getX()-1);
     	position.setX(nextX);
@@ -74,7 +76,7 @@ public class MobileElement extends Element implements IMobile{
     }
 	
 	@Override
-    public void moveDownRight() {
+    public void moveDownRight(Position position) {
     	setNextY(position.getY()+1);
     	setNextX(position.getX()+1);
     	position.setX(nextX);

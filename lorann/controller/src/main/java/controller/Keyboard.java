@@ -21,6 +21,11 @@ public class Keyboard implements KeyListener{
 		if(e.getKeyCode() == KeyEvent.VK_RIGHT)  { //Flèche droite
 		 
 			toucheRight = true;
+			if(toucheRight == true) {
+				setNextX(Lorann.position+1);
+		    //	position.setX(nextX);
+				
+			}
 		
 			}
 	
