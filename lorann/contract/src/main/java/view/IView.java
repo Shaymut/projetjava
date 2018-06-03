@@ -23,4 +23,6 @@ public interface IView {
     void displayMap(Element[][] elements);
     
     void updateFrame();
+
+    void setLorann(Element lorann);
 }

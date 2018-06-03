@@ -3,10 +3,10 @@ package view;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Image;
-import java.awt.event.ActionEvent;
+/*import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
+import java.awt.event.KeyListener;*/
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -18,7 +18,7 @@ import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 
 
-public class Panel extends JPanel implements ActionListener, KeyListener {
+public class Panel extends JPanel /*implements ActionListener, KeyListener*/ {
 	private static final long serialVersionUID = 1L;
     private static Dimension PANEL_SIZE;
     //private static final int CHARACTER_WIDTH = 32;
@@ -31,11 +31,13 @@ public class Panel extends JPanel implements ActionListener, KeyListener {
     Element[][] mapNiveau;
     
     BufferedImage image = null;
+    
+    Keyboard keyboard = new Keyboard();
 
     public Panel(int x, int y, Element[][] mapNiveau) {
     	Panel.PANEL_SIZE = new Dimension(x, y);
     	this.mapNiveau = mapNiveau;
-        addKeyListener(this);
+        addKeyListener(keyboard);
         setFocusable(true);
         setFocusTraversalKeysEnabled(false);
     }
@@ -109,7 +111,12 @@ public class Panel extends JPanel implements ActionListener, KeyListener {
 		}*/
 		
     }
-
+    
+    
+    public void updatePanel() {
+		repaint();
+	}
+/*
     public void keyPressed(KeyEvent touche) {
         int Button = touche.getKeyCode();
         //int rowIncrement = 0;
@@ -136,7 +143,7 @@ public class Panel extends JPanel implements ActionListener, KeyListener {
             currentCol += colIncrement;
             repaint();
         }*/
-    }
+    //}
     /*
     private boolean isInBounds(int rowIncrement, int colIncrement) {
         int top = currentRow + rowIncrement;
@@ -146,15 +153,13 @@ public class Panel extends JPanel implements ActionListener, KeyListener {
 
         return (top >= 0 && left >= 0 && right <= PANEL_SIZE.getWidth() && bottom <= PANEL_SIZE.getHeight());       
     }*/
-
+/*
     public void keyTyped(KeyEvent e) {}
     public void keyReleased(KeyEvent e) {}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {		
 	}
+	*/
 	
-	public void updatePanel() {
-		repaint();
-	}
 }

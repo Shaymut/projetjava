@@ -2,6 +2,7 @@ package controller;
 
 import java.sql.SQLException;
 import java.util.List;
+import model.Element;
 import model.IModel;
 import model.Tile;
 import view.IView;
@@ -19,6 +20,12 @@ public class ControllerFacade implements IController {
 
     /** The model. */
     private final IModel model;
+    
+    Element lorann;
+    
+    //Keyboard keyboard = new Keyboard();
+    
+    
 
     /**
      * Instantiates a new controller facade.
@@ -63,9 +70,12 @@ public class ControllerFacade implements IController {
         this.getModel().CreateMap(ListTiles);
         this.getView().displayMap(this.getModel().getMap());
         this.getView().createFrame("Lorann", 20, 12, this.getModel().getMap());
-        //this.getView().updateFrame();   <------ Erreur si lancé
+        this.lorann = this.getModel().getLorann();
+        this.getView().setLorann(this.lorann);
+        //this.keyboard.setLorann(this.lorann);       //                         <----------------     Touver un autre moyen  de mettre Lorann dans le keyboard
+        //this.getView().updateFrame();     <------ Erreur si lancé
     }
-    /**
+    /*
      * Gets the view.
      *
      * @return the view

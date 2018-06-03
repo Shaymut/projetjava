@@ -1,7 +1,9 @@
-package controller;
+package view;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+
+import model.Element;
 
 public class Keyboard implements KeyListener{
 	
@@ -13,35 +15,38 @@ public class Keyboard implements KeyListener{
      public boolean toucheRight = false;
      private int nextY;
      private int nextX;
-     
+     private Element lorann;
 
 	@Override
 	public void keyPressed(KeyEvent e) {
 		
 		if(e.getKeyCode() == KeyEvent.VK_RIGHT)  { //Flèche droite
-		 
+			System.out.println("Touche appyée : Droite");
+			
 			toucheRight = true;
-			if(toucheRight == true) {
+			/*if(toucheRight == true) {
 				//setNextX(Lorann.l);
 		    //	position.setX(nextX);
 				
-			}
+			}*/
 		
 			}
 	
 		else if(e.getKeyCode() == KeyEvent.VK_LEFT) {
+			System.out.println("Touche appyée : Left");
 			toucheLeft = true;
 		
 		}else if(e.getKeyCode() == KeyEvent.VK_DOWN) {
+			System.out.println("Touche appyée : Bas");
 		
 			
 		}else if(e.getKeyCode() == KeyEvent.VK_UP) {
+			System.out.println("Touche appyée : Haut");
 			toucheUp = true;
-			
-			
 		}
+		
 		if(e.getKeyCode() == KeyEvent.VK_SPACE) {
-			System.out.println("Espace");
+			System.out.println("Touche appyée : Espace");
 			//Mettre ici la méthode pour le lancer du pouvoir
 			
 		}
@@ -62,7 +67,14 @@ public class Keyboard implements KeyListener{
 	public void setNextX(int nextX) {
 		this.nextX = nextX;
 	}
-
+	
+	public Element getLorann() {
+		return this.lorann;
+	}
+	
+	public void setLorann(Element lorann) {
+		this.lorann = lorann;
+	}
 	
 	    
 	@Override

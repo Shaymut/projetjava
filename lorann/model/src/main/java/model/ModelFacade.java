@@ -46,6 +46,13 @@ public final class ModelFacade implements IModel {
 	public char getElementByXY(int x, int y) {
 		return Niveau.getElementByXY(x, y);
 	}
+
+	@Override
+	public Element getLorann() {
+		return Niveau.getLorann();
+	}
+	
+	
 	
 
 }

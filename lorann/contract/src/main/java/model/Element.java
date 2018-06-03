@@ -6,7 +6,7 @@ public class Element {
 	char sprite;
 	Position position;
 	
-	Element(Permeability permeability, char sprite, Position position){
+	public Element(Permeability permeability, char sprite, Position position){
 		this.permeability = permeability;
 		this.sprite = sprite;
 		this.position = position;

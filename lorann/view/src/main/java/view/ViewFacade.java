@@ -14,6 +14,8 @@ public class ViewFacade implements IView {
 	
 	Window frame;
 	
+	Element lorann;
+	
     /**
      * Instantiates a new view facade.
      */
@@ -53,6 +55,11 @@ public class ViewFacade implements IView {
 	@Override
 	public void updateFrame() {
 		frame.updateFrame();
+	}
+
+	@Override
+	public void setLorann(Element lorann) {
+		this.lorann= lorann;
 	}
 
 }
