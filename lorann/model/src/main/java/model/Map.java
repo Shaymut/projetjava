@@ -5,7 +5,6 @@ import java.util.List;
 public class Map {
 	
 	Element[][] mapNiveau = new Element[20][12];
-	
 	MotionlessElementFactory motionlessElementFactory = new MotionlessElementFactory();
 	MobileElementFactory mobileElementFactory = new MobileElementFactory();
 	Lorann lorann;
@@ -47,6 +46,9 @@ public class Map {
 		return this.mapNiveau[x][y].getSprite();
 	}
 	
+	public Element getLorann() {
+		return this.lorann;
+	}
 	
 	
 	//Partie Consacrée aux mouvements de Lorann : 
@@ -54,34 +56,34 @@ public class Map {
 	
 	
 	public void LorannMoveUp() {
-		this.lorann.moveUp();
+		this.lorann.moveUp(null);
 	}
 	
 	public void LorannMoveDown() {
-		this.lorann.moveDown();
+		this.lorann.moveDown(null);
 	}
 	
 	public void LorannMoveLeft() {
-		this.lorann.moveLeft();
+		this.lorann.moveLeft(null);
 	}
 	
 	public void LorannMoveRight() {
-		this.lorann.moveRight();
+		this.lorann.moveRight(null);
 	}
 	
 	public void LorannMoveUpLeft() {
-		this.lorann.moveUpLeft();
+		this.lorann.moveUpLeft(null);
 	}
 	
 	public void LorannMoveUpRight() {
-		this.lorann.moveUpRight();
+		this.lorann.moveUpRight(null);
 	}
 	
 	public void LorannMoveDownLeft() {
-		this.lorann.moveDownLeft();
+		this.lorann.moveDownLeft(null);
 	}
 	
 	public void LorannMoveDownRight() {
-		this.lorann.moveDownRight();
+		this.lorann.moveDownRight(null);
 	}
 }
