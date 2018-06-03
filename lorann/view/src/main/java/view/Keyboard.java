@@ -7,15 +7,12 @@ import model.Element;
 
 public class Keyboard implements KeyListener{
 	
-	
-	
 	 public boolean toucheUp = false;
      public boolean toucheLeft = false;
      public boolean toucheDown = false;
      public boolean toucheRight = false;
      private int nextY;
      private int nextX;
-     private Element lorann;
 
 	@Override
 	public void keyPressed(KeyEvent e) {
@@ -66,14 +63,6 @@ public class Keyboard implements KeyListener{
 
 	public void setNextX(int nextX) {
 		this.nextX = nextX;
-	}
-	
-	public Element getLorann() {
-		return this.lorann;
-	}
-	
-	public void setLorann(Element lorann) {
-		this.lorann = lorann;
 	}
 	
 	    

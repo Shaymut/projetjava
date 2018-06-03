@@ -23,6 +23,8 @@ public class ControllerFacade implements IController {
     
     Element lorann;
     
+    Collision collision;
+    
     //Keyboard keyboard = new Keyboard();
     
     
@@ -71,8 +73,9 @@ public class ControllerFacade implements IController {
         this.getView().displayMap(this.getModel().getMap());
         this.getView().createFrame("Lorann", 20, 12, this.getModel().getMap());
         this.lorann = this.getModel().getLorann();
+        this.collision = new Collision(this.getModel().getMap(), this.getModel().getLorann());
         this.getView().setLorann(this.lorann);
-        //this.keyboard.setLorann(this.lorann);       //                         <----------------     Touver un autre moyen  de mettre Lorann dans le keyboard
+        this.collision.test();
         //this.getView().updateFrame();     <------ Erreur si lancé
     }
     /*
