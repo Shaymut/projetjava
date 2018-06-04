@@ -2,10 +2,15 @@ package controller;
 
 import java.sql.SQLException;
 import java.util.List;
+
+import javax.swing.text.ViewFactory;
+
 import model.Element;
 import model.IModel;
 import model.Tile;
 import view.IView;
+import view.Order;
+import view.ViewFacade;
 
 /**
  * <h1>The Class ControllerFacade provides a facade of the Controller component.</h1>
@@ -21,9 +26,9 @@ public class ControllerFacade implements IController {
     /** The model. */
     private final IModel model;
     
-    Element lorann;
+    private Element lorann;
     
-    Collision collision;
+    private ViewFacade viewFacade;
     
     //Keyboard keyboard = new Keyboard();
     
@@ -71,12 +76,14 @@ public class ControllerFacade implements IController {
         System.out.println(message.toString());
         this.getModel().CreateMap(ListTiles);
         this.getView().displayMap(this.getModel().getMap());
-        this.getView().createFrame("Lorann", 20, 12, this.getModel().getMap());
+        this.setViewFacade(new ViewFacade("Lorann", 20, 12, this.getModel().getMap()));
+        this.viewFacade.setController(this);
         this.lorann = this.getModel().getLorann();
-        this.collision = new Collision(this.getModel().getMap(), this.getModel().getLorann());
         this.getView().setLorann(this.lorann);
-        this.collision.test();
-        System.out.println(this.getView().getOrder());
+        
+	    System.out.println(this.getViewFacade().getOrder());
+        
+        
         //this.getView().updateFrame();     <------ Erreur si lancé
     }
     /*
@@ -96,4 +103,20 @@ public class ControllerFacade implements IController {
     public IModel getModel() {
         return this.model;
     }
+
+	public ViewFacade getViewFacade() {
+		return viewFacade;
+	}
+
+	public void setViewFacade(ViewFacade viewFacade) {
+		this.viewFacade = viewFacade;
+	}
+	
+	public void updatemove() {
+		if (this.getViewFacade().getOrder() == Order.RIGHT) {
+			new Collision(this.getModel().getMap(), this.getModel().getLorann(), this.getModel().getLorann().getX() +1, this.getModel().getLorann().getY(), this);
+		}else if (this.getViewFacade().getOrder() == Order.LEFT) {
+			new Collision(this.getModel().getMap(), this.getModel().getLorann(), this.getModel().getLorann().getX() -1, this.getModel().getLorann().getY(), this);
+		}
+	}
 }

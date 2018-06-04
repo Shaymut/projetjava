@@ -23,5 +23,8 @@ public class Element {
 	public int getY() {
 		return this.position.getY();
 	}
-	
+
+	public Permeability getPermeability() {
+		return this.permeability;
+	}
 }

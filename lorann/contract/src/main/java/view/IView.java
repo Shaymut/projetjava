@@ -18,7 +18,7 @@ public interface IView {
      */
     void displayMessage(String message);
     
-    void createFrame(String name, int x, int y, Element[][] mapNiveau);
+   //void createFrame(String name, int x, int y, Element[][] mapNiveau);
     
     void displayMap(Element[][] elements);
     
@@ -27,4 +27,5 @@ public interface IView {
     void setLorann(Element lorann);
     
     Order getOrder();
+   
 }

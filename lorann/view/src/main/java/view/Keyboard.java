@@ -8,12 +8,12 @@ import model.Element;
 public class Keyboard implements KeyListener{
 	
 	public Order order = Order.RIGHT;
-	 public boolean toucheUp = false;
-     public boolean toucheLeft = false;
-     public boolean toucheDown = false;
-     public boolean toucheRight = false;
-     private int nextY;
-     private int nextX;
+	public boolean toucheUp = false;
+    public boolean toucheLeft = false;
+    public boolean toucheDown = false;
+    public boolean toucheRight = false;
+    private int nextY;
+    private int nextX;
 
 	@Override
 	public void keyPressed(KeyEvent e) {

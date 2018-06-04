@@ -2,6 +2,8 @@ package view;
 
 import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
+
+import controller.IController;
 import model.*;
 
 /**
@@ -12,15 +14,23 @@ import model.*;
  */
 public class ViewFacade implements IView {
 	
-	Window frame;
+	private Window frame;
 	
-	Element lorann;
+	private Element lorann;
+	
+	IController controller;
+	
+	public ViewFacade() {
+		super();
+	}
 	
     /**
      * Instantiates a new view facade.
      */
-    public ViewFacade() {
+    public ViewFacade(String name, int x, int y, Element[][] mapNiveau) {
         super();
+        frame = new Window(name, x, y, mapNiveau);
+        frame.setVisible(true);
     }
     
     /*
@@ -41,16 +51,11 @@ public class ViewFacade implements IView {
 			System.out.println();
 		}
 	}
-
-	@Override
-	public void createFrame(String name, int x, int y, Element[][] mapNiveau) {
-		SwingUtilities.invokeLater(new Runnable() {
-            public void run() {
-                frame = new Window(name, x, y, mapNiveau);
-                frame.setVisible(true);
-            }
-        });
-	}
+    
+    public void setController(IController controller) {
+    	this.controller = controller;
+    	frame.setController(controller);
+    }
 	
 	@Override
 	public void updateFrame() {
@@ -64,7 +69,7 @@ public class ViewFacade implements IView {
 
 	@Override
 	public Order getOrder() {
-		return null;
+		return frame.getOrder();
 	}
 
 }

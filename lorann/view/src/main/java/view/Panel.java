@@ -18,15 +18,11 @@ import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 
 
-public class Panel extends JPanel /*implements ActionListener, KeyListener*/ {
+public class Panel extends JPanel {
 	private static final long serialVersionUID = 1L;
     private static Dimension PANEL_SIZE;
-    //private static final int CHARACTER_WIDTH = 32;
     
     Image Image;
-    
-    //private int currentRow = 0;
-    //private int currentCol = 0;
     
     Element[][] mapNiveau;
     
@@ -37,7 +33,6 @@ public class Panel extends JPanel /*implements ActionListener, KeyListener*/ {
     public Panel(int x, int y, Element[][] mapNiveau) {
     	Panel.PANEL_SIZE = new Dimension(x, y);
     	this.mapNiveau = mapNiveau;
-        addKeyListener(keyboard);
         setFocusable(true);
         setFocusTraversalKeysEnabled(false);
     }
@@ -102,64 +97,16 @@ public class Panel extends JPanel /*implements ActionListener, KeyListener*/ {
         		}
         	}
         }
-        
-		/*try {
-			image = ImageIO.read(new File(getClass().getResource("/pictures/lorann_u.png").toURI()));
-			g.drawImage(image, currentCol, currentRow, this);
-		} catch (IOException | URISyntaxException e) {
-			e.printStackTrace();
-		}*/
-		
     }
     
     
     public void updatePanel() {
 		repaint();
 	}
-/*
-    public void keyPressed(KeyEvent touche) {
-        int Button = touche.getKeyCode();
-        //int rowIncrement = 0;
-        //int colIncrement = 0;
-        if(Button == KeyEvent.VK_LEFT) {
-        	System.out.println("keyPressed : gauche");
-        	//colIncrement = colIncrement - 32;
-        }
-        else if(Button == KeyEvent.VK_RIGHT) {
-        	System.out.println("keyPressed : droite");
-        	//colIncrement = colIncrement + 32;
-        }
-        else if(Button == KeyEvent.VK_UP) {
-        	System.out.println("keyPressed : haut");
-        	//rowIncrement = rowIncrement - 32;
-        }
-        else if(Button == KeyEvent.VK_DOWN) {
-        	System.out.println("keyPressed : bas");
-        	//rowIncrement = rowIncrement + 32;            
-        }
-        /*
-        if(isInBounds(rowIncrement, colIncrement)) {
-            currentRow += rowIncrement;
-            currentCol += colIncrement;
-            repaint();
-        }*/
-    //}
-    /*
-    private boolean isInBounds(int rowIncrement, int colIncrement) {
-        int top = currentRow + rowIncrement;
-        int left = currentCol + colIncrement;
-        int right = left + CHARACTER_WIDTH;
-        int bottom = top + CHARACTER_WIDTH;
-
-        return (top >= 0 && left >= 0 && right <= PANEL_SIZE.getWidth() && bottom <= PANEL_SIZE.getHeight());       
-    }*/
-/*
-    public void keyTyped(KeyEvent e) {}
-    public void keyReleased(KeyEvent e) {}
-
-	@Override
-	public void actionPerformed(ActionEvent e) {		
-	}
-	*/
-	
+    
+    public Order getOrder() {
+    	return keyboard.order;
+    }
+    
 }
+    

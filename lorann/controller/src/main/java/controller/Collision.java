@@ -1,23 +1,23 @@
 package controller;
 
 import model.Element;
+import model.Permeability;
 
 public class Collision {
 	
 	Element[][] mapNiveau;
 	Element lorann;
+	IController controller;
 	
-	public Collision(Element[][] mapNiveau, Element lorann) {
+	public Collision(Element[][] mapNiveau, Element lorann, int x, int y, IController controller) {
 		this.mapNiveau = mapNiveau;
 		this.lorann = lorann;
-	}
-	
-	public void test() {
-		System.out.println(this.lorann.getX() + " , " + this.lorann.getY());
-	}
-	
-	public void Check() {
-		
+		if (this.mapNiveau[x][y].getPermeability() == Permeability.BLOCK) {
+			System.out.println("BLOCK");
+		}else if (this.mapNiveau[x][y].getPermeability() == Permeability.PENETRABLE) {
+			System.out.println("PENETRABLE");
+			mapNiveau.
+		}
 	}
 	
 }
