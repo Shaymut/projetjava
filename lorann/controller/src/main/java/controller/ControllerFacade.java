@@ -222,7 +222,7 @@ public class ControllerFacade implements IController {
 	}
 	
 	public void evilVerticalMove() {
-		if (evilHorizontalMoveRight) {
+		if (evilVerticalMoveDown) {
 			new Collision(this.getModel().getMap(), this.getModel().getEvilVertical(), this.getModel().getEvilVertical().getX(), this.getModel().getEvilVertical().getY() + 1, this);
 		}
 		else {
