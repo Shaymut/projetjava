@@ -20,9 +20,17 @@ public class Collision {
 			System.out.println("PENETRABLE");
 			if (MotionElement.getSprite() == 'L') {
 				controller.lorannMove(x, y);
-			}/*else if (MotionElement.getSprite() == 'B') {
-				controller.evilRandomMove(x,y);
-			}*/
+			}else if (MotionElement.getSprite() == 'B') {
+				if (this.mapNiveau[x][y].getSprite() == 'L') {
+					controller.remove(x,y);
+					controller.evilRandomMove(x,y);
+					controller.died();
+				}else if (this.mapNiveau[x][y].getSprite() == 'O') {
+					System.out.println("BLOCK");
+				}else {
+					controller.evilRandomMove(x,y);
+				}
+			}
 			
 			
 			

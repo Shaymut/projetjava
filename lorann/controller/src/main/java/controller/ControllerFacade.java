@@ -58,7 +58,7 @@ public class ControllerFacade implements IController {
      */
     public void start() throws SQLException {
     	
-        final List<Tile> ListTiles = this.getModel().getAllTilesByMap(5);
+        final List<Tile> ListTiles = this.getModel().getAllTilesByMap(4);
         final StringBuilder message = new StringBuilder();
         for (final Tile tile : ListTiles) {
             message.append(tile);
@@ -145,8 +145,34 @@ public class ControllerFacade implements IController {
 		this.getViewFacade().setMap(mapNiveau);
 	}
 	
-	public void evilMove() {
-		
+	public void evilRadomMove() {
+		int choix = random.nextInt(8);
+		switch(choix) {
+		case 1:
+			new Collision(this.getModel().getMap(), this.getModel().getEvilRandom(), this.getModel().getEvilRandom().getX() + 1, this.getModel().getEvilRandom().getY(), this);
+			break;
+		case 2:
+			new Collision(this.getModel().getMap(), this.getModel().getEvilRandom(), this.getModel().getEvilRandom().getX() - 1, this.getModel().getEvilRandom().getY(), this);
+			break;
+		case 3:
+			new Collision(this.getModel().getMap(), this.getModel().getEvilRandom(), this.getModel().getEvilRandom().getX(), this.getModel().getEvilRandom().getY() - 1, this);
+			break;
+		case 4 :
+			new Collision(this.getModel().getMap(), this.getModel().getEvilRandom(), this.getModel().getEvilRandom().getX(), this.getModel().getEvilRandom().getY() + 1, this);
+			break;
+		case 5 :
+			new Collision(this.getModel().getMap(), this.getModel().getEvilRandom(), this.getModel().getEvilRandom().getX() - 1, this.getModel().getEvilRandom().getY() - 1, this);
+			break;
+		case 6 :
+			new Collision(this.getModel().getMap(), this.getModel().getEvilRandom(), this.getModel().getEvilRandom().getX() + 1, this.getModel().getEvilRandom().getY() - 1, this);
+			break;
+		case 7 :
+			new Collision(this.getModel().getMap(), this.getModel().getEvilRandom(), this.getModel().getEvilRandom().getX() - 1, this.getModel().getEvilRandom().getY() + 1, this);
+			break;
+		case 8 :
+			new Collision(this.getModel().getMap(), this.getModel().getEvilRandom(), this.getModel().getEvilRandom().getX() + 1, this.getModel().getEvilRandom().getY() + 1, this);
+			break;
+		}
 	}
 	
 	@Override
@@ -191,9 +217,8 @@ public class ControllerFacade implements IController {
 	}
 	
 	public void timer() {
-		System.out.println("Deplacement des monstres");
-		//this.getModel().getEvilRandom();
-		
+		if (this.evilRandom != null) {
+			this.evilRadomMove();}
 		try {
 			Thread.sleep(500);
 			if (this.running) {
