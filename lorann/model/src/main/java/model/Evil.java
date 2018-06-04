@@ -12,9 +12,9 @@ public class Evil extends MobileElement{
 		System.out.println("Création d'un objet Evil");
 	
 	}
-	
+	/*
 	public void move() {
-	}
+	}*/
 
 
 }

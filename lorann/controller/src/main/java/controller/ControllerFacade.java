@@ -37,14 +37,6 @@ public class ControllerFacade implements IController {
     
     private double score;
     
-    boolean running = true;
-    
-  
-    
-    //Keyboard keyboard = new Keyboard();
-    
-    
-
     /**
      * Instantiates a new controller facade.
      *
@@ -82,7 +74,6 @@ public class ControllerFacade implements IController {
         this.lorann = this.getModel().getLorann();
         this.evilRandom = this.getModel().getEvilRandom();
         this.getView().setLorann(this.lorann);
-        timer();
     }
     /*
      * Gets the view.
@@ -108,26 +99,6 @@ public class ControllerFacade implements IController {
 
 	public void setViewFacade(ViewFacade viewFacade) {
 		this.viewFacade = viewFacade;
-	}
-	
-	public void updatemoveEvilRandom() {
-		if (this.getViewFacade().getOrder() == Order.RIGHT) {
-			new Collision(this.getModel().getMap(), this.getModel().getEvilRandom(), this.getModel().getEvilRandom().getX() + 1, this.getModel().getEvilRandom().getY(), this);
-		}else if (this.getViewFacade().getOrder() == Order.LEFT) {
-			new Collision(this.getModel().getMap(), this.getModel().getEvilRandom(), this.getModel().getEvilRandom().getX() - 1, this.getModel().getEvilRandom().getY(), this);
-		}else if (this.getViewFacade().getOrder() == Order.UP) {
-			new Collision(this.getModel().getMap(), this.getModel().getEvilRandom(), this.getModel().getEvilRandom().getX(), this.getModel().getEvilRandom().getY() - 1, this);
-		}else if (this.getViewFacade().getOrder() == Order.DOWN) {
-			new Collision(this.getModel().getMap(), this.getModel().getEvilRandom(), this.getModel().getEvilRandom().getX(), this.getModel().getEvilRandom().getY() + 1, this);
-		}else if (this.getViewFacade().getOrder() == Order.LEFT_UP) {
-			new Collision(this.getModel().getMap(), this.getModel().getEvilRandom(), this.getModel().getEvilRandom().getX() - 1, this.getModel().getEvilRandom().getY() - 1, this);
-		}else if (this.getViewFacade().getOrder() == Order.RIGHT_UP) {
-			new Collision(this.getModel().getMap(), this.getModel().getEvilRandom(), this.getModel().getEvilRandom().getX() + 1, this.getModel().getEvilRandom().getY() - 1, this);
-		}else if (this.getViewFacade().getOrder() == Order.LEFT_DOWN) {
-			new Collision(this.getModel().getMap(), this.getModel().getEvilRandom(), this.getModel().getEvilRandom().getX() - 1, this.getModel().getEvilRandom().getY() + 1, this);
-		}else if (this.getViewFacade().getOrder() == Order.RIGHT_DOWN) {
-			new Collision(this.getModel().getMap(), this.getModel().getEvilRandom(), this.getModel().getEvilRandom().getX() + 1, this.getModel().getEvilRandom().getY() + 1, this);
-		}
 	}
 	
 	public void updatemoveLorann() {
@@ -160,9 +131,10 @@ public class ControllerFacade implements IController {
 		this.getModel().setMap(this.mapNiveau);
 		this.getView().displayMap(this.mapNiveau);
 		this.getViewFacade().setMap(mapNiveau);
+		
 	}
 
-	public void evilRandomMove( int x ,  int y) {
+	/*public void evilRandomMove(int x ,  int y) {
 		Element temp = this.mapNiveau[x][y];
 		int tempX = this.evilRandom.getX();
 		int tempY = this.evilRandom.getY();
@@ -172,24 +144,25 @@ public class ControllerFacade implements IController {
 		this.getModel().setMap(this.mapNiveau);
 		this.getView().displayMap(this.mapNiveau);
 		this.getViewFacade().setMap(mapNiveau);
-	}
+	}*/
+	
 	@Override
 	public void remove(int x, int y) {
-		this.mapNiveau[x][y] = new Ground(new Position(x,y));
+		System.out.println("PROUT2");
+		this.mapNiveau[x][y] = new Ground(new Position(x, y));
+		System.out.println("PROUT3");
 	}
 
 	@Override
 	public void died() {
 		this.getView().displayMessage("Tu es mort !\nTon score est de : " + this.score);
 		this.getViewFacade().killFrame();
-		this.running = false;
 	}
 	
 	@Override
 	public void win() {
 		this.getView().displayMessage("Tu as fini le niveau, Bravo!\nTon score est de : " + this.score);
 		this.getViewFacade().killFrame();
-		this.running = false;
 	}
 
 	@Override
@@ -217,19 +190,6 @@ public class ControllerFacade implements IController {
 	public void setEvilRandom(Element evilRandom) {
 		this.evilRandom = evilRandom;
 	}
-	
 
-	public void timer() {
-		this.getEvilRandom();
-        System.out.println("Deplacement des monstres");
-        try {
-            Thread.sleep(500);
-            if (this.running) {
-                timer();
-            }
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-    }
 
 }

@@ -1,7 +1,6 @@
 package model;
 
 import java.util.List;
-import java.util.Random;
 
 public class Map {
 	
@@ -9,12 +8,7 @@ public class Map {
 	MotionlessElementFactory motionlessElementFactory = new MotionlessElementFactory();
 	MobileElementFactory mobileElementFactory = new MobileElementFactory();
 	Lorann lorann;
-	static EvilRandom evilRandom;
-	Random random = new Random();
-	
-
-
-
+	EvilRandom evilRandom;
 
 	public void CreateMap(List<Tile> ListTiles) {
 		for (Tile tile : ListTiles) {
@@ -64,7 +58,7 @@ public class Map {
 	}
 	
 	public Element getEvilRandom() {
-		return Map.evilRandom;
+		return this.evilRandom;
 	}
 
 

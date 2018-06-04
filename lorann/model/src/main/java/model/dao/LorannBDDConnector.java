@@ -35,7 +35,7 @@ final class LorannBDDConnector {
     /**
      * Instantiates a new boulder dash BDD connector.
      */
-    LorannBDDConnector() {
+    private LorannBDDConnector() {
         this.open();
     }
 

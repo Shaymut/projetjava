@@ -6,13 +6,13 @@ public class Element {
 	
 	Permeability permeability;
 	char sprite;
-	static Position position;
+	Position position;
 	Random random = new Random();
 	
 	public Element(Permeability permeability, char sprite, Position position){
 		this.permeability = permeability;
 		this.sprite = sprite;
-		Element.position = position;
+		this.position = position;
 	}
 	
 	public char getSprite() {
@@ -20,15 +20,15 @@ public class Element {
 	}
 	
 	public  int getX() {
-		return Element.position.getX();
+		return this.position.getX();
 	}
 	
 	public int getY() {
-		return Element.position.getY();
+		return this.position.getY();
 	}
 	
 	public  void setX(int x) {
-		Element.position.x = x;
+		this.position.x = x;
 	}
 	
 	public Position getPosition() {
@@ -36,11 +36,11 @@ public class Element {
 	}
 
 	public void setY(int y) {
-		Element.position.y = y;
+		this.position.y = y;
 	}
 	
 	public void setPosition(Position position) {
-		Element.position = position;
+		this.position = position;
 	}
 
 	public Permeability getPermeability() {

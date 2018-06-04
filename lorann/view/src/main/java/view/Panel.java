@@ -66,8 +66,7 @@ public class Panel extends JPanel {
         				image = ImageIO.read(new File(getClass().getResource("/pictures/ground.png").toURI()));
         				break;
         			case 'L':
-        					image = ImageIO.read(new File(getClass().getResource("/pictures/lorann_1.png").toURI()));
-        	   			
+        				image = ImageIO.read(new File(getClass().getResource("/pictures/lorann_6.png").toURI()));
         				break;
         			case 'G':
         				image = ImageIO.read(new File(getClass().getResource("/pictures/purse.png").toURI()));
