@@ -74,7 +74,7 @@ public class ControllerFacade implements IController {
         }
         this.getView().displayMessage(message.toString());*/
     	
-        final List<Tile> ListTiles = this.getModel().getAllTilesByMap(1);
+        final List<Tile> ListTiles = this.getModel().getAllTilesByMap(3);
         final StringBuilder message = new StringBuilder();
         for (final Tile tile : ListTiles) {
             message.append(tile);
@@ -186,7 +186,6 @@ public class ControllerFacade implements IController {
 			}
 		}
 		this.getModel().setMap(this.mapNiveau);
-		System.out.println("PORTE CREE------------------------------------------------");
 	}
 	
 	

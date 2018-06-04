@@ -22,7 +22,6 @@ public class Collision {
 			
 			if (this.mapNiveau[x][y].getSprite() == 'E') {
 				controller.replaceDoor();
-				System.out.println("Je me fais remplacer----------------------------------------------------------------------");
 			}else {
 				controller.scoreUp(650);
 			}
