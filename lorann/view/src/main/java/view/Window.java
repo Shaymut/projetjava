@@ -78,7 +78,7 @@ public class Window extends JFrame implements KeyListener{
 		}else {
 			this.order = Order.NONE;
 		}
-		controller.updatemove();
+		controller.updatemoveLorann();
 	}
 	
 	@Override

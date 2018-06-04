@@ -15,9 +15,6 @@ public class MobileElementFactory {
 			case 'K':
 				element = new EvilVertical(position);
 				break;
-			case 'B':
-				element = new EvilRandom(position);
-				break;
 			case 'J' :
 				element = new EvilStalker(position);
 				break;

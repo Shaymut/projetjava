@@ -8,6 +8,7 @@ public class Map {
 	MotionlessElementFactory motionlessElementFactory = new MotionlessElementFactory();
 	MobileElementFactory mobileElementFactory = new MobileElementFactory();
 	Lorann lorann;
+	EvilRandom evilRandom;
 	
 	public void CreateMap(List<Tile> ListTiles) {
 		for (Tile tile : ListTiles) {
@@ -24,12 +25,14 @@ public class Map {
 			else if (tile.getSprite() == 'P' ||
 					 tile.getSprite() == 'F' ||
 					 tile.getSprite() == 'K' ||
-					 tile.getSprite() == 'B' ||
 					 tile.getSprite() == 'J'){
 				mapNiveau[tile.getX()][tile.getY()] = mobileElementFactory.createMobileElement(tile.getSprite(), new Position(tile.getX(),tile.getY()));
 			}
 			else if(tile.getSprite() == 'L') {
 				mapNiveau[tile.getX()][tile.getY()] = lorann = new Lorann(new Position(tile.getX(),tile.getY()), this);
+			}
+			else if(tile.getSprite() == 'B') {
+				mapNiveau[tile.getX()][tile.getY()] = evilRandom = new EvilRandom(new Position(tile.getX(),tile.getY()), this);
 			}
 		}
 	}
@@ -52,6 +55,10 @@ public class Map {
 	
 	public Element getLorann() {
 		return this.lorann;
+	}
+	
+	public Element getEvilRandom() {
+		return this.evilRandom;
 	}
 
 }

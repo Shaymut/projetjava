@@ -31,6 +31,8 @@ public class ControllerFacade implements IController {
     
     private Element lorann;
     
+    private Element evilRandom;
+    
     private ViewFacade viewFacade;
     
     private Element[][] mapNiveau;
@@ -38,6 +40,8 @@ public class ControllerFacade implements IController {
     private double score;
     
     Timer timer;
+    
+    boolean running = true;
     
     //Keyboard keyboard = new Keyboard();
     
@@ -79,6 +83,7 @@ public class ControllerFacade implements IController {
         this.viewFacade.setController(this);
         this.lorann = this.getModel().getLorann();
         this.getView().setLorann(this.lorann);
+        timer();
     }
     /*
      * Gets the view.
@@ -106,7 +111,27 @@ public class ControllerFacade implements IController {
 		this.viewFacade = viewFacade;
 	}
 	
-	public void updatemove() {
+	public void updatemoveEvilRandom() {
+		if (this.getViewFacade().getOrder() == Order.RIGHT) {
+			new Collision(this.getModel().getMap(), this.getModel().getEvilRandom(), this.getModel().getEvilRandom().getX() + 1, this.getModel().getEvilRandom().getY(), this);
+		}else if (this.getViewFacade().getOrder() == Order.LEFT) {
+			new Collision(this.getModel().getMap(), this.getModel().getEvilRandom(), this.getModel().getEvilRandom().getX() - 1, this.getModel().getEvilRandom().getY(), this);
+		}else if (this.getViewFacade().getOrder() == Order.UP) {
+			new Collision(this.getModel().getMap(), this.getModel().getEvilRandom(), this.getModel().getEvilRandom().getX(), this.getModel().getEvilRandom().getY() - 1, this);
+		}else if (this.getViewFacade().getOrder() == Order.DOWN) {
+			new Collision(this.getModel().getMap(), this.getModel().getEvilRandom(), this.getModel().getEvilRandom().getX(), this.getModel().getEvilRandom().getY() + 1, this);
+		}else if (this.getViewFacade().getOrder() == Order.LEFT_UP) {
+			new Collision(this.getModel().getMap(), this.getModel().getEvilRandom(), this.getModel().getEvilRandom().getX() - 1, this.getModel().getEvilRandom().getY() - 1, this);
+		}else if (this.getViewFacade().getOrder() == Order.RIGHT_UP) {
+			new Collision(this.getModel().getMap(), this.getModel().getEvilRandom(), this.getModel().getEvilRandom().getX() + 1, this.getModel().getEvilRandom().getY() - 1, this);
+		}else if (this.getViewFacade().getOrder() == Order.LEFT_DOWN) {
+			new Collision(this.getModel().getMap(), this.getModel().getEvilRandom(), this.getModel().getEvilRandom().getX() - 1, this.getModel().getEvilRandom().getY() + 1, this);
+		}else if (this.getViewFacade().getOrder() == Order.RIGHT_DOWN) {
+			new Collision(this.getModel().getMap(), this.getModel().getEvilRandom(), this.getModel().getEvilRandom().getX() + 1, this.getModel().getEvilRandom().getY() + 1, this);
+		}
+	}
+	
+	public void updatemoveLorann() {
 		if (this.getViewFacade().getOrder() == Order.RIGHT) {
 			new Collision(this.getModel().getMap(), this.getModel().getLorann(), this.getModel().getLorann().getX() + 1, this.getModel().getLorann().getY(), this);
 		}else if (this.getViewFacade().getOrder() == Order.LEFT) {
@@ -138,6 +163,17 @@ public class ControllerFacade implements IController {
 		this.getViewFacade().setMap(mapNiveau);
 	}
 
+	public void evilRandomMove( int x ,  int y) {
+		Element temp = this.mapNiveau[x][y];
+		int tempX = this.evilRandom.getX();
+		int tempY = this.evilRandom.getY();
+		this.mapNiveau[x][y] = evilRandom;
+		this.mapNiveau[tempX][tempY] = temp;
+		evilRandom.setPosition(new Position(x,y));
+		this.getModel().setMap(this.mapNiveau);
+		this.getView().displayMap(this.mapNiveau);
+		this.getViewFacade().setMap(mapNiveau);
+	}
 	@Override
 	public void remove(int x, int y) {
 		this.mapNiveau[x][y] = new Ground(new Position(x,y));
@@ -147,12 +183,14 @@ public class ControllerFacade implements IController {
 	public void died() {
 		this.getView().displayMessage("Tu es mort !\nTon score est de : " + this.score);
 		this.getViewFacade().killFrame();
+		this.running = false;
 	}
 	
 	@Override
 	public void win() {
 		this.getView().displayMessage("Tu as fini le niveau, Bravo!\nTon score est de : " + this.score);
 		this.getViewFacade().killFrame();
+		this.running = false;
 	}
 
 	@Override
@@ -172,6 +210,25 @@ public class ControllerFacade implements IController {
 		}
 		this.getModel().setMap(this.mapNiveau);
 	}
+
+	public Element getEvilRandom() {
+		return evilRandom;
+	}
+
+	public void setEvilRandom(Element evilRandom) {
+		this.evilRandom = evilRandom;
+	}
 	
-	
+	public void timer() {
+        // CODER LA
+        System.out.println("Deplacement des monstres");
+        try {
+            Thread.sleep(500);
+            if (this.running) {
+                timer();
+            }
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
 }

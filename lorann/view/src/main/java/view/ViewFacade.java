@@ -19,6 +19,8 @@ public class ViewFacade implements IView {
 	
 	private Element lorann;
 	
+	private Element evilRandom;
+	
 	IController controller;
 	
 	public ViewFacade() {
@@ -70,6 +72,16 @@ public class ViewFacade implements IView {
 	@Override
 	public void setLorann(Element lorann) {
 		this.lorann= lorann;
+	}
+	
+	
+
+	public Element getEvilRandom() {
+		return evilRandom;
+	}
+
+	public void setEvilRandom(Element evilRandom) {
+		this.evilRandom = evilRandom;
 	}
 
 	@Override

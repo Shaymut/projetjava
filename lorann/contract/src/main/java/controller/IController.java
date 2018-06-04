@@ -8,9 +8,11 @@ package controller;
  */
 public interface IController {
 
-	public void updatemove();
+	public void updatemoveLorann();
 	
 	public void lorannMove(int x, int y);
+	
+	public void evilRandomMove( int x ,  int y);
 
 	public void remove(int x, int y);
 
