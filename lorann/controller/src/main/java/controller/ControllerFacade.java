@@ -3,8 +3,6 @@ package controller;
 import java.sql.SQLException;
 import java.util.List;
 
-import javax.management.timer.Timer;
-
 import model.DoorOpened;
 import model.Element;
 import model.Ground;
@@ -37,7 +35,7 @@ public class ControllerFacade implements IController {
     
     private double score;
     
-    Timer timer;
+    boolean running = true;
     
     //Keyboard keyboard = new Keyboard();
     
@@ -79,6 +77,7 @@ public class ControllerFacade implements IController {
         this.viewFacade.setController(this);
         this.lorann = this.getModel().getLorann();
         this.getView().setLorann(this.lorann);
+        timer();
     }
     /*
      * Gets the view.
@@ -147,12 +146,14 @@ public class ControllerFacade implements IController {
 	public void died() {
 		this.getView().displayMessage("Tu es mort !\nTon score est de : " + this.score);
 		this.getViewFacade().killFrame();
+		this.running = false;
 	}
 	
 	@Override
 	public void win() {
 		this.getView().displayMessage("Tu as fini le niveau, Bravo!\nTon score est de : " + this.score);
 		this.getViewFacade().killFrame();
+		this.running = false;
 	}
 
 	@Override
@@ -173,5 +174,18 @@ public class ControllerFacade implements IController {
 		this.getModel().setMap(this.mapNiveau);
 	}
 	
+	
+	public void timer() {
+		// CODER LA
+		System.out.println("Deplacement des monstres");
+		try {
+			Thread.sleep(500);
+			if (this.running) {
+				timer();
+			}
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+	}
 	
 }
