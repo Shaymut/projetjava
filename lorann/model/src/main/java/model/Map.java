@@ -4,7 +4,7 @@ import java.util.List;
 
 public class Map {
 	
-	Element[][] mapNiveau = new Element[20][12];
+	final static Element[][] mapNiveau = new Element[20][12];
 	MotionlessElementFactory motionlessElementFactory = new MotionlessElementFactory();
 	MobileElementFactory mobileElementFactory = new MobileElementFactory();
 	Lorann lorann;
@@ -35,15 +35,15 @@ public class Map {
 	}
 	
 	public Element getElementInMap(int x, int y) {
-		return this.mapNiveau[x][y];
+		return Map.mapNiveau[x][y];
 	}	
 	
 	public Element[][] getMap(){
-		return this.mapNiveau;
+		return Map.mapNiveau;
 	}
 	
 	public char getElementByXY(int x, int y) {
-		return this.mapNiveau[x][y].getSprite();
+		return Map.mapNiveau[x][y].getSprite();
 	}
 	
 	public Element getLorann() {
