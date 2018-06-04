@@ -10,6 +10,7 @@ public class Map {
 	Lorann lorann;
 	EvilRandom evilRandom;
 	EvilHorizontal evilHorizontal;
+	EvilVertical evilVertical;
 
 	public void CreateMap(List<Tile> ListTiles) {
 		for (Tile tile : ListTiles) {
@@ -24,7 +25,7 @@ public class Map {
 				mapNiveau[tile.getX()][tile.getY()] = motionlessElementFactory.createMotionlessElement(tile.getSprite(), new Position(tile.getX(),tile.getY()));
 			}
 			else if (tile.getSprite() == 'P' ||
-					 tile.getSprite() == 'K' ||
+					 
 					 tile.getSprite() == 'J'){
 				mapNiveau[tile.getX()][tile.getY()] = mobileElementFactory.createMobileElement(tile.getSprite(), new Position(tile.getX(),tile.getY()));
 			}
@@ -36,6 +37,8 @@ public class Map {
 			}
 			else if(tile.getSprite() == 'F') {
 				mapNiveau[tile.getX()][tile.getY()] = evilHorizontal = new EvilHorizontal(new Position(tile.getX(),tile.getY()));
+			}else if(tile.getSprite() == 'K' ) {
+				mapNiveau[tile.getX()][tile.getY()] = evilVertical = new EvilVertical(new Position(tile.getX(),tile.getY()));
 			}
 		}
 	}
@@ -66,6 +69,14 @@ public class Map {
 	
 	public EvilHorizontal getEvilHorizontal() {
 		return this.evilHorizontal;
+	}
+
+	public EvilVertical getEvilVertical() {
+		return evilVertical;
+	}
+
+	public void setEvilVertical(EvilVertical evilVertical) {
+		this.evilVertical = evilVertical;
 	}
 
 

@@ -30,7 +30,9 @@ public class ControllerFacade implements IController {
     private Element lorann;
     private Element evilRandom;
     private Element evilHorizontal;
+    private Element evilVertical;
     private boolean evilHorizontalMoveRight = true;
+    private boolean evilVerticalMoveDown = true;
     private ViewFacade viewFacade;
     private Element[][] mapNiveau;
     private double score;
@@ -59,7 +61,7 @@ public class ControllerFacade implements IController {
      */
     public void start() throws SQLException {
     	
-        final List<Tile> ListTiles = this.getModel().getAllTilesByMap(4);
+        final List<Tile> ListTiles = this.getModel().getAllTilesByMap(5);
         final StringBuilder message = new StringBuilder();
         for (final Tile tile : ListTiles) {
             message.append(tile);
@@ -74,6 +76,7 @@ public class ControllerFacade implements IController {
         this.lorann = this.getModel().getLorann();
         this.evilRandom = this.getModel().getEvilRandom();
         this.evilHorizontal = this.getModel().getEvilHorizontal();
+        this.evilVertical = this.getModel().getEvilVertical();
         this.getView().setLorann(this.lorann);
         timer();
     }
@@ -198,12 +201,41 @@ public class ControllerFacade implements IController {
 		}
 	}
 	
-	public void setEvilHorizontalRight(boolean right) {
+	public void setEvilHorizontalMoveRight(boolean right) {
 		this.evilHorizontalMoveRight = right;
 	}
 	
-	public boolean getEvilHorizontalRight() {
+	public boolean getEvilHorizontalMoveRight() {
 		return this.evilHorizontalMoveRight;
+	}
+	
+	public void evilVerticalMove(int x ,  int y) {
+		Element temp = this.mapNiveau[x][y];
+		int tempX = this.evilVertical.getX();
+		int tempY = this.evilVertical.getY();
+		this.mapNiveau[x][y] = evilVertical;
+		this.mapNiveau[tempX][tempY] = temp;
+		evilVertical.setPosition(new Position(x,y));
+		this.getModel().setMap(this.mapNiveau);
+		this.getView().displayMap(this.mapNiveau);
+		this.getViewFacade().setMap(mapNiveau);
+	}
+	
+	public void evilVerticalMove() {
+		if (evilHorizontalMoveRight) {
+			new Collision(this.getModel().getMap(), this.getModel().getEvilHorizontal(), this.getModel().getEvilHorizontal().getX(), this.getModel().getEvilHorizontal().getY() + 1, this);
+		}
+		else {
+			new Collision(this.getModel().getMap(), this.getModel().getEvilHorizontal(), this.getModel().getEvilHorizontal().getX(), this.getModel().getEvilHorizontal().getY() - 1, this);
+		}
+	}
+	
+	public void setEvilVerticalMoveDown(boolean down) {
+		this.evilVerticalMoveDown = down;
+	}
+	
+	public boolean getEvilVerticalMoveDown() {
+		return this.evilVerticalMoveDown;
 	}
 	
 	@Override
@@ -250,6 +282,9 @@ public class ControllerFacade implements IController {
 		if (this.evilHorizontal != null) {
 			this.evilHorizontalMove();
 		}
+		if(this.evilVertical != null) {
+			this.evilHorizontalMove();
+		}
 		try {
 			Thread.sleep(250);
 			if (this.running) {
@@ -259,5 +294,15 @@ public class ControllerFacade implements IController {
 				e.printStackTrace();
 			}
 		}
+
+	public Element getEvilVertical() {
+		return evilVertical;
+	}
+
+	public void setEvilVertical(Element evilVertical) {
+		this.evilVertical = evilVertical;
+	}
+
+
 
 }

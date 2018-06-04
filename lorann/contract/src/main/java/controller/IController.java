@@ -29,7 +29,10 @@ public interface IController {
 	public void evilRandomMove(int x, int y);
 	
 	public void evilHorizontalMove(int x, int y);
-	public boolean getEvilHorizontalRight();
-	public void setEvilHorizontalRight(boolean right);
+	public boolean getEvilHorizontalMoveRight();
+	public void setEvilHorizontalMoveRight(boolean right);
 	
+	public void evilVerticalMove(int x, int y );
+	public boolean getEvilVerticalMoveDown();
+	public void setEvilVerticalMoveDown(boolean down);
 }
