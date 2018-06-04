@@ -3,7 +3,7 @@ package model;
 public class Spell extends MobileElement implements Hit{
 
 	static private char sprite = 'P';
-	static Permeability permeability= Permeability.BLOCK;
+	static Permeability permeability= Permeability.COLLECTABLE;
 	
 	Spell(Position position) {
 		super(permeability, sprite, position);

@@ -8,9 +8,9 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-public class MotionlessElementFactoryTest {
+public class MobileElementFactoryTest {
 	
-	private Gold gold;
+	private Spell spell;
 	private Position position;
 
 	@BeforeClass
@@ -24,26 +24,27 @@ public class MotionlessElementFactoryTest {
 	@Before
 	public void setUp() throws Exception {
 		position = new Position(10,1);
-		gold = new Gold(position);
+		spell = new Spell(position);
 	}
 
 	@After
 	public void tearDown() throws Exception {
 	}
 
+
+
 	@Test
-	public void testCreateMotionlessElement() {
+	public void testCreateMobileElement() {
 		int X;
-		new Gold(position);
-		X = gold.getX();
+		new Spell(position);
+		X = spell.getX();
 		assertEquals(10,X);
 		Permeability permeability ; 
-		permeability = gold.getPermeability();
+		permeability = spell.getPermeability();
 		assertEquals(Permeability.COLLECTABLE, permeability);
 		char sprite;
-		sprite = gold.getSprite();
-		assertEquals('G', sprite);
+		sprite = spell.getSprite();
+		assertEquals('P', sprite);
 	}
-	
 
 }
