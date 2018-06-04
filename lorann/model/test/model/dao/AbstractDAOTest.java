@@ -54,9 +54,9 @@ public class AbstractDAOTest {
     @Test
     public void prepareCall() {
         try {
-            assertNotNull(AbstractDAO.prepareCall("CALL getLevelByID(1)").executeQuery());
+            assertNotNull(AbstractDAO.prepareCall("CALL findAllTilesByIDMap(1)").executeQuery());
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
-}
+} 
