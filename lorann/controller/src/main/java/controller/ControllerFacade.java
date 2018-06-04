@@ -155,13 +155,13 @@ public class ControllerFacade implements IController {
 
 	@Override
 	public void died() {
-		this.getView().displayMessage("Tu es mort !\nTon score est de : " + this.score);
+		this.getView().displayMessage("Tu es mort !\nTon score est de : " + (int)this.score);
 		this.getViewFacade().killFrame();
 	}
 	
 	@Override
 	public void win() {
-		this.getView().displayMessage("Tu as fini le niveau, Bravo!\nTon score est de : " + this.score);
+		this.getView().displayMessage("Tu as fini le niveau, Bravo!\nTon score est de : " + (int)this.score);
 		this.getViewFacade().killFrame();
 	}
 
