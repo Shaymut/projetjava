@@ -28,6 +28,10 @@ public class Element {
 		this.position.x = x;
 	}
 	
+	public Position getPosition() {
+		return position;
+	}
+
 	public void setY(int y) {
 		this.position.y = y;
 	}

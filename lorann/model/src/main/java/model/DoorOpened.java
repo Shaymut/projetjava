@@ -7,7 +7,7 @@ public class DoorOpened extends MotionlessElement{
 	static Permeability permeability = Permeability.PENETRABLE;
 	
 	
-	DoorOpened(Position position) {
+	public DoorOpened(Position position) {
 		super(permeability, sprite, position);
 		System.out.println("Création d'un objet DoorOpened");
 	}

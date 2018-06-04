@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.swing.text.ViewFactory;
 
+import model.DoorOpened;
 import model.Element;
 import model.Ground;
 import model.IModel;
@@ -172,6 +173,20 @@ public class ControllerFacade implements IController {
 	public void scoreUp(double x) {
 		this.score = score + x;
 		System.out.println("Score : " + this.score);
+	}
+
+	@Override
+	public void replaceDoor() {
+		for(int i = 0; i <= 19; i++) {
+			for(int j = 0; j <= 11; j++) {
+				if(this.mapNiveau[i][j].getSprite() == 'C') {
+					this.mapNiveau[i][j] = new DoorOpened(this.mapNiveau[i][j].getPosition());
+				}
+				
+			}
+		}
+		this.getModel().setMap(this.mapNiveau);
+		System.out.println("PORTE CREE------------------------------------------------");
 	}
 	
 	

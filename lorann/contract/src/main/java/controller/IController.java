@@ -19,4 +19,5 @@ public interface IController {
 	public void win();
 	
 	public void scoreUp(double x);
+	public void replaceDoor();
 }
