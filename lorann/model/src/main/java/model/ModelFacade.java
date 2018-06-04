@@ -41,6 +41,11 @@ public final class ModelFacade implements IModel {
 	public Element[][] getMap() {
 		return Niveau.getMap();
 	}
+	
+	@Override
+	public void setMap(Element[][] map) {
+		Niveau.setMap(map);
+	}
 
 	@Override
 	public char getElementByXY(int x, int y) {
@@ -51,7 +56,7 @@ public final class ModelFacade implements IModel {
 	public Element getLorann() {
 		return Niveau.getLorann();
 	}
-	
+
 	
 	
 

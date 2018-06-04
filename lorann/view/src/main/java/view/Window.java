@@ -43,6 +43,10 @@ public class Window extends JFrame implements KeyListener{
     	this.controller = controller;
     }
     
+    public void setMap(Element[][] mapNiveau) {
+    	this.panel.setMap(mapNiveau);
+    }
+    
     
     //---------------------KEYBOARD---------------------
         

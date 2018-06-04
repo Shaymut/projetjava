@@ -23,6 +23,18 @@ public class Element {
 	public int getY() {
 		return this.position.getY();
 	}
+	
+	public  void setX(int x) {
+		this.position.x = x;
+	}
+	
+	public void setY(int y) {
+		this.position.y = y;
+	}
+	
+	public void setPosition(Position position) {
+		this.position = position;
+	}
 
 	public Permeability getPermeability() {
 		return this.permeability;

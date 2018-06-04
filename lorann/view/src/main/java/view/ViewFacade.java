@@ -11,6 +11,7 @@ import model.*;
  *
  * @author Jean-Aymeric DIET jadiet@cesi.fr
  * @version 1.0
+ * @param <Lorann>
  */
 public class ViewFacade implements IView {
 	
@@ -31,6 +32,10 @@ public class ViewFacade implements IView {
         super();
         frame = new Window(name, x, y, mapNiveau);
         frame.setVisible(true);
+    }
+    
+    public void setMap(Element[][] mapNiveau) {
+    	this.frame.setMap(mapNiveau);
     }
     
     /*

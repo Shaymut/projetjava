@@ -9,10 +9,11 @@ public class Lorann extends MobileElement{
 	public boolean isAlive = false;
 	static Permeability permeability = Permeability.BLOCK;
 	Position positionL;
+	Map mapNiveau;
 
-	Lorann(Position position) {
+	Lorann(Position position, Map map) {
 		super(permeability, sprite, position);
-		
+		this.mapNiveau = map;
 	}
 	
 	public boolean HaveASpell() {
@@ -35,6 +36,7 @@ public class Lorann extends MobileElement{
 	}
 	public void setScore(long score) {
 		this.score = score;
-	}
+	}	
+	
 }
 	

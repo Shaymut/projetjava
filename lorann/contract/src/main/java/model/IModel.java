@@ -28,6 +28,8 @@ public interface IModel {
 	
 	Element[][] getMap();
 	
+	void setMap(Element[][] map);
+	
 	char getElementByXY(int x, int y);
 	
 	

@@ -37,6 +37,11 @@ public class Panel extends JPanel {
         setFocusTraversalKeysEnabled(false);
     }
     
+    public void setMap(Element[][] mapNiveau) {
+    	this.mapNiveau = mapNiveau;
+    	repaint();
+    }
+    
     public Dimension getPreferredSize() {
         return PANEL_SIZE;
     }

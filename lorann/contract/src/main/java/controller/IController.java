@@ -10,5 +10,5 @@ public interface IController {
 
 	public void updatemove();
 	
-	
+	public void lorannMove(int x, int y);
 }

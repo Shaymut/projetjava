@@ -4,10 +4,11 @@ import java.util.List;
 
 public class Map {
 	
-	final static Element[][] mapNiveau = new Element[20][12];
+	static Element[][] mapNiveau = new Element[20][12];
 	MotionlessElementFactory motionlessElementFactory = new MotionlessElementFactory();
 	MobileElementFactory mobileElementFactory = new MobileElementFactory();
 	Lorann lorann;
+	Lorann lor;
 	
 	public void CreateMap(List<Tile> ListTiles) {
 		for (Tile tile : ListTiles) {
@@ -29,7 +30,7 @@ public class Map {
 				mapNiveau[tile.getX()][tile.getY()] = mobileElementFactory.createMobileElement(tile.getSprite(), new Position(tile.getX(),tile.getY()));
 			}
 			else if(tile.getSprite() == 'L') {
-				mapNiveau[tile.getX()][tile.getY()] = lorann = new Lorann(new Position(tile.getX(),tile.getY()));
+				mapNiveau[tile.getX()][tile.getY()] = lorann = new Lorann(new Position(tile.getX(),tile.getY()), this);
 			}
 		}
 	}
@@ -42,12 +43,20 @@ public class Map {
 		return Map.mapNiveau;
 	}
 	
+	public void setMap(Element[][] map){
+		Map.mapNiveau = map;
+	}
+	
 	public char getElementByXY(int x, int y) {
 		return Map.mapNiveau[x][y].getSprite();
 	}
 	
 	public Element getLorann() {
 		return this.lorann;
+	}
+	
+	public Lorann getlorann() {
+		return this.lor;
 	}
 	
 	

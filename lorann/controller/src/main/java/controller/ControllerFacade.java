@@ -7,6 +7,7 @@ import javax.swing.text.ViewFactory;
 
 import model.Element;
 import model.IModel;
+import model.Position;
 import model.Tile;
 import view.IView;
 import view.Order;
@@ -29,6 +30,8 @@ public class ControllerFacade implements IController {
     private Element lorann;
     
     private ViewFacade viewFacade;
+    
+    private Element[][] mapNiveau;
     
     //Keyboard keyboard = new Keyboard();
     
@@ -76,6 +79,7 @@ public class ControllerFacade implements IController {
         System.out.println(message.toString());
         this.getModel().CreateMap(ListTiles);
         this.getView().displayMap(this.getModel().getMap());
+        this.mapNiveau = this.getModel().getMap();
         this.setViewFacade(new ViewFacade("Lorann", 20, 12, this.getModel().getMap()));
         this.viewFacade.setController(this);
         this.lorann = this.getModel().getLorann();
@@ -117,6 +121,22 @@ public class ControllerFacade implements IController {
 			new Collision(this.getModel().getMap(), this.getModel().getLorann(), this.getModel().getLorann().getX() +1, this.getModel().getLorann().getY(), this);
 		}else if (this.getViewFacade().getOrder() == Order.LEFT) {
 			new Collision(this.getModel().getMap(), this.getModel().getLorann(), this.getModel().getLorann().getX() -1, this.getModel().getLorann().getY(), this);
+		}else if (this.getViewFacade().getOrder() == Order.UP) {
+			new Collision(this.getModel().getMap(), this.getModel().getLorann(), this.getModel().getLorann().getX(), this.getModel().getLorann().getY() -1, this);
+		}else if (this.getViewFacade().getOrder() == Order.DOWN) {
+			new Collision(this.getModel().getMap(), this.getModel().getLorann(), this.getModel().getLorann().getX(), this.getModel().getLorann().getY() +1, this);
 		}
+	}
+	
+	public void lorannMove(int x, int y){
+		Element temp = this.mapNiveau[x][y];
+		int tempX = this.lorann.getX();
+		int tempY = this.lorann.getY();
+		this.mapNiveau[x][y] = lorann;
+		this.mapNiveau[tempX][tempY] = temp;
+		lorann.setPosition(new Position(x,y));
+		this.getModel().setMap(this.mapNiveau);
+		this.getView().displayMap(this.mapNiveau);
+		this.getViewFacade().setMap(mapNiveau);
 	}
 }

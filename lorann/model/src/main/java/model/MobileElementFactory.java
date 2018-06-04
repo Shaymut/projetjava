@@ -6,9 +6,6 @@ public class MobileElementFactory {
 	
 	public Element createMobileElement(char sprite, Position position) {
 		switch(sprite) {
-			case 'L':
-				element = new Lorann(position);
-				break;
 			case 'P':
 				element= new Spell(position);
 				break;

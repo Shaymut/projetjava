@@ -16,7 +16,7 @@ public class Collision {
 			System.out.println("BLOCK");
 		}else if (this.mapNiveau[x][y].getPermeability() == Permeability.PENETRABLE) {
 			System.out.println("PENETRABLE");
-			mapNiveau.
+			controller.lorannMove(x, y);
 		}
 	}
 	
