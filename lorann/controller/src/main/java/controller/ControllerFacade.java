@@ -26,15 +26,10 @@ public class ControllerFacade implements IController {
 
     /** The model. */
     private final IModel model;
-    
     private Element lorann;
-    
     private Element evilRandom;
-    
     private ViewFacade viewFacade;
-    
     private Element[][] mapNiveau;
-    
     private double score;
     
     /**
