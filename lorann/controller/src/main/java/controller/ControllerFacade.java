@@ -119,13 +119,21 @@ public class ControllerFacade implements IController {
 	
 	public void updatemove() {
 		if (this.getViewFacade().getOrder() == Order.RIGHT) {
-			new Collision(this.getModel().getMap(), this.getModel().getLorann(), this.getModel().getLorann().getX() +1, this.getModel().getLorann().getY(), this);
+			new Collision(this.getModel().getMap(), this.getModel().getLorann(), this.getModel().getLorann().getX() + 1, this.getModel().getLorann().getY(), this);
 		}else if (this.getViewFacade().getOrder() == Order.LEFT) {
-			new Collision(this.getModel().getMap(), this.getModel().getLorann(), this.getModel().getLorann().getX() -1, this.getModel().getLorann().getY(), this);
+			new Collision(this.getModel().getMap(), this.getModel().getLorann(), this.getModel().getLorann().getX() - 1, this.getModel().getLorann().getY(), this);
 		}else if (this.getViewFacade().getOrder() == Order.UP) {
-			new Collision(this.getModel().getMap(), this.getModel().getLorann(), this.getModel().getLorann().getX(), this.getModel().getLorann().getY() -1, this);
+			new Collision(this.getModel().getMap(), this.getModel().getLorann(), this.getModel().getLorann().getX(), this.getModel().getLorann().getY() - 1, this);
 		}else if (this.getViewFacade().getOrder() == Order.DOWN) {
-			new Collision(this.getModel().getMap(), this.getModel().getLorann(), this.getModel().getLorann().getX(), this.getModel().getLorann().getY() +1, this);
+			new Collision(this.getModel().getMap(), this.getModel().getLorann(), this.getModel().getLorann().getX(), this.getModel().getLorann().getY() + 1, this);
+		}else if (this.getViewFacade().getOrder() == Order.LEFT_UP) {
+			new Collision(this.getModel().getMap(), this.getModel().getLorann(), this.getModel().getLorann().getX() - 1, this.getModel().getLorann().getY() - 1, this);
+		}else if (this.getViewFacade().getOrder() == Order.RIGHT_UP) {
+			new Collision(this.getModel().getMap(), this.getModel().getLorann(), this.getModel().getLorann().getX() + 1, this.getModel().getLorann().getY() - 1, this);
+		}else if (this.getViewFacade().getOrder() == Order.LEFT_DOWN) {
+			new Collision(this.getModel().getMap(), this.getModel().getLorann(), this.getModel().getLorann().getX() - 1, this.getModel().getLorann().getY() + 1, this);
+		}else if (this.getViewFacade().getOrder() == Order.RIGHT_DOWN) {
+			new Collision(this.getModel().getMap(), this.getModel().getLorann(), this.getModel().getLorann().getX() + 1, this.getModel().getLorann().getY() + 1, this);
 		}
 	}
 	

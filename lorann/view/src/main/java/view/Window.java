@@ -56,22 +56,28 @@ public class Window extends JFrame implements KeyListener{
         
 	@Override
 	public void keyPressed(KeyEvent e) {
-		if(e.getKeyCode() == KeyEvent.VK_RIGHT)  { //Flèche droite
+		if(e.getKeyCode() == KeyEvent.VK_NUMPAD6)  { //Flèche droite
 			this.order = Order.RIGHT;
 			}
 	
-		else if(e.getKeyCode() == KeyEvent.VK_LEFT) {
+		else if(e.getKeyCode() == KeyEvent.VK_NUMPAD4) {
 			this.order = Order.LEFT;
-		
-		}
-		if(e.getKeyCode() == KeyEvent.VK_DOWN) {
+		}else if(e.getKeyCode() == KeyEvent.VK_NUMPAD2) {
 			this.order = Order.DOWN;
-			
-		}else if(e.getKeyCode() == KeyEvent.VK_UP) {
+		}else if(e.getKeyCode() == KeyEvent.VK_NUMPAD8) {
 			this.order = Order.UP;
-		}
-		if(e.getKeyCode() == KeyEvent.VK_SPACE) {
+		}else if(e.getKeyCode() == KeyEvent.VK_NUMPAD5) {
 			this.order = Order.SPACE;
+		}else if(e.getKeyCode() == KeyEvent.VK_NUMPAD5) {
+			this.order = Order.SPACE;
+		}else if(e.getKeyCode() == KeyEvent.VK_NUMPAD7) {
+			this.order = Order.LEFT_UP;
+		}else if(e.getKeyCode() == KeyEvent.VK_NUMPAD9) {
+			this.order = Order.RIGHT_UP;
+		}else if(e.getKeyCode() == KeyEvent.VK_NUMPAD1) {
+			this.order = Order.LEFT_DOWN;
+		}else if(e.getKeyCode() == KeyEvent.VK_NUMPAD3) {
+			this.order = Order.RIGHT_DOWN;
 		}
 		System.out.println(order);
 		controller.updatemove();

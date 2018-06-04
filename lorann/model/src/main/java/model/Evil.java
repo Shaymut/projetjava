@@ -2,7 +2,7 @@ package model;
 
 public class Evil extends MobileElement{
 
-	static Permeability permeability = Permeability.BLOCK;
+	static Permeability permeability = Permeability.HURT;
 	public Position position ; 
 	int nextX;
 	int nextY;
