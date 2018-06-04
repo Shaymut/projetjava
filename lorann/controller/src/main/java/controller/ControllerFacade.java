@@ -3,8 +3,6 @@ package controller;
 import java.sql.SQLException;
 import java.util.List;
 
-import javax.management.timer.Timer;
-
 import model.DoorOpened;
 import model.Element;
 import model.Ground;
@@ -39,9 +37,9 @@ public class ControllerFacade implements IController {
     
     private double score;
     
-    Timer timer;
-    
     boolean running = true;
+    
+  
     
     //Keyboard keyboard = new Keyboard();
     
@@ -219,6 +217,7 @@ public class ControllerFacade implements IController {
 		this.evilRandom = evilRandom;
 	}
 	
+
 	public void timer() {
         // CODER LA
         System.out.println("Deplacement des monstres");
@@ -231,4 +230,5 @@ public class ControllerFacade implements IController {
             e.printStackTrace();
         }
     }
+
 }
