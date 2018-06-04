@@ -77,4 +77,10 @@ public class ViewFacade implements IView {
 		return frame.getOrder();
 	}
 
+	@Override
+	public void killFrame() {
+		frame.killFrame();
+		
+	}
+
 }

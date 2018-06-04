@@ -6,6 +6,7 @@ import java.util.List;
 import javax.swing.text.ViewFactory;
 
 import model.Element;
+import model.Ground;
 import model.IModel;
 import model.Position;
 import model.Tile;
@@ -138,5 +139,16 @@ public class ControllerFacade implements IController {
 		this.getModel().setMap(this.mapNiveau);
 		this.getView().displayMap(this.mapNiveau);
 		this.getViewFacade().setMap(mapNiveau);
+	}
+
+	@Override
+	public void remove(int x, int y) {
+		this.mapNiveau[x][y] = new Ground(new Position(x,y));
+	}
+
+	@Override
+	public void died() {
+		this.getView().displayMessage("Tu es mort !");
+		this.getViewFacade().killFrame();
 	}
 }

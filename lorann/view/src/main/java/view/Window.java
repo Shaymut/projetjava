@@ -47,6 +47,10 @@ public class Window extends JFrame implements KeyListener{
     	this.panel.setMap(mapNiveau);
     }
     
+    public void killFrame() {
+    	this.setVisible(false);
+    }
+    
     
     //---------------------KEYBOARD---------------------
         
