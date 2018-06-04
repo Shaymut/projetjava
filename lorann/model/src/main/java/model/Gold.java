@@ -4,7 +4,7 @@ public class Gold extends MotionlessElement{
 
 	static char sprite = 'G';
 	
-	static Permeability permeability = Permeability.PENETRABLE;
+	static Permeability permeability = Permeability.COLLECTABLE;
 	
 	Gold(Position position) {
 		super(permeability, sprite, position);

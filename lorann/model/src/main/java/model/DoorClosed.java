@@ -4,7 +4,7 @@ public class DoorClosed extends MotionlessElement{
 
 	static char sprite = 'C';
 	
-	static Permeability permeability = Permeability.BLOCK;
+	static Permeability permeability = Permeability.HURT;
 	
 	DoorClosed(Position position) {
 		super(permeability, sprite, position);
