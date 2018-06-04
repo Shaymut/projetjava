@@ -65,7 +65,7 @@ public class ControllerFacade implements IController {
      */
     public void start() throws SQLException {
     	
-        final List<Tile> ListTiles = this.getModel().getAllTilesByMap(1);
+        final List<Tile> ListTiles = this.getModel().getAllTilesByMap(5);
         final StringBuilder message = new StringBuilder();
         for (final Tile tile : ListTiles) {
             message.append(tile);
@@ -79,11 +79,6 @@ public class ControllerFacade implements IController {
         this.viewFacade.setController(this);
         this.lorann = this.getModel().getLorann();
         this.getView().setLorann(this.lorann);
-        
-	    System.out.println(this.getViewFacade().getOrder());
-        
-        
-        //this.getView().updateFrame();     <------ Erreur si lancé
     }
     /*
      * Gets the view.

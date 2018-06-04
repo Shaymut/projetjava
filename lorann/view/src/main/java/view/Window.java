@@ -58,16 +58,12 @@ public class Window extends JFrame implements KeyListener{
 	public void keyPressed(KeyEvent e) {
 		if(e.getKeyCode() == KeyEvent.VK_NUMPAD6)  { //Flèche droite
 			this.order = Order.RIGHT;
-			}
-	
-		else if(e.getKeyCode() == KeyEvent.VK_NUMPAD4) {
+		}else if(e.getKeyCode() == KeyEvent.VK_NUMPAD4) {
 			this.order = Order.LEFT;
 		}else if(e.getKeyCode() == KeyEvent.VK_NUMPAD2) {
 			this.order = Order.DOWN;
 		}else if(e.getKeyCode() == KeyEvent.VK_NUMPAD8) {
 			this.order = Order.UP;
-		}else if(e.getKeyCode() == KeyEvent.VK_NUMPAD5) {
-			this.order = Order.SPACE;
 		}else if(e.getKeyCode() == KeyEvent.VK_NUMPAD5) {
 			this.order = Order.SPACE;
 		}else if(e.getKeyCode() == KeyEvent.VK_NUMPAD7) {
@@ -78,6 +74,8 @@ public class Window extends JFrame implements KeyListener{
 			this.order = Order.LEFT_DOWN;
 		}else if(e.getKeyCode() == KeyEvent.VK_NUMPAD3) {
 			this.order = Order.RIGHT_DOWN;
+		}else {
+			this.order = Order.NONE;
 		}
 		System.out.println(order);
 		controller.updatemove();
@@ -91,11 +89,15 @@ public class Window extends JFrame implements KeyListener{
 
 	@Override
 	public void keyReleased(KeyEvent e) {
-		if(e.getKeyCode() == KeyEvent.VK_RIGHT ||
-		   e.getKeyCode() == KeyEvent.VK_LEFT ||
-		   e.getKeyCode() == KeyEvent.VK_DOWN ||
-		   e.getKeyCode() == KeyEvent.VK_UP ||
-		   e.getKeyCode() == KeyEvent.VK_SPACE) {
+		if(e.getKeyCode() == KeyEvent.VK_NUMPAD6 ||
+		   e.getKeyCode() == KeyEvent.VK_NUMPAD4 ||
+		   e.getKeyCode() == KeyEvent.VK_NUMPAD2 ||
+		   e.getKeyCode() == KeyEvent.VK_NUMPAD8 ||
+		   e.getKeyCode() == KeyEvent.VK_NUMPAD5 ||
+		   e.getKeyCode() == KeyEvent.VK_NUMPAD7 ||
+		   e.getKeyCode() == KeyEvent.VK_NUMPAD9 ||
+		   e.getKeyCode() == KeyEvent.VK_NUMPAD1 ||
+		   e.getKeyCode() == KeyEvent.VK_NUMPAD3) {
 			this.order = Order.NONE;
 		}
 	}	
