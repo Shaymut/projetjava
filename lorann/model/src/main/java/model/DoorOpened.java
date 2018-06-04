@@ -4,7 +4,7 @@ public class DoorOpened extends MotionlessElement{
 
 	static char sprite = 'O';
 	// "/Pictures/gate_open.png";
-	static Permeability permeability = Permeability.PENETRABLE;
+	static Permeability permeability = Permeability.VICTORY;
 	
 	
 	public DoorOpened(Position position) {

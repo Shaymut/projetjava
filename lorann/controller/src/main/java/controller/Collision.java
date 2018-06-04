@@ -19,13 +19,15 @@ public class Collision {
 			controller.lorannMove(x, y);
 		}else if (this.mapNiveau[x][y].getPermeability() == Permeability.COLLECTABLE) {
 			System.out.println("COLLECTABLE");
-			controller.remove(x,y);
-			controller.lorannMove(x, y);
+			
 			if (this.mapNiveau[x][y].getSprite() == 'E') {
 				controller.replaceDoor();
+				System.out.println("Je me fais remplacer----------------------------------------------------------------------");
 			}else {
 				controller.scoreUp(650);
 			}
+			controller.remove(x,y);
+			controller.lorannMove(x, y);
 		}
 		else if (this.mapNiveau[x][y].getPermeability() == Permeability.HURT) {
 			System.out.println("--------------------- DIED ---------------------");
