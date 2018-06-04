@@ -219,7 +219,7 @@ public class ControllerFacade implements IController {
 	
 
 	public void timer() {
-        // CODER LA
+		this.getModel().getEvilRandom();
         System.out.println("Deplacement des monstres");
         try {
             Thread.sleep(500);
