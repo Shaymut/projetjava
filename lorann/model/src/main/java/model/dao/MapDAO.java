@@ -33,7 +33,6 @@ public abstract class MapDAO extends AbstractDAO {
     
     /** The IDMap column index. */
     private static int IDMapColumnIndex  = 5;
-
     /**
      * Gets the all examples.
      *

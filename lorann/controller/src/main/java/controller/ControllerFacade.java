@@ -220,7 +220,7 @@ public class ControllerFacade implements IController {
 	
 
 	public void timer() {
-		this.getEvilRandom().move();
+		this.getEvilRandom();
         System.out.println("Deplacement des monstres");
         try {
             Thread.sleep(500);

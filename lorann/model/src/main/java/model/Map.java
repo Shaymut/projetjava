@@ -12,6 +12,10 @@ public class Map {
 	static EvilRandom evilRandom;
 	Random random = new Random();
 	
+
+
+
+
 	public void CreateMap(List<Tile> ListTiles) {
 		for (Tile tile : ListTiles) {
 			if (tile.getSprite() == 'S'||
