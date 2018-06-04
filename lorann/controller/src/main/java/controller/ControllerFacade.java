@@ -34,6 +34,8 @@ public class ControllerFacade implements IController {
     
     private Element[][] mapNiveau;
     
+    private double score;
+    
     //Keyboard keyboard = new Keyboard();
     
     
@@ -156,7 +158,21 @@ public class ControllerFacade implements IController {
 
 	@Override
 	public void died() {
-		this.getView().displayMessage("Tu es mort !");
+		this.getView().displayMessage("Tu es mort !\nTon score est de : " + this.score);
 		this.getViewFacade().killFrame();
 	}
+	
+	@Override
+	public void win() {
+		this.getView().displayMessage("Tu as fini le niveau, Bravo!\nTon score est de : " + this.score);
+		this.getViewFacade().killFrame();
+	}
+
+	@Override
+	public void scoreUp(double x) {
+		this.score = score + x;
+		System.out.println("Score : " + this.score);
+	}
+	
+	
 }

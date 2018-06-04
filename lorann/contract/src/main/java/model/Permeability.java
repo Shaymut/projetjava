@@ -4,5 +4,6 @@ public enum Permeability {
 	BLOCK,
 	PENETRABLE,
 	COLLECTABLE,
-	HURT;
+	HURT,
+	VICTORY;
 }

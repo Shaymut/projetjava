@@ -21,12 +21,22 @@ public class Collision {
 			System.out.println("COLLECTABLE");
 			controller.remove(x,y);
 			controller.lorannMove(x, y);
+			if (this.mapNiveau[x][y].getSprite() == 'E') {
+				controller.replaceDoor();
+			}else {
+				controller.scoreUp(650);
+			}
 		}
 		else if (this.mapNiveau[x][y].getPermeability() == Permeability.HURT) {
 			System.out.println("--------------------- DIED ---------------------");
 			controller.remove(x,y);
 			controller.lorannMove(x, y);
 			controller.died();
+		}else if (this.mapNiveau[x][y].getPermeability() == Permeability.VICTORY) {
+			System.out.println("--------------------- WIN ---------------------");
+			controller.remove(x,y);
+			controller.lorannMove(x, y);
+			controller.win();
 		}
 	}
 	

@@ -15,4 +15,8 @@ public interface IController {
 	public void remove(int x, int y);
 
 	public void died();
+	
+	public void win();
+	
+	public void scoreUp(double x);
 }
