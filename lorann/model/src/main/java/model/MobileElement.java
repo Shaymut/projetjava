@@ -28,9 +28,7 @@ public class MobileElement extends Element implements IMobile{
 	@Override
     public void moveUp() {
     	  setNextY(position.getY()-1);
-          position.setY(nextY);
-
-          
+          position.setY(nextY); 
     }
 
 	@Override
@@ -81,7 +79,6 @@ public class MobileElement extends Element implements IMobile{
     	setNextX(position.getX()+1);
     	position.setX(nextX);
     	position.setY(nextY);
-    	
     }
 
 

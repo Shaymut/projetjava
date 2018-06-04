@@ -1,15 +1,18 @@
 package model;
 
+import java.util.Random;
+
 public class Element {
 	
 	Permeability permeability;
 	char sprite;
-	Position position;
+	static Position position;
+	Random random = new Random();
 	
 	public Element(Permeability permeability, char sprite, Position position){
 		this.permeability = permeability;
 		this.sprite = sprite;
-		this.position = position;
+		Element.position = position;
 	}
 	
 	public char getSprite() {
@@ -17,15 +20,15 @@ public class Element {
 	}
 	
 	public  int getX() {
-		return this.position.getX();
+		return Element.position.getX();
 	}
 	
 	public int getY() {
-		return this.position.getY();
+		return Element.position.getY();
 	}
 	
 	public  void setX(int x) {
-		this.position.x = x;
+		Element.position.x = x;
 	}
 	
 	public Position getPosition() {
@@ -33,14 +36,15 @@ public class Element {
 	}
 
 	public void setY(int y) {
-		this.position.y = y;
+		Element.position.y = y;
 	}
 	
 	public void setPosition(Position position) {
-		this.position = position;
+		Element.position = position;
 	}
 
 	public Permeability getPermeability() {
 		return this.permeability;
 	}
+	
 }

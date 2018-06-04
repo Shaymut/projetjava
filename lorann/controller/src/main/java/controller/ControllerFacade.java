@@ -80,6 +80,7 @@ public class ControllerFacade implements IController {
         this.setViewFacade(new ViewFacade("Lorann", 20, 12, this.getModel().getMap()));
         this.viewFacade.setController(this);
         this.lorann = this.getModel().getLorann();
+        this.evilRandom = this.getModel().getEvilRandom();
         this.getView().setLorann(this.lorann);
         timer();
     }
@@ -219,7 +220,7 @@ public class ControllerFacade implements IController {
 	
 
 	public void timer() {
-		//
+		this.getEvilRandom().move();
         System.out.println("Deplacement des monstres");
         try {
             Thread.sleep(500);

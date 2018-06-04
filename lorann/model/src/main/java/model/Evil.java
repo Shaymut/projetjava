@@ -13,17 +13,8 @@ public class Evil extends MobileElement{
 	
 	}
 	
-	
-
-	public void kill() {
-	//if(nextX == ) {
-		
-	//}
-		 
-	
-		
+	public void move() {
 	}
-	
 
 
 }
