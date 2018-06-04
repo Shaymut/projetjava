@@ -28,7 +28,7 @@ public class Panel extends JPanel {
     
     BufferedImage image = null;
     
-    Keyboard keyboard = new Keyboard();
+   
 
     public Panel(int x, int y, Element[][] mapNiveau) {
     	Panel.PANEL_SIZE = new Dimension(x, y);
@@ -108,10 +108,7 @@ public class Panel extends JPanel {
     public void updatePanel() {
 		repaint();
 	}
-    
-    public Order getOrder() {
-    	return keyboard.order;
-    }
+
     
 }
     
