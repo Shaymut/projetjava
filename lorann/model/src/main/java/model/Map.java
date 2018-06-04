@@ -8,7 +8,6 @@ public class Map {
 	MotionlessElementFactory motionlessElementFactory = new MotionlessElementFactory();
 	MobileElementFactory mobileElementFactory = new MobileElementFactory();
 	Lorann lorann;
-	Lorann lor;
 	
 	public void CreateMap(List<Tile> ListTiles) {
 		for (Tile tile : ListTiles) {
@@ -54,45 +53,5 @@ public class Map {
 	public Element getLorann() {
 		return this.lorann;
 	}
-	
-	public Lorann getlorann() {
-		return this.lor;
-	}
-	
-	
-	//Partie Consacrée aux mouvements de Lorann : 
-	
-	
-	
-	public void LorannMoveUp() {
-		this.lorann.moveUp();
-	}
-	
-	public void LorannMoveDown() {
-		this.lorann.moveDown();
-	}
-	
-	public void LorannMoveLeft() {
-		this.lorann.moveLeft();
-	}
-	
-	public void LorannMoveRight() {
-		this.lorann.moveRight();
-	}
-	
-	public void LorannMoveUpLeft() {
-		this.lorann.moveUpLeft();
-	}
-	
-	public void LorannMoveUpRight() {
-		this.lorann.moveUpRight();
-	}
-	
-	public void LorannMoveDownLeft() {
-		this.lorann.moveDownLeft();
-	}
-	
-	public void LorannMoveDownRight() {
-		this.lorann.moveDownRight();
-	}
+
 }

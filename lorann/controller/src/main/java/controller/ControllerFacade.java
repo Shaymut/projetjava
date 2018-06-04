@@ -182,7 +182,6 @@ public class ControllerFacade implements IController {
 				if(this.mapNiveau[i][j].getSprite() == 'C') {
 					this.mapNiveau[i][j] = new DoorOpened(this.mapNiveau[i][j].getPosition());
 				}
-				
 			}
 		}
 		this.getModel().setMap(this.mapNiveau);
