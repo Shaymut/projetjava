@@ -7,7 +7,7 @@ public class EvilRandom extends Evil implements EvilMove{
 	static char sprite = 'B';
 	Random random = new Random();
 	
-	EvilRandom(Position position, Map map) {
+	EvilRandom(Position position) {
 		super(sprite, position);
 		System.out.println("Création d'un objet EvilRandom");
 	}

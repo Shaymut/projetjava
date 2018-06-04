@@ -56,9 +56,15 @@ public final class ModelFacade implements IModel {
 	public Element getLorann() {
 		return Niveau.getLorann();
 	}
-
+	
+	@Override
 	public Element getEvilRandom() {
 		return Niveau.getEvilRandom();
+	}
+
+	@Override
+	public Element getEvilHorizontal() {
+		return Niveau.getEvilHorizontal();
 	}
 	
 	

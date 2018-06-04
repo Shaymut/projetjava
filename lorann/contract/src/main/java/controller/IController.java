@@ -24,5 +24,12 @@ public interface IController {
 	
 	public void replaceDoor();
 
+	
+	
 	public void evilRandomMove(int x, int y);
+	
+	public void evilHorizontalMove(int x, int y);
+	public boolean getEvilHorizontalRight();
+	public void setEvilHorizontalRight(boolean right);
+	
 }

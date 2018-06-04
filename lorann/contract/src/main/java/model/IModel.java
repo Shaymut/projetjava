@@ -34,4 +34,5 @@ public interface IModel {
 	
 	Element getLorann();
 	Element getEvilRandom();
+	Element getEvilHorizontal();
 }

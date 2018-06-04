@@ -6,7 +6,6 @@ import java.util.Random;
 
 import model.DoorOpened;
 import model.Element;
-import model.EvilRandom;
 import model.Ground;
 import model.IModel;
 import model.Position;
@@ -30,6 +29,8 @@ public class ControllerFacade implements IController {
     private final IModel model;
     private Element lorann;
     private Element evilRandom;
+    private Element evilHorizontal;
+    private boolean evilHorizontalMoveRight = true;
     private ViewFacade viewFacade;
     private Element[][] mapNiveau;
     private double score;
@@ -72,6 +73,7 @@ public class ControllerFacade implements IController {
         this.viewFacade.setController(this);
         this.lorann = this.getModel().getLorann();
         this.evilRandom = this.getModel().getEvilRandom();
+        this.evilHorizontal = this.getModel().getEvilHorizontal();
         this.getView().setLorann(this.lorann);
         timer();
     }
@@ -175,6 +177,35 @@ public class ControllerFacade implements IController {
 		}
 	}
 	
+	public void evilHorizontalMove(int x ,  int y) {
+		Element temp = this.mapNiveau[x][y];
+		int tempX = this.evilHorizontal.getX();
+		int tempY = this.evilHorizontal.getY();
+		this.mapNiveau[x][y] = evilHorizontal;
+		this.mapNiveau[tempX][tempY] = temp;
+		evilHorizontal.setPosition(new Position(x,y));
+		this.getModel().setMap(this.mapNiveau);
+		this.getView().displayMap(this.mapNiveau);
+		this.getViewFacade().setMap(mapNiveau);
+	}
+	
+	public void evilHorizontalMove() {
+		if (evilHorizontalMoveRight) {
+			new Collision(this.getModel().getMap(), this.getModel().getEvilHorizontal(), this.getModel().getEvilHorizontal().getX() + 1, this.getModel().getEvilHorizontal().getY(), this);
+		}
+		else {
+			new Collision(this.getModel().getMap(), this.getModel().getEvilHorizontal(), this.getModel().getEvilHorizontal().getX() - 1, this.getModel().getEvilHorizontal().getY(), this);
+		}
+	}
+	
+	public void setEvilHorizontalRight(boolean right) {
+		this.evilHorizontalMoveRight = right;
+	}
+	
+	public boolean getEvilHorizontalRight() {
+		return this.evilHorizontalMoveRight;
+	}
+	
 	@Override
 	public void remove(int x, int y) {
 		this.mapNiveau[x][y] = new Ground(new Position(x, y));
@@ -211,16 +242,16 @@ public class ControllerFacade implements IController {
 		}
 		this.getModel().setMap(this.mapNiveau);
 	}
-
-	public Element getEvilRandom() {
-		return evilRandom;
-	}
 	
 	public void timer() {
 		if (this.evilRandom != null) {
-			this.evilRadomMove();}
+			this.evilRadomMove();
+		}
+		if (this.evilHorizontal != null) {
+			this.evilHorizontalMove();
+		}
 		try {
-			Thread.sleep(500);
+			Thread.sleep(250);
 			if (this.running) {
 				timer();
 			}
@@ -228,6 +259,5 @@ public class ControllerFacade implements IController {
 				e.printStackTrace();
 			}
 		}
-
 
 }

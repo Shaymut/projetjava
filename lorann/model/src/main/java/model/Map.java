@@ -9,6 +9,7 @@ public class Map {
 	MobileElementFactory mobileElementFactory = new MobileElementFactory();
 	Lorann lorann;
 	EvilRandom evilRandom;
+	EvilHorizontal evilHorizontal;
 
 	public void CreateMap(List<Tile> ListTiles) {
 		for (Tile tile : ListTiles) {
@@ -23,7 +24,6 @@ public class Map {
 				mapNiveau[tile.getX()][tile.getY()] = motionlessElementFactory.createMotionlessElement(tile.getSprite(), new Position(tile.getX(),tile.getY()));
 			}
 			else if (tile.getSprite() == 'P' ||
-					 tile.getSprite() == 'F' ||
 					 tile.getSprite() == 'K' ||
 					 tile.getSprite() == 'J'){
 				mapNiveau[tile.getX()][tile.getY()] = mobileElementFactory.createMobileElement(tile.getSprite(), new Position(tile.getX(),tile.getY()));
@@ -32,7 +32,10 @@ public class Map {
 				mapNiveau[tile.getX()][tile.getY()] = lorann = new Lorann(new Position(tile.getX(),tile.getY()), this);
 			}
 			else if(tile.getSprite() == 'B') {
-				mapNiveau[tile.getX()][tile.getY()] = evilRandom = new EvilRandom(new Position(tile.getX(),tile.getY()), this);
+				mapNiveau[tile.getX()][tile.getY()] = evilRandom = new EvilRandom(new Position(tile.getX(),tile.getY()));
+			}
+			else if(tile.getSprite() == 'F') {
+				mapNiveau[tile.getX()][tile.getY()] = evilHorizontal = new EvilHorizontal(new Position(tile.getX(),tile.getY()));
 			}
 		}
 	}
@@ -59,6 +62,10 @@ public class Map {
 	
 	public EvilRandom getEvilRandom() {
 		return this.evilRandom;
+	}
+	
+	public EvilHorizontal getEvilHorizontal() {
+		return this.evilHorizontal;
 	}
 
 

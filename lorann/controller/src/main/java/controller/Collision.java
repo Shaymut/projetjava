@@ -14,12 +14,20 @@ public class Collision {
 		this.MotionElement = MotionElement;
 		if (this.mapNiveau[x][y].getPermeability() == Permeability.BLOCK) {
 			System.out.println("BLOCK");
+			if (MotionElement.getSprite() == 'F') {
+				if (controller.getEvilHorizontalRight()) {
+					controller.setEvilHorizontalRight(false);
+				}else {
+					controller.setEvilHorizontalRight(true);
+				}
+			}
 			
 			
 		}else if (this.mapNiveau[x][y].getPermeability() == Permeability.PENETRABLE) {
 			System.out.println("PENETRABLE");
 			if (MotionElement.getSprite() == 'L') {
 				controller.lorannMove(x, y);
+				
 			}else if (MotionElement.getSprite() == 'B') {
 				if (this.mapNiveau[x][y].getSprite() == 'L') {
 					controller.remove(x,y);
@@ -30,6 +38,17 @@ public class Collision {
 				}else {
 					controller.evilRandomMove(x,y);
 				}
+				
+			}else if (MotionElement.getSprite() == 'F') {
+			if (this.mapNiveau[x][y].getSprite() == 'L') {
+				controller.remove(x,y);
+				controller.evilHorizontalMove(x, y);
+				controller.died();
+			}else if (this.mapNiveau[x][y].getSprite() == 'O') {
+				System.out.println("BLOCK");
+			}else {
+				controller.evilHorizontalMove(x,y);
+			}
 			}
 			
 			
@@ -47,6 +66,13 @@ public class Collision {
 				controller.remove(x, y);
 				controller.lorannMove(x, y);
 			}else {
+				if (MotionElement.getSprite() == 'F') {
+					if (controller.getEvilHorizontalRight()) {
+						controller.setEvilHorizontalRight(false);
+					}else {
+						controller.setEvilHorizontalRight(true);
+					}
+				}
 				System.out.println("BLOCK");
 			}
 		}
@@ -62,6 +88,13 @@ public class Collision {
 				controller.lorannMove(x, y);
 				controller.died();
 			}else {
+				if (MotionElement.getSprite() == 'F') {
+					if (controller.getEvilHorizontalRight()) {
+						controller.setEvilHorizontalRight(false);
+					}else {
+						controller.setEvilHorizontalRight(true);
+					}
+				}
 				System.out.println("BLOCK");
 			}
 			
@@ -76,6 +109,13 @@ public class Collision {
 				controller.lorannMove(x, y);
 				controller.win();
 			}else {
+				if (MotionElement.getSprite() == 'F') {
+					if (controller.getEvilHorizontalRight()) {
+						controller.setEvilHorizontalRight(false);
+					}else {
+						controller.setEvilHorizontalRight(true);
+					}
+				}
 				System.out.println("BLOCK");
 			}
 		}
