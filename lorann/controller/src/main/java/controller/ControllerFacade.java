@@ -223,10 +223,10 @@ public class ControllerFacade implements IController {
 	
 	public void evilVerticalMove() {
 		if (evilHorizontalMoveRight) {
-			new Collision(this.getModel().getMap(), this.getModel().getEvilHorizontal(), this.getModel().getEvilHorizontal().getX(), this.getModel().getEvilHorizontal().getY() + 1, this);
+			new Collision(this.getModel().getMap(), this.getModel().getEvilVertical(), this.getModel().getEvilVertical().getX(), this.getModel().getEvilVertical().getY() + 1, this);
 		}
 		else {
-			new Collision(this.getModel().getMap(), this.getModel().getEvilHorizontal(), this.getModel().getEvilHorizontal().getX(), this.getModel().getEvilHorizontal().getY() - 1, this);
+			new Collision(this.getModel().getMap(), this.getModel().getEvilVertical(), this.getModel().getEvilVertical().getX(), this.getModel().getEvilVertical().getY() - 1, this);
 		}
 	}
 	
