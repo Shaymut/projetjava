@@ -21,8 +21,7 @@ public class Collision {
 					controller.setEvilHorizontalMoveRight(true);
 				}
 				
-			}
-			if (MotionElement.getSprite() == 'K') {
+			}else if (MotionElement.getSprite() == 'K') {
 				if (controller.getEvilVerticalMoveDown()) {
 					controller.setEvilVerticalMoveDown(false);
 				}else {
@@ -57,8 +56,7 @@ public class Collision {
 			}else {
 				controller.evilHorizontalMove(x,y);
 			}
-			}
-			else if (MotionElement.getSprite() == 'K') {
+			}else if (MotionElement.getSprite() == 'K') {
 				if (this.mapNiveau[x][y].getSprite() == 'L') {
 					controller.remove(x,y);
 					controller.evilVerticalMove(x, y);
@@ -68,7 +66,7 @@ public class Collision {
 				}else {
 					controller.evilVerticalMove(x,y);
 				}
-				}
+			}
 			
 			
 			
@@ -92,8 +90,7 @@ public class Collision {
 					}else {
 						controller.setEvilHorizontalMoveRight(true);
 					}
-				}
-				if (MotionElement.getSprite() == 'K') {
+				}else if (MotionElement.getSprite() == 'K') {
 					if (controller.getEvilVerticalMoveDown()) {
 						controller.setEvilVerticalMoveDown(false);
 					}else {
@@ -121,8 +118,7 @@ public class Collision {
 					}else {
 						controller.setEvilHorizontalMoveRight(true);
 					}
-				}
-				if (MotionElement.getSprite() == 'K') {
+				}else if (MotionElement.getSprite() == 'K') {
 					if (controller.getEvilVerticalMoveDown()) {
 						controller.setEvilVerticalMoveDown(false);
 					}else {
@@ -149,8 +145,7 @@ public class Collision {
 					}else {
 						controller.setEvilHorizontalMoveRight(true);
 					}
-				}
-				if (MotionElement.getSprite() == 'K') {
+				}else if (MotionElement.getSprite() == 'K') {
 					if (controller.getEvilVerticalMoveDown()) {
 						controller.setEvilVerticalMoveDown(false);
 					}else {
