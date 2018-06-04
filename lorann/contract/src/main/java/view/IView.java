@@ -25,4 +25,6 @@ public interface IView {
     void updateFrame();
 
     void setLorann(Element lorann);
+    
+    Order getOrder();
 }

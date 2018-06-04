@@ -76,6 +76,7 @@ public class ControllerFacade implements IController {
         this.collision = new Collision(this.getModel().getMap(), this.getModel().getLorann());
         this.getView().setLorann(this.lorann);
         this.collision.test();
+        System.out.println(this.getView().getOrder());
         //this.getView().updateFrame();     <------ Erreur si lancé
     }
     /*

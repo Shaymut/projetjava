@@ -62,4 +62,9 @@ public class ViewFacade implements IView {
 		this.lorann= lorann;
 	}
 
+	@Override
+	public Order getOrder() {
+		return null;
+	}
+
 }

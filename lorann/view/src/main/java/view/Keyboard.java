@@ -7,6 +7,7 @@ import model.Element;
 
 public class Keyboard implements KeyListener{
 	
+	public Order order = Order.RIGHT;
 	 public boolean toucheUp = false;
      public boolean toucheLeft = false;
      public boolean toucheDown = false;
@@ -19,32 +20,25 @@ public class Keyboard implements KeyListener{
 		
 		if(e.getKeyCode() == KeyEvent.VK_RIGHT)  { //Flèche droite
 			System.out.println("Touche appyée : Droite");
-			
-			toucheRight = true;
-			/*if(toucheRight == true) {
-				//setNextX(Lorann.l);
-		    //	position.setX(nextX);
-				
-			}*/
-		
+			this.order = Order.RIGHT;
 			}
 	
 		else if(e.getKeyCode() == KeyEvent.VK_LEFT) {
 			System.out.println("Touche appyée : Left");
-			toucheLeft = true;
+			this.order = Order.LEFT;
 		
-		}else if(e.getKeyCode() == KeyEvent.VK_DOWN) {
+		}
+		if(e.getKeyCode() == KeyEvent.VK_DOWN) {
 			System.out.println("Touche appyée : Bas");
-		
+			this.order = Order.DOWN;
 			
 		}else if(e.getKeyCode() == KeyEvent.VK_UP) {
 			System.out.println("Touche appyée : Haut");
-			toucheUp = true;
+			this.order = Order.UP;
 		}
-		
 		if(e.getKeyCode() == KeyEvent.VK_SPACE) {
 			System.out.println("Touche appyée : Espace");
-			//Mettre ici la méthode pour le lancer du pouvoir
+			this.order = Order.SPACE;
 			
 		}
 	}
