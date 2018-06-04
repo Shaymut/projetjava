@@ -66,6 +66,7 @@ public class Window extends JFrame implements KeyListener{
 			this.order = Order.UP;
 		}else if(e.getKeyCode() == KeyEvent.VK_NUMPAD5) {
 			this.order = Order.SPACE;
+			System.out.println("FIRE!");
 		}else if(e.getKeyCode() == KeyEvent.VK_NUMPAD7) {
 			this.order = Order.LEFT_UP;
 		}else if(e.getKeyCode() == KeyEvent.VK_NUMPAD9) {
@@ -77,15 +78,12 @@ public class Window extends JFrame implements KeyListener{
 		}else {
 			this.order = Order.NONE;
 		}
-		System.out.println(order);
 		controller.updatemove();
 	}
 	
 	@Override
 	public void keyTyped(KeyEvent e) {		
 	}
-	
-	
 
 	@Override
 	public void keyReleased(KeyEvent e) {
