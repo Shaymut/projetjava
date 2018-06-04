@@ -3,7 +3,7 @@ package controller;
 import java.sql.SQLException;
 import java.util.List;
 
-import javax.swing.text.ViewFactory;
+import javax.management.timer.Timer;
 
 import model.DoorOpened;
 import model.Element;
@@ -37,6 +37,8 @@ public class ControllerFacade implements IController {
     
     private double score;
     
+    Timer timer;
+    
     //Keyboard keyboard = new Keyboard();
     
     
@@ -62,19 +64,8 @@ public class ControllerFacade implements IController {
      *             the SQL exception
      */
     public void start() throws SQLException {
-        /*this.getView().displayMessage(this.getModel().getExampleById(1).toString());
-
-        this.getView().displayMessage(this.getModel().getExampleByName("Example 2").toString());
-
-        final List<Example> examples = this.getModel().getAllExamples();
-        final StringBuilder message = new StringBuilder();
-        for (final Example example : examples) {
-            message.append(example);
-            message.append('\n');
-        }
-        this.getView().displayMessage(message.toString());*/
     	
-        final List<Tile> ListTiles = this.getModel().getAllTilesByMap(3);
+        final List<Tile> ListTiles = this.getModel().getAllTilesByMap(1);
         final StringBuilder message = new StringBuilder();
         for (final Tile tile : ListTiles) {
             message.append(tile);
@@ -102,7 +93,7 @@ public class ControllerFacade implements IController {
     public IView getView() {
         return this.view;
     }
-
+    
     /**
      * Gets the model.
      *
