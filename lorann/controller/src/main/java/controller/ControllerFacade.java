@@ -2,9 +2,11 @@ package controller;
 
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Random;
 
 import model.DoorOpened;
 import model.Element;
+import model.EvilRandom;
 import model.Ground;
 import model.IModel;
 import model.Position;
@@ -31,6 +33,8 @@ public class ControllerFacade implements IController {
     private ViewFacade viewFacade;
     private Element[][] mapNiveau;
     private double score;
+    private boolean running = true;
+    Random random = new Random();
     
     /**
      * Instantiates a new controller facade.
@@ -69,6 +73,7 @@ public class ControllerFacade implements IController {
         this.lorann = this.getModel().getLorann();
         this.evilRandom = this.getModel().getEvilRandom();
         this.getView().setLorann(this.lorann);
+        timer();
     }
     /*
      * Gets the view.
@@ -126,10 +131,9 @@ public class ControllerFacade implements IController {
 		this.getModel().setMap(this.mapNiveau);
 		this.getView().displayMap(this.mapNiveau);
 		this.getViewFacade().setMap(mapNiveau);
-		
 	}
 
-	/*public void evilRandomMove(int x ,  int y) {
+	public void evilRandomMove(int x ,  int y) {
 		Element temp = this.mapNiveau[x][y];
 		int tempX = this.evilRandom.getX();
 		int tempY = this.evilRandom.getY();
@@ -139,25 +143,29 @@ public class ControllerFacade implements IController {
 		this.getModel().setMap(this.mapNiveau);
 		this.getView().displayMap(this.mapNiveau);
 		this.getViewFacade().setMap(mapNiveau);
-	}*/
+	}
+	
+	public void evilMove() {
+		
+	}
 	
 	@Override
 	public void remove(int x, int y) {
-		System.out.println("PROUT2");
 		this.mapNiveau[x][y] = new Ground(new Position(x, y));
-		System.out.println("PROUT3");
 	}
 
 	@Override
 	public void died() {
 		this.getView().displayMessage("Tu es mort !\nTon score est de : " + (int)this.score);
 		this.getViewFacade().killFrame();
+		this.running = false;
 	}
 	
 	@Override
 	public void win() {
 		this.getView().displayMessage("Tu as fini le niveau, Bravo!\nTon score est de : " + (int)this.score);
 		this.getViewFacade().killFrame();
+		this.running = false;
 	}
 
 	@Override
@@ -181,10 +189,20 @@ public class ControllerFacade implements IController {
 	public Element getEvilRandom() {
 		return evilRandom;
 	}
-
-	public void setEvilRandom(Element evilRandom) {
-		this.evilRandom = evilRandom;
-	}
+	
+	public void timer() {
+		System.out.println("Deplacement des monstres");
+		//this.getModel().getEvilRandom();
+		
+		try {
+			Thread.sleep(500);
+			if (this.running) {
+				timer();
+			}
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
 
 
 }

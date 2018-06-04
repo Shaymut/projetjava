@@ -32,7 +32,6 @@ public interface IModel {
 	
 	char getElementByXY(int x, int y);
 	
-	Element getEvilRandom();
-	
 	Element getLorann();
+	Element getEvilRandom();
 }

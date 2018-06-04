@@ -35,6 +35,7 @@ public class Map {
 				mapNiveau[tile.getX()][tile.getY()] = evilRandom = new EvilRandom(new Position(tile.getX(),tile.getY()), this);
 			}
 		}
+		System.out.println(this.evilRandom.getX() + "    " + this.evilRandom.getY());
 	}
 	
 	public Element getElementInMap(int x, int y) {
@@ -57,7 +58,7 @@ public class Map {
 		return this.lorann;
 	}
 	
-	public Element getEvilRandom() {
+	public EvilRandom getEvilRandom() {
 		return this.evilRandom;
 	}
 
