@@ -33,9 +33,9 @@ public class Window extends JFrame implements KeyListener{
     /**
      * 
      * @param name
-     * @param {@link Position#getX()}
-     * @param {@link Position#getY()}
-     * @param {@link Panel#mapNiveau}
+     * @param x
+     * @param y
+     * @param mapNiveau
      */
    
     
@@ -89,9 +89,8 @@ public class Window extends JFrame implements KeyListener{
      * 
      * Set the map
      * 
-     * @param {@link Panel#mapNiveau}
+     * @param mapNiveau
      * 
-     * @see {@link Panel#mapNiveau}
      */
     
     public void setMap(Element[][] mapNiveau) {

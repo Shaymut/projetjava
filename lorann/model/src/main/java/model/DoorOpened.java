@@ -26,9 +26,10 @@ public class DoorOpened extends MotionlessElement{
 	 * 
 	 * Constructor DoorOpened
 	 * 
-     * @param {@link Position#Position(Position)}
+     * @param position
+     * 
 	 * We get the position of this object
-	 * @see {@link Position#Position(Position)}
+	 * 
 	 */
 	
 	public DoorOpened(Position position) {

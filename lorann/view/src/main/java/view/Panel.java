@@ -56,7 +56,6 @@ public class Panel extends JPanel {
      * 
      * Contain the path of the using image
      * 
-     * @see Panel#PaintComponent(Graphics)
      */
     
     BufferedImage image = null;

@@ -47,9 +47,9 @@ public class ViewFacade implements IView {
      * Instantiates a new view facade.
      * 
      * @param name
-     * @param {@link Position#getX()}
-     * @param {@link Position#getY()}
-     * @param {@link Panel#mapNiveau}
+     * @param x
+     * @param y
+     * @param mapNiveau
      */
     
     public ViewFacade(String name, int x, int y, Element[][] mapNiveau) {
@@ -59,7 +59,7 @@ public class ViewFacade implements IView {
     }
     /**
      * 
-     * @param {@link Panel#mapNiveau}
+     * @param mapNiveau
      *
      */
     
@@ -80,9 +80,8 @@ public class ViewFacade implements IView {
      * 
      * Display the map
      * 
-     * @param {@link Panel#mapNiveau}
+     * @param mapNiveau
      * 
-     * @see {@link Panel#mapNiveau}
      */
     
     @Override

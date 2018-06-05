@@ -97,8 +97,8 @@ public class Map {
 	 * 
 	 * Get an element with X and Y
 	 * 
-	 * @param {@link Position#getX()}
-	 * @param {@link Position#getY()}
+	 * @param x
+	 * @param y
 	 * @return an element
 	 */
 	
@@ -131,8 +131,8 @@ public class Map {
 	 * 
 	 * Get the sprite of an element in the map
 	 * 
-	 * @param {@link Position#getX()}
-	 * @param {@link Position#getY()}
+	 * @param x
+	 * @param y
 	 * @return the sprite of an element
 	 */
 	

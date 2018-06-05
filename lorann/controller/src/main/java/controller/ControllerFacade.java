@@ -70,6 +70,8 @@ public class ControllerFacade implements IController {
      *            the view
      * @param model
      *            the model
+     * @param niveau
+     * 			  the level
      */
     public ControllerFacade(final IView view, final IModel model, int niveau) {
         super();
@@ -106,7 +108,7 @@ public class ControllerFacade implements IController {
         timer();
        
     }
-    /*
+    /**
      * Gets the view.
      *
      * @return the view
@@ -124,7 +126,7 @@ public class ControllerFacade implements IController {
         return this.model;
     }
     
-    /*
+    /**
      * Gets the viewFacade.
      *
      * @return the viewFacade
@@ -155,7 +157,7 @@ public class ControllerFacade implements IController {
     /**
      * Sets the HaveSpell.
      *
-     * @param HaveSpell
+     * @param haveSpell
      *            the new HaveSpell
      */
 	public void setHaveSpell(boolean haveSpell) {
@@ -323,7 +325,7 @@ public class ControllerFacade implements IController {
 	/**
      * Sets the evilHorizontalMoveRight.
      *
-     * @param evilHorizontalMoveRight
+     * @param right
      *            the new evilHorizontalMoveRight
      */
 	public void setEvilHorizontalMoveRight(boolean right) {
@@ -374,7 +376,7 @@ public class ControllerFacade implements IController {
 	/**
      * Sets the evilVerticalMoveDown.
      *
-     * @param evilVerticalMoveDown
+     * @param down
      *            the new evilVerticalMoveDown
      */
 	public void setEvilVerticalMoveDown(boolean down) {
@@ -435,7 +437,7 @@ public class ControllerFacade implements IController {
 	/**
      * Sets the evilPingPongMove.
      *
-     * @param evilPingPongMove
+     * @param nextMove
      *            the new evilPingPongMove
      */
 	public void setEvilPingPongMove(int nextMove) {

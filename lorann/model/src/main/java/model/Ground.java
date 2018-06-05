@@ -24,9 +24,8 @@ public class Ground extends MotionlessElement{
 	 * 
 	 * Constructor Ground
 	 * 
-	 * @param {@link Position#Position(Position)}
+	 * @param position
 	 * We get the position of this object
-	 * @see {@link Position#Position(Position)}
 	 */
 	
 	public Ground(Position position) {
