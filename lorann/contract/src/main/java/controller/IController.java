@@ -12,8 +12,6 @@ public interface IController {
 	
 	public void lorannMove(int x, int y);
 	
-	//public void evilRandomMove( int x ,  int y);
-
 	public void remove(int x, int y);
 
 	public void died();
