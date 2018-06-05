@@ -14,7 +14,7 @@ public class Window extends JFrame implements KeyListener{
     private static final long serialVersionUID = 1L;
     
     Panel panel;
-    
+   
     IController controller;
     
     private Order order = Order.NONE;
@@ -58,14 +58,19 @@ public class Window extends JFrame implements KeyListener{
 	public void keyPressed(KeyEvent e) {
 		if(e.getKeyCode() == KeyEvent.VK_NUMPAD6)  { //Flèche droite
 			this.order = Order.RIGHT;
+			
 		}else if(e.getKeyCode() == KeyEvent.VK_NUMPAD4) {
 			this.order = Order.LEFT;
+			
 		}else if(e.getKeyCode() == KeyEvent.VK_NUMPAD2) {
 			this.order = Order.DOWN;
+		
 		}else if(e.getKeyCode() == KeyEvent.VK_NUMPAD8) {
 			this.order = Order.UP;
+		
 		}else if(e.getKeyCode() == KeyEvent.VK_NUMPAD5) {
 			this.order = Order.SPACE;
+			
 			System.out.println("FIRE!");
 		}else if(e.getKeyCode() == KeyEvent.VK_NUMPAD7) {
 			this.order = Order.LEFT_UP;
@@ -78,7 +83,9 @@ public class Window extends JFrame implements KeyListener{
 		}else {
 			this.order = Order.NONE;
 		}
+		controller.setEvilStart(true);
 		controller.updatemoveLorann();
+	
 	}
 	
 	@Override

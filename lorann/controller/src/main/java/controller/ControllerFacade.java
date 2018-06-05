@@ -28,6 +28,7 @@ public class ControllerFacade implements IController {
 
     /** The model. */
     private final IModel model;
+    private boolean evilStart = false;
     private Element lorann;
     
     private Element evilRandom;
@@ -88,7 +89,9 @@ public class ControllerFacade implements IController {
         this.evilVertical = this.getModel().getEvilVertical();
         this.evilPingPong = this.getModel().getEvilPingPong();
         this.getView().setLorann(this.lorann);
-        timer();
+        System.out.println("-------------------ETAT NUMBER ONE " + isEvilStart());
+        EvilStart();
+       
     }
     /*
      * Gets the view.
@@ -99,6 +102,15 @@ public class ControllerFacade implements IController {
         return this.view;
     }
     
+    public void EvilStart() {
+    while(true) {
+    	System.out.println(isEvilStart());
+    	if(evilStart == true) {
+    		timer();
+    	
+    	}
+    }
+    }
     /**
      * Gets the model.
      *
@@ -232,7 +244,7 @@ public class ControllerFacade implements IController {
 	}
 	
 	public void evilVerticalMove() {
-		if (evilVerticalMoveDown) {
+		if (evilVerticalMoveDown) { 
 			new Collision(this.getModel().getMap(), this.getModel().getEvilVertical(), this.getModel().getEvilVertical().getX(), this.getModel().getEvilVertical().getY() + 1, this);
 		}
 		else {
@@ -357,6 +369,14 @@ public class ControllerFacade implements IController {
 
 	public void setEvilVertical(Element evilVertical) {
 		this.evilVertical = evilVertical;
+	}
+
+	public boolean isEvilStart() {
+		return evilStart;
+	}
+
+	public void setEvilStart(boolean evilStart) {
+		this.evilStart = evilStart;
 	}
 
 
