@@ -21,7 +21,8 @@ import view.ViewFacade;
  * @version 1.0
  */
 public class ControllerFacade implements IController {
-
+	
+	private int niveau;
     /** The view. */
     private final IView  view;
 
@@ -54,10 +55,11 @@ public class ControllerFacade implements IController {
      * @param model
      *            the model
      */
-    public ControllerFacade(final IView view, final IModel model) {
+    public ControllerFacade(final IView view, final IModel model, int niveau) {
         super();
         this.view = view;
         this.model = model;
+        this.niveau = niveau;
     }
 
     /**
@@ -68,7 +70,7 @@ public class ControllerFacade implements IController {
      */
     public void start() throws SQLException {
     	
-        final List<Tile> ListTiles = this.getModel().getAllTilesByMap(5);
+        final List<Tile> ListTiles = this.getModel().getAllTilesByMap(niveau);
         final StringBuilder message = new StringBuilder();
         for (final Tile tile : ListTiles) {
             message.append(tile);

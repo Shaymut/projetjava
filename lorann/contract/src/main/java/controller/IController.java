@@ -23,8 +23,6 @@ public interface IController {
 	public void scoreUp(double x);
 	
 	public void replaceDoor();
-
-	
 	
 	public void evilRandomMove(int x, int y);
 	

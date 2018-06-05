@@ -13,7 +13,9 @@ import view.ViewFacade;
  * @version 1.0
  */
 public abstract class Main {
-
+	
+	private static int NIVEAU = 1;
+	
     /**
      * The main method.
      *
@@ -21,7 +23,7 @@ public abstract class Main {
      *            the arguments
      */
     public static void main(final String[] args) {
-        final ControllerFacade controller = new ControllerFacade(new ViewFacade(), new ModelFacade());
+        final ControllerFacade controller = new ControllerFacade(new ViewFacade(), new ModelFacade(), NIVEAU);
 
         try {
             controller.start();
