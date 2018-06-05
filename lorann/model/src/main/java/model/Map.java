@@ -11,6 +11,7 @@ public class Map {
 	EvilRandom evilRandom;
 	EvilHorizontal evilHorizontal;
 	EvilVertical evilVertical;
+	EvilPingPong evilPingPong;
 
 	public void CreateMap(List<Tile> ListTiles) {
 		for (Tile tile : ListTiles) {
@@ -24,9 +25,7 @@ public class Map {
 				tile.getSprite() == 'O') {
 				mapNiveau[tile.getX()][tile.getY()] = motionlessElementFactory.createMotionlessElement(tile.getSprite(), new Position(tile.getX(),tile.getY()));
 			}
-			else if (tile.getSprite() == 'P' ||
-					 
-					 tile.getSprite() == 'J'){
+			else if (tile.getSprite() == 'P'){
 				mapNiveau[tile.getX()][tile.getY()] = mobileElementFactory.createMobileElement(tile.getSprite(), new Position(tile.getX(),tile.getY()));
 			}
 			else if(tile.getSprite() == 'L') {
@@ -40,6 +39,9 @@ public class Map {
 			}
 			else if(tile.getSprite() == 'K' ) {
 				mapNiveau[tile.getX()][tile.getY()] = evilVertical = new EvilVertical(new Position(tile.getX(),tile.getY()));
+			}
+			else if (tile.getSprite() == 'J') {
+				mapNiveau[tile.getX()][tile.getY()] = evilPingPong = new EvilPingPong(new Position(tile.getX(),tile.getY()));
 			}
 		}
 	}
@@ -75,9 +77,9 @@ public class Map {
 	public EvilVertical getEvilVertical() {
 		return evilVertical;
 	}
-
-	public void setEvilVertical(EvilVertical evilVertical) {
-		this.evilVertical = evilVertical;
+	
+	public EvilPingPong getEvilPingPong() {
+		return evilPingPong;
 	}
 
 

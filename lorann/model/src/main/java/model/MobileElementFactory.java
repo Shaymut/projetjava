@@ -16,7 +16,7 @@ public class MobileElementFactory {
 				element = new EvilVertical(position);
 				break;
 			case 'J' :
-				element = new EvilStalker(position);
+				element = new EvilPingPong(position);
 				break;
 			default :
 				System.out.println("Il y a un sprite dans la BDD qui n'existe pas dans le switch case : " + sprite);

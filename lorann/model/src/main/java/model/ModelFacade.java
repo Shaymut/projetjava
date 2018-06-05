@@ -70,6 +70,11 @@ public final class ModelFacade implements IModel {
 	public Element getEvilVertical() {
 		return Niveau.getEvilVertical();
 	}
+
+	@Override
+	public Element getEvilPingPong() {
+		return Niveau.getEvilPingPong();
+	}
 	
 
 }

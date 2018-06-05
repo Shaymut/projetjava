@@ -28,11 +28,18 @@ public class ControllerFacade implements IController {
     /** The model. */
     private final IModel model;
     private Element lorann;
+    
     private Element evilRandom;
+    
     private Element evilHorizontal;
-    private Element evilVertical;
     private boolean evilHorizontalMoveRight = true;
+    
+    private Element evilVertical;
     private boolean evilVerticalMoveDown = true;
+    
+    private Element evilPingPong;
+    private int evilPingPongMove = 1;
+    
     private ViewFacade viewFacade;
     private Element[][] mapNiveau;
     private double score;
@@ -77,6 +84,7 @@ public class ControllerFacade implements IController {
         this.evilRandom = this.getModel().getEvilRandom();
         this.evilHorizontal = this.getModel().getEvilHorizontal();
         this.evilVertical = this.getModel().getEvilVertical();
+        this.evilPingPong = this.getModel().getEvilPingPong();
         this.getView().setLorann(this.lorann);
         timer();
     }
@@ -239,6 +247,49 @@ public class ControllerFacade implements IController {
 	}
 	
 	@Override
+	public void evilPingPongMove(int x, int y) {
+		Element temp = this.mapNiveau[x][y];
+		int tempX = this.evilPingPong.getX();
+		int tempY = this.evilPingPong.getY();
+		this.mapNiveau[x][y] = evilPingPong;
+		this.mapNiveau[tempX][tempY] = temp;
+		evilPingPong.setPosition(new Position(x,y));
+		this.getModel().setMap(this.mapNiveau);
+		this.getView().displayMap(this.mapNiveau);
+		this.getViewFacade().setMap(mapNiveau);
+		
+	}
+	
+	public void evilPingPongMove() {
+		switch(this.evilPingPongMove) {
+		case 1 :
+			System.out.println("Cas 1 ");
+			new Collision(this.getModel().getMap(), this.getModel().getEvilPingPong(), this.getModel().getEvilPingPong().getX() + 1, this.getModel().getEvilPingPong().getY() + 1 , this);
+			break;
+		case 2 : 
+			System.out.println("Cas 2 ");
+			new Collision(this.getModel().getMap(), this.getModel().getEvilPingPong(), this.getModel().getEvilPingPong().getX() - 1, this.getModel().getEvilPingPong().getY() + 1 , this);
+			break;
+		case 3 :
+			System.out.println("Cas 3 ");
+			new Collision(this.getModel().getMap(), this.getModel().getEvilPingPong(), this.getModel().getEvilPingPong().getX() - 1, this.getModel().getEvilPingPong().getY() - 1 , this);
+			break;
+		case 4 :
+			System.out.println("Cas 4 ");
+			new Collision(this.getModel().getMap(), this.getModel().getEvilPingPong(), this.getModel().getEvilPingPong().getX() + 1, this.getModel().getEvilPingPong().getY() - 1 , this);
+			break;
+		}
+	}
+	
+	public void setEvilPingPongMove(int nextMove) {
+		this.evilPingPongMove = nextMove;
+	}
+	
+	public int getEvilPingPongMove() {
+		return this.evilPingPongMove;
+	}
+	
+	@Override
 	public void remove(int x, int y) {
 		this.mapNiveau[x][y] = new Ground(new Position(x, y));
 	}
@@ -284,6 +335,9 @@ public class ControllerFacade implements IController {
 		}
 		if(this.evilVertical != null) {
 			this.evilVerticalMove();
+		}
+		if(this.evilPingPong != null) {
+			this.evilPingPongMove();
 		}
 		try {
 			Thread.sleep(250);

@@ -36,4 +36,5 @@ public interface IModel {
 	Element getEvilRandom();
 	Element getEvilHorizontal();
 	Element getEvilVertical();
+	Element getEvilPingPong();
 }

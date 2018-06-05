@@ -13,7 +13,6 @@ public class Collision {
 		this.mapNiveau = mapNiveau;
 		this.MotionElement = MotionElement;
 		if (this.mapNiveau[x][y].getPermeability() == Permeability.BLOCK) {
-			System.out.println("BLOCK");
 			if (MotionElement.getSprite() == 'F') {
 				if (controller.getEvilHorizontalMoveRight()) {
 					controller.setEvilHorizontalMoveRight(false);
@@ -27,7 +26,23 @@ public class Collision {
 				}else {
 					controller.setEvilVerticalMoveDown(true);
 				}
+			}else if (MotionElement.getSprite() == 'J') {
+				switch(controller.getEvilPingPongMove()) {
+				case 1 :
+					controller.setEvilPingPongMove(2);
+					break;
+				case 2 :
+					controller.setEvilPingPongMove(3);
+					break;
+				case 3 :
+					controller.setEvilPingPongMove(4);
+					break;
+				case 4 :
+					controller.setEvilPingPongMove(1);
+					break;
+				}
 			}
+			System.out.println("BLOCK");
 			
 			
 		}else if (this.mapNiveau[x][y].getPermeability() == Permeability.PENETRABLE) {
@@ -68,6 +83,17 @@ public class Collision {
 					controller.evilVerticalMove(x,y);
 				}
 			}
+			else if (MotionElement.getSprite() == 'J') {
+				if (this.mapNiveau[x][y].getSprite() == 'L') {
+					controller.remove(x,y);
+					controller.evilPingPongMove(x, y);
+					controller.died();
+				}else if (this.mapNiveau[x][y].getSprite() == 'O') {
+					System.out.println("BLOCK");
+				}else {
+					controller.evilPingPongMove(x,y);
+				}
+			}
 			
 			
 			
@@ -84,29 +110,41 @@ public class Collision {
 				}
 				controller.remove(x, y);
 				controller.lorannMove(x, y);
-			}else {
-				if (MotionElement.getSprite() == 'F') {
-					if (controller.getEvilHorizontalMoveRight()) {
-						controller.setEvilHorizontalMoveRight(false);
-					}else {
-						controller.setEvilHorizontalMoveRight(true);
-					}
-				}else if (MotionElement.getSprite() == 'K') {
-					if (controller.getEvilVerticalMoveDown()) {
-						controller.setEvilVerticalMoveDown(false);
-					}else {
-						controller.setEvilVerticalMoveDown(true);
-					}
+			}else if (MotionElement.getSprite() == 'F') {
+				if (controller.getEvilHorizontalMoveRight()) {
+					controller.setEvilHorizontalMoveRight(false);
+				}else {
+					controller.setEvilHorizontalMoveRight(true);
 				}
-				System.out.println("BLOCK");
+			}else if (MotionElement.getSprite() == 'K') {
+				if (controller.getEvilVerticalMoveDown()) {
+					controller.setEvilVerticalMoveDown(false);
+				}else {
+					controller.setEvilVerticalMoveDown(true);
+				}
 			}
-		}
-		
-		
-		
-		
-		
-		else if (this.mapNiveau[x][y].getPermeability() == Permeability.HURT) {
+			else if (MotionElement.getSprite() == 'J') {
+				switch(controller.getEvilPingPongMove()) {
+				case 1 :
+					controller.setEvilPingPongMove(2);
+					break;
+				case 2 :
+					controller.setEvilPingPongMove(3);
+					break;
+				case 3 :
+					controller.setEvilPingPongMove(4);
+					break;
+				case 4 :
+					controller.setEvilPingPongMove(1);
+					break;
+				}
+			}	
+			System.out.println("BLOCK");
+			
+			
+			
+			
+		}else if (this.mapNiveau[x][y].getPermeability() == Permeability.HURT) {
 			if (MotionElement.getSprite() == 'L') {
 				System.out.println("--------------------- DIED ---------------------");
 				controller.remove(x,y);
@@ -126,6 +164,22 @@ public class Collision {
 						controller.setEvilVerticalMoveDown(true);
 					}
 				}
+				else if (MotionElement.getSprite() == 'J') {
+					switch(controller.getEvilPingPongMove()) {
+					case 1 :
+						controller.setEvilPingPongMove(2);
+						break;
+					case 2 :
+						controller.setEvilPingPongMove(3);
+						break;
+					case 3 :
+						controller.setEvilPingPongMove(4);
+						break;
+					case 4 :
+						controller.setEvilPingPongMove(1);
+						break;
+					}
+				}
 				System.out.println("BLOCK");
 			}
 			
@@ -139,8 +193,7 @@ public class Collision {
 				controller.remove(x,y);
 				controller.lorannMove(x, y);
 				controller.win();
-			}else {
-				if (MotionElement.getSprite() == 'F') {
+			}else if (MotionElement.getSprite() == 'F') {
 					if (controller.getEvilHorizontalMoveRight()) {
 						controller.setEvilHorizontalMoveRight(false);
 					}else {
@@ -153,9 +206,23 @@ public class Collision {
 						controller.setEvilVerticalMoveDown(true);
 					}
 				}
+				else if (MotionElement.getSprite() == 'J') {
+					switch(controller.getEvilPingPongMove()) {
+					case 1 :
+						controller.setEvilPingPongMove(2);
+						break;
+					case 2 :
+						controller.setEvilPingPongMove(3);
+						break;
+					case 3 :
+						controller.setEvilPingPongMove(4);
+						break;
+					case 4 :
+						controller.setEvilPingPongMove(1);
+						break;
+					}
+				}
 				System.out.println("BLOCK");
 			}
 		}
-	}
-	
 }

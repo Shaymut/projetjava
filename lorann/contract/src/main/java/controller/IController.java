@@ -35,4 +35,8 @@ public interface IController {
 	public void evilVerticalMove(int x, int y );
 	public boolean getEvilVerticalMoveDown();
 	public void setEvilVerticalMoveDown(boolean down);
+	
+	public void evilPingPongMove(int x, int y );
+	public int getEvilPingPongMove();
+	public void setEvilPingPongMove(int nextMove);
 }
