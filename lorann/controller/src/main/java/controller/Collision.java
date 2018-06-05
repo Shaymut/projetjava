@@ -5,10 +5,27 @@ import model.Permeability;
 
 public class Collision {
 	
+	/** The mapNiveau. */
 	Element[][] mapNiveau;
+	/** The MotionElement. */
 	Element MotionElement;
+	/** The controller. */
 	IController controller;
 	
+	/**
+     * Instantiates a new Collision.
+     *
+     * @param mapNiveau
+     *            the mapNiveau
+     * @param MotionElement
+     *            the MotionElement
+     * @param x
+     *            the x
+     * @param y
+     *            the y
+     * @param controller
+     *            the controller
+     */
 	public Collision(Element[][] mapNiveau, Element MotionElement, int x, int y, IController controller) {
 		this.mapNiveau = mapNiveau;
 		this.MotionElement = MotionElement;
@@ -193,8 +210,7 @@ public class Collision {
 			
 			
 			
-			
-		}else if (this.mapNiveau[x][y].getPermeability() == Permeability.VICTORY) {
+			}else if (this.mapNiveau[x][y].getPermeability() == Permeability.VICTORY) {
 			if (MotionElement.getSprite() == 'L') {
 				System.out.println("--------------------- WIN ---------------------");
 				controller.remove(x,y);

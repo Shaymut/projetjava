@@ -22,54 +22,45 @@ import view.ViewFacade;
  */
 public class ControllerFacade implements IController {
 	
+	/** The niveau. */
 	private int niveau;
     /** The view. */
-    private final IView  view;
-
+    private final IView view;
     /** The model. */
     private final IModel model;
+    /** The lorann. */
     private Element lorann;
-    
+    /** The spell. */
     private Element spell;
+    /** The lastOrder. */
     private Order lastOrder = Order.DOWN;
+    /** The HaveSpell. */
     private boolean HaveSpell = true;
+    /** The spellMoveDirectionLorann. */
     private boolean spellMoveDirectionLorann = true;
-    
+    /** The evilRandom. */
     private Element evilRandom;
-    
+    /** The evilHorizontal. */
     private Element evilHorizontal;
+    /** The evilHorizontalMoveRight. */
     private boolean evilHorizontalMoveRight = true;
-    
+    /** The evilVertical. */    
     private Element evilVertical;
+    /** The evilVerticalMoveDown. */
     private boolean evilVerticalMoveDown = true;
-    
-    public boolean getHaveSpell() {
-		return this.HaveSpell;
-	}
-
-	public void setHaveSpell(boolean haveSpell) {
-		HaveSpell = haveSpell;
-	}
-
-	public boolean getSpellMoveDirectionLorann() {
-		return spellMoveDirectionLorann;
-	}
-
-	public void setSpellMoveDirectionLorann(boolean spellMoveDirectionLorann) {
-		this.spellMoveDirectionLorann = spellMoveDirectionLorann;
-	}
-
-	public void setLastOrder(Order lastOrder) {
-		this.lastOrder = lastOrder;
-	}
-
+    /** The evilPingPong. */
 	private Element evilPingPong;
+	/** The evilPingPongMove. */
     private int evilPingPongMove = 1;
-    
+    /** The viewFacade. */
     private ViewFacade viewFacade;
+    /** The mapNiveau. */
     private Element[][] mapNiveau;
+    /** The score. */
     private double score;
+    /** The running. */
     private boolean running = true;
+    /** The random. */
     Random random = new Random();
     
     /**
@@ -124,15 +115,6 @@ public class ControllerFacade implements IController {
         return this.view;
     }
     
-   /* public void EvilStart() {
-    while(true) {
-    	System.out.println("Commence à bouger pour commencer le jeu ! :)");
-    	if(evilStart == true) {
-    		timer();
-    	
-    	}
-    }
-    }*/
     /**
      * Gets the model.
      *
@@ -141,15 +123,77 @@ public class ControllerFacade implements IController {
     public IModel getModel() {
         return this.model;
     }
-
+    
+    /*
+     * Gets the viewFacade.
+     *
+     * @return the viewFacade
+     */
 	public ViewFacade getViewFacade() {
 		return viewFacade;
 	}
 
+	/**
+     * Sets the viewFacade.
+     *
+     * @param viewFacade
+     *            the new viewFacade
+     */
 	public void setViewFacade(ViewFacade viewFacade) {
 		this.viewFacade = viewFacade;
 	}
 	
+	/**
+     * Gets the HaveSpell.
+     *
+     * @return the HaveSpell
+     */
+    public boolean getHaveSpell() {
+		return this.HaveSpell;
+	}
+    
+    /**
+     * Sets the HaveSpell.
+     *
+     * @param HaveSpell
+     *            the new HaveSpell
+     */
+	public void setHaveSpell(boolean haveSpell) {
+		HaveSpell = haveSpell;
+	}
+	
+	/**
+     * Gets the spellMoveDirectionLorann.
+     *
+     * @return the spellMoveDirectionLorann
+     */
+	public boolean getSpellMoveDirectionLorann() {
+		return spellMoveDirectionLorann;
+	}
+	
+	/**
+     * Sets the spellMoveDirectionLorann.
+     *
+     * @param spellMoveDirectionLorann
+     *            the new spellMoveDirectionLorann
+     */
+	public void setSpellMoveDirectionLorann(boolean spellMoveDirectionLorann) {
+		this.spellMoveDirectionLorann = spellMoveDirectionLorann;
+	}
+	
+	/**
+     * Sets the lastOrder.
+     *
+     * @param lastOrder
+     *            the new lastOrder
+     */
+	public void setLastOrder(Order lastOrder) {
+		this.lastOrder = lastOrder;
+	}
+	
+	/**
+     * Update the Lorann Move.
+     */
 	public void updatemoveLorann() {
 		if (this.getViewFacade().getOrder() == Order.RIGHT) {
 			new Collision(this.getModel().getMap(), this.getModel().getLorann(), this.getModel().getLorann().getX() + 1, this.getModel().getLorann().getY(), this);
@@ -170,6 +214,14 @@ public class ControllerFacade implements IController {
 		}
 	}
 	
+	/**
+     * Update the Lorann Move.
+     *
+     * @param x
+     *            the new x
+     * @param y
+     *            the new y
+     */
 	public void lorannMove(int x, int y){
 		Element temp = this.mapNiveau[x][y];
 		int tempX = this.lorann.getX();
@@ -182,7 +234,15 @@ public class ControllerFacade implements IController {
 		this.getViewFacade().setMap(mapNiveau);
 		System.out.println("Score : " + this.score);
 	}
-
+	
+	/**
+     * Update the EvilRandom Move.
+     *
+     * @param x
+     *            the new x
+     * @param y
+     *            the new y
+     */
 	public void evilRandomMove(int x ,  int y) {
 		Element temp = this.mapNiveau[x][y];
 		int tempX = this.evilRandom.getX();
@@ -195,6 +255,9 @@ public class ControllerFacade implements IController {
 		this.getViewFacade().setMap(mapNiveau);
 	}
 	
+	/**
+     * Update the EvilRandom Move.
+     */
 	public void evilRadomMove() {
 		int choix = random.nextInt(8);
 		switch(choix) {
@@ -225,6 +288,14 @@ public class ControllerFacade implements IController {
 		}
 	}
 	
+	/**
+     * Update the EvilHorizontal Move.
+     *
+     * @param x
+     *            the new x
+     * @param y
+     *            the new y
+     */
 	public void evilHorizontalMove(int x ,  int y) {
 		Element temp = this.mapNiveau[x][y];
 		int tempX = this.evilHorizontal.getX();
@@ -237,6 +308,9 @@ public class ControllerFacade implements IController {
 		this.getViewFacade().setMap(mapNiveau);
 	}
 	
+	/**
+     * Update the EvilHorizontal Move.
+     */
 	public void evilHorizontalMove() {
 		if (evilHorizontalMoveRight) {
 			new Collision(this.getModel().getMap(), this.getModel().getEvilHorizontal(), this.getModel().getEvilHorizontal().getX() + 1, this.getModel().getEvilHorizontal().getY(), this);
@@ -246,14 +320,33 @@ public class ControllerFacade implements IController {
 		}
 	}
 	
+	/**
+     * Sets the evilHorizontalMoveRight.
+     *
+     * @param evilHorizontalMoveRight
+     *            the new evilHorizontalMoveRight
+     */
 	public void setEvilHorizontalMoveRight(boolean right) {
 		this.evilHorizontalMoveRight = right;
 	}
 	
+	/**
+     * Gets the evilHorizontalMoveRight.
+     *
+     * @return the evilHorizontalMoveRight
+     */
 	public boolean getEvilHorizontalMoveRight() {
 		return this.evilHorizontalMoveRight;
 	}
 	
+	/**
+     * Update the EvilVerticalMove.
+     *
+     * @param x
+     *            the new x
+     * @param y
+     *            the new y
+     */
 	public void evilVerticalMove(int x ,  int y) {
 		Element temp = this.mapNiveau[x][y];
 		int tempX = this.evilVertical.getX();
@@ -266,6 +359,9 @@ public class ControllerFacade implements IController {
 		this.getViewFacade().setMap(mapNiveau);
 	}
 	
+	/**
+     * Update the EvilVertical Move.
+     */
 	public void evilVerticalMove() {
 		if (evilVerticalMoveDown) { 
 			new Collision(this.getModel().getMap(), this.getModel().getEvilVertical(), this.getModel().getEvilVertical().getX(), this.getModel().getEvilVertical().getY() + 1, this);
@@ -275,14 +371,33 @@ public class ControllerFacade implements IController {
 		}
 	}
 	
+	/**
+     * Sets the evilVerticalMoveDown.
+     *
+     * @param evilVerticalMoveDown
+     *            the new evilVerticalMoveDown
+     */
 	public void setEvilVerticalMoveDown(boolean down) {
 		this.evilVerticalMoveDown = down;
 	}
 	
+	/**
+     * Gets the evilVerticalMoveDown.
+     *
+     * @return the evilVerticalMoveDown
+     */
 	public boolean getEvilVerticalMoveDown() {
 		return this.evilVerticalMoveDown;
 	}
 	
+	/**
+     * Update the EvilPingPong Move.
+     *
+     * @param x
+     *            the new x
+     * @param y
+     *            the new y
+     */
 	@Override
 	public void evilPingPongMove(int x, int y) {
 		Element temp = this.mapNiveau[x][y];
@@ -297,6 +412,9 @@ public class ControllerFacade implements IController {
 		
 	}
 	
+	/**
+     * Update the EvilPingPong Move.
+     */
 	public void evilPingPongMove() {
 		switch(this.evilPingPongMove) {
 		case 1 :
@@ -314,14 +432,33 @@ public class ControllerFacade implements IController {
 		}
 	}
 	
+	/**
+     * Sets the evilPingPongMove.
+     *
+     * @param evilPingPongMove
+     *            the new evilPingPongMove
+     */
 	public void setEvilPingPongMove(int nextMove) {
 		this.evilPingPongMove = nextMove;
 	}
 	
+	/**
+     * Gets the evilPingPongMove.
+     *
+     * @return the evilPingPongMove
+     */
 	public int getEvilPingPongMove() {
 		return this.evilPingPongMove;
 	}
 	
+	/**
+     * Update the Spell Move.
+     *
+     * @param x
+     *            the new x
+     * @param y
+     *            the new y
+     */
 	public void SpellMove(int x, int y) {/*
 		Element temp = this.mapNiveau[x][y];
 		int tempX = this.spell.getX();
@@ -335,6 +472,9 @@ public class ControllerFacade implements IController {
 		*/
 	}
 	
+	/**
+     * Update the Spell Move.
+     */
 	public void fire() {/*
 		System.out.println("FIRE");
 		if (this.spell != null) {
@@ -398,21 +538,41 @@ public class ControllerFacade implements IController {
 		}*/		
 	}
 	
-	
+	/**
+     * Gets the spell.
+     *
+     * @return the spell
+     */
 	public Element getSpell() {
 		return spell;
 	}
-
+	
+	/**
+     * Sets the spell.
+     *
+     * @param spell
+     *            the new spell
+     */
 	public void setSpell(Element spell) {
 		this.spell = spell;
 	}
 	
-	
+	/**
+     * Remove an Element in mapNiveau.
+     *
+     * @param x
+     *            the new x
+     * @param y
+     *            the new y
+     */
 	@Override
 	public void remove(int x, int y) {
 		this.mapNiveau[x][y] = new Ground(new Position(x, y));
 	}
-
+	
+	/**
+     * Make the end of the programme with a death message.
+     */
 	@Override
 	public void died() {
 		this.getView().displayMessage("Tu es mort !\nTon score est de : " + (int)this.score);
@@ -420,18 +580,30 @@ public class ControllerFacade implements IController {
 		this.running = false;
 	}
 	
+	/**
+     * Make the end of the programme with a win message.
+     */
 	@Override
 	public void win() {
 		this.getView().displayMessage("Tu as fini le niveau, Bravo!\nTon score est de : " + (int)this.score);
 		this.getViewFacade().killFrame();
 		this.running = false;
 	}
-
+	
+	/**
+     * Increments the score with x.
+     *
+     * @param x
+     *            the new x
+     */
 	@Override
 	public void scoreUp(double x) {
 		this.score = score + x;
 	}
-
+	
+	/**
+     * Replace the door closed by a open door in the map.
+     */
 	@Override
 	public void replaceDoor() {
 		for(int i = 0; i <= 19; i++) {
@@ -444,10 +616,19 @@ public class ControllerFacade implements IController {
 		this.getModel().setMap(this.mapNiveau);
 	}
 	
+	/**
+     * Sets the running.
+     *
+     * @param running
+     *            the new running
+     */
 	public void setRunning(boolean running) {
 		this.running = running;
 	}
 	
+	/**
+     * Timer for the evil's move.
+     */
 	public void timer() {
 		if (this.evilRandom != null) {
 			this.evilRadomMove();
@@ -470,11 +651,22 @@ public class ControllerFacade implements IController {
 				e.printStackTrace();
 			}
 		}
-
+	
+	/**
+     * Gets the evilVertical.
+     *
+     * @return the evilVertical
+     */
 	public Element getEvilVertical() {
 		return evilVertical;
 	}
-
+	
+	/**
+     * Sets the evilVertical.
+     *
+     * @param evilVertical
+     *            the new evilVertical
+     */
 	public void setEvilVertical(Element evilVertical) {
 		this.evilVertical = evilVertical;
 	}
