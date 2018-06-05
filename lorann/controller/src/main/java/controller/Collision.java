@@ -55,8 +55,9 @@ public class Collision {
 				System.out.println("BLOCK");
 			}else {
 				controller.evilHorizontalMove(x,y);
+				}
 			}
-			}else if (MotionElement.getSprite() == 'K') {
+			else if (MotionElement.getSprite() == 'K') {
 				if (this.mapNiveau[x][y].getSprite() == 'L') {
 					controller.remove(x,y);
 					controller.evilVerticalMove(x, y);

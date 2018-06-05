@@ -283,7 +283,7 @@ public class ControllerFacade implements IController {
 			this.evilHorizontalMove();
 		}
 		if(this.evilVertical != null) {
-			this.evilHorizontalMove();
+			this.evilVerticalMove();
 		}
 		try {
 			Thread.sleep(250);

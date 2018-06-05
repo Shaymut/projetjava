@@ -37,7 +37,8 @@ public class Map {
 			}
 			else if(tile.getSprite() == 'F') {
 				mapNiveau[tile.getX()][tile.getY()] = evilHorizontal = new EvilHorizontal(new Position(tile.getX(),tile.getY()));
-			}else if(tile.getSprite() == 'K' ) {
+			}
+			else if(tile.getSprite() == 'K' ) {
 				mapNiveau[tile.getX()][tile.getY()] = evilVertical = new EvilVertical(new Position(tile.getX(),tile.getY()));
 			}
 		}
