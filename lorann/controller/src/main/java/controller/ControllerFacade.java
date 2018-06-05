@@ -28,7 +28,6 @@ public class ControllerFacade implements IController {
 
     /** The model. */
     private final IModel model;
-    private boolean evilStart = false;
     private Element lorann;
     
     private Element spell;
@@ -413,17 +412,6 @@ public class ControllerFacade implements IController {
 	public void setEvilVertical(Element evilVertical) {
 		this.evilVertical = evilVertical;
 	}
-
-	public boolean isEvilStart() {
-		return evilStart;
-	}
-
-	public void setEvilStart(boolean evilStart) {
-		this.evilStart = evilStart;
-	}
-
-
-
 
 
 }

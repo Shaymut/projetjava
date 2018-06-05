@@ -37,7 +37,4 @@ public interface IController {
 	public void evilPingPongMove(int x, int y );
 	public int getEvilPingPongMove();
 	public void setEvilPingPongMove(int nextMove);
-	
-	public void setEvilStart(boolean evilStart);
-	public boolean isEvilStart();
 }
