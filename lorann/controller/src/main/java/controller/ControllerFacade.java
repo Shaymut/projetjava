@@ -89,7 +89,6 @@ public class ControllerFacade implements IController {
         this.evilHorizontal = this.getModel().getEvilHorizontal();
         this.evilVertical = this.getModel().getEvilVertical();
         this.evilPingPong = this.getModel().getEvilPingPong();
-        this.getView().setLorann(this.lorann);
        timer();
        
     }
