@@ -100,6 +100,5 @@ public class Element {
      */
 	public Permeability getPermeability() {
 		return this.permeability;
-	}
-	
+	}	
 }
