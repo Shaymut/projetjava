@@ -9,34 +9,66 @@ import model.*;
  * <h1>The Class ViewFacade provides a facade of the View component.</h1>
  *
  * @author Jean-Aymeric DIET jadiet@cesi.fr
- * @version 1.0
+ * @version 1.1
+ * 
  *
  */
 public class ViewFacade implements IView {
-	
-	private Window frame;
-	
-	IController controller;
-	
-	public ViewFacade() {
-		super();
-	}
-	
+    
     /**
-     * Instantiates a new view facade.
+     * 
+     * Window of the game
+     * 
+     * @see ViewFacade#ViewFacade()
+     * @see ViewFacade#setMap(Element[][])
+     * @see ViewFacade#setController(IController)
+     * @see ViewFacade#updateFrame()
+     * @see ViewFacade#getOrder()
+     * @see ViewFacade#killFrame()
      */
+    
+    private Window frame;
+    
+    IController controller;
+    
+    /**
+     * 
+     * Constructor ViewFacade
+     * 
+     */
+    
+    public ViewFacade() {
+        super();
+    }
+    
+    /**
+     * 
+     * Constructor ViewFacade
+     * Instantiates a new view facade.
+     * 
+     * @param name
+     * @param {@link Position#getX()}
+     * @param {@link Position#getY()}
+     * @param {@link Panel#mapNiveau}
+     */
+    
     public ViewFacade(String name, int x, int y, Element[][] mapNiveau) {
         super();
         frame = new Window(name, x, y, mapNiveau);
         frame.setVisible(true);
     }
+    /**
+     * 
+     * @param {@link Panel#mapNiveau}
+     *
+     */
     
     public void setMap(Element[][] mapNiveau) {
-    	this.frame.setMap(mapNiveau);
+        this.frame.setMap(mapNiveau);
     }
     
     /*
-     * (non-Javadoc)
+     * 
      * @see view.IView#displayMessage(java.lang.String)
      */
     @Override
@@ -44,36 +76,77 @@ public class ViewFacade implements IView {
         JOptionPane.showMessageDialog(null, message);
     }
     
+    /**
+     * 
+     * Display the map
+     * 
+     * @param {@link Panel#mapNiveau}
+     * 
+     * @see {@link Panel#mapNiveau}
+     */
+    
     @Override
     public void displayMap(Element[][] mapNiveau) {
-		for (int i = 0; i <= 11; i++) {
-			for (int j = 0; j <= 19; j++) {
-				System.out.print(mapNiveau[j][i].getSprite());
-			}
-			System.out.println();
-		}
-	}
+        for (int i = 0; i <= 11; i++) {
+            for (int j = 0; j <= 19; j++) {
+                System.out.print(mapNiveau[j][i].getSprite());
+            }
+            System.out.println();
+        }
+    }
+    
+    /**
+     * 
+     * Set the controller
+     * 
+     * @param controller
+     * 
+     */
     
     @Override
     public void setController(IController controller) {
-    	this.controller = controller;
-    	frame.setController(controller);
+        this.controller = controller;
+        frame.setController(controller);
     }
-	
-	@Override
-	public void updateFrame() {
-		frame.updateFrame();
-	}
+    
+    /**
+     * 
+     * Update the frame
+     * 
+     * @see ViewFacade#frame
+     * 
+     */
+    
+    @Override
+    public void updateFrame() {
+        frame.updateFrame();
+    }
 
-	@Override
-	public Order getOrder() {
-		return frame.getOrder();
-	}
+    /**
+     * 
+     * Get an order
+     * 
+     * @see ViewFacade#frame
+     * 
+     */
+    
+    @Override
+    public Order getOrder() {
+        return frame.getOrder();
+    }
 
-	@Override
-	public void killFrame() {
-		frame.killFrame();
-		
-	}
+    /**
+     * 
+     * Kill a frame
+     * 
+     * @see ViewFacade#frame
+     * 
+     */
+    
+    @Override
+    public void killFrame() {
+        frame.killFrame();
+        
+    }
 
 }

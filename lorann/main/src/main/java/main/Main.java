@@ -15,7 +15,7 @@ import view.ViewFacade;
 public abstract class Main {
 	
 	/** The NIVEAU. */
-	private static int NIVEAU = 5;
+	private static int NIVEAU = 1;
 	
     /**
      * The main method.
