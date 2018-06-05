@@ -444,6 +444,10 @@ public class ControllerFacade implements IController {
 		this.getModel().setMap(this.mapNiveau);
 	}
 	
+	public void setRunning(boolean running) {
+		this.running = running;
+	}
+	
 	public void timer() {
 		if (this.evilRandom != null) {
 			this.evilRadomMove();

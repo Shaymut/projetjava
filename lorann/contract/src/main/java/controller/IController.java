@@ -15,6 +15,8 @@ public interface IController {
 	public void lorannMove(int x, int y);
 	
 	public void remove(int x, int y);
+	
+	public void setRunning(boolean running);
 
 	public void died();
 	

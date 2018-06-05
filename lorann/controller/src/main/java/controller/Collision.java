@@ -155,6 +155,7 @@ public class Collision {
 			if (MotionElement.getSprite() == 'L') {
 				System.out.println("--------------------- DIED ---------------------");
 				controller.remove(x,y);
+				controller.setRunning(false);
 				controller.lorannMove(x, y);
 				controller.died();
 			}else {
@@ -197,6 +198,7 @@ public class Collision {
 			if (MotionElement.getSprite() == 'L') {
 				System.out.println("--------------------- WIN ---------------------");
 				controller.remove(x,y);
+				controller.setRunning(false);
 				controller.lorannMove(x, y);
 				controller.win();
 			}else if (MotionElement.getSprite() == 'F') {
