@@ -13,12 +13,32 @@ public class Window extends JFrame implements KeyListener{
 	
     private static final long serialVersionUID = 1L;
     
+    /**
+     * 
+     * Object panel
+     * 
+     * @see Window#Window(String, int, int, Element[][])
+     * @see Window#updateFrame()
+     * @see Window#setMap(Element[][])
+     * 
+     */
+    
     Panel panel;
    
     IController controller;
     
     private Order order = Order.NONE;
 
+    
+    /**
+     * 
+     * @param name
+     * @param {@link Position#getX()}
+     * @param {@link Position#getY()}
+     * @param {@link Panel#mapNiveau}
+     */
+   
+    
     public Window(String name, int x, int y, Element[][] mapNiveau) {
         super(name);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
@@ -31,21 +51,58 @@ public class Window extends JFrame implements KeyListener{
         setFocusTraversalKeysEnabled(false);
     }
     
+    /**
+     * 
+     * Update the frames
+     * 
+     */
+    
     void updateFrame() {
     	this.panel.updatePanel();
     }
+    
+    /**
+     * 
+     * Get the order
+     * 
+     * @see Window#order
+     * 
+     * @return the order
+     */
     
     public Order getOrder() {
     	return this.order;
     }
     
+    /**
+     * 
+     * Set the controller
+     * 
+     * @param controller
+     */
+    
     public void setController(IController controller) {
     	this.controller = controller;
     }
     
+    /**
+     * 
+     * Set the map
+     * 
+     * @param {@link Panel#mapNiveau}
+     * 
+     * @see {@link Panel#mapNiveau}
+     */
+    
     public void setMap(Element[][] mapNiveau) {
     	this.panel.setMap(mapNiveau);
     }
+    
+    /**
+     * 
+     * Set invisible a frame
+     * 
+     */
     
     public void killFrame() {
     	this.setVisible(false);
@@ -54,6 +111,14 @@ public class Window extends JFrame implements KeyListener{
     
     //---------------------KEYBOARD---------------------
         
+    /**
+     * 
+     * Take the keyPressed and execute an order
+     * 
+     * @param e
+     * 
+     */
+    
 	@Override
 	public void keyPressed(KeyEvent e) {
 		if(e.getKeyCode() == KeyEvent.VK_NUMPAD6)  { //Flèche droite
@@ -116,6 +181,14 @@ public class Window extends JFrame implements KeyListener{
 	public void keyTyped(KeyEvent e) {		
 	}
 
+	/**
+	 * 
+	 * Take the key released and set the order at "NONE"
+	 * 
+	 * @param e
+	 * 
+	 */
+	
 	@Override
 	public void keyReleased(KeyEvent e) {
 		if(e.getKeyCode() == KeyEvent.VK_NUMPAD6 ||

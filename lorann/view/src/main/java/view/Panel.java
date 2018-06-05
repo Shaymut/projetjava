@@ -19,16 +19,60 @@ import javax.swing.JPanel;
 
 
 public class Panel extends JPanel {
+	
+	/**
+	 * 
+	 * Initialization of the variable serialVersionUID
+	 * 
+	 */
+	
 	private static final long serialVersionUID = 1L;
-    private static Dimension PANEL_SIZE;
     
+	
+	/**
+	 * 
+	 * Map' size
+	 * 
+	 * @see Panel#Panel(int, int, Element[][])
+	 * @see getPrefferedSize#Panel ()
+	 */
+	
+	private static Dimension PANEL_SIZE;
+	
     Image Image;
+    
+    /**
+     * 
+     * Table mapNiveau
+     * 
+     * @see Panel#Panel(int, int, Element[][])
+     * @see Panel#setMap(Element[][])
+     * @see Panel#paintComponent(Graphics)
+     */
     
     Element[][] mapNiveau;
     
+    /**
+     * 
+     * Contain the path of the using image
+     * 
+     * @see Panel#PaintComponent(Graphics)
+     */
+    
     BufferedImage image = null;
     
-   
+   /**
+    * 
+    * Constructor Panel 
+    * 
+    * @param x
+    * @param y
+    * @param mapNiveau
+    * 
+    * @see x
+    * @see y
+    * @see mapNiveau
+    */
 
     public Panel(int x, int y, Element[][] mapNiveau) {
     	Panel.PANEL_SIZE = new Dimension(x, y);
@@ -37,15 +81,41 @@ public class Panel extends JPanel {
         setFocusTraversalKeysEnabled(false);
     }
     
+    /**
+     * 
+     * Set the map
+     * 
+     * @param mapNiveau
+     */
+    
     public void setMap(Element[][] mapNiveau) {
     	this.mapNiveau = mapNiveau;
     	repaint();
     }
     
+    /**
+     * 
+     * Return the favorite size
+     * 
+     * @return the favorite size
+     */
+    
+    
     public Dimension getPreferredSize() {
         return PANEL_SIZE;
     }
 
+    /**
+     * 
+     * Display images from the map
+     * 
+     * @param Graphics
+     * 
+     * @see Panel#image
+     * @see Panel#mapNiveau
+     *      
+     */
+    
     protected void paintComponent(Graphics g){
         super.paintComponent(g);
 
@@ -103,7 +173,12 @@ public class Panel extends JPanel {
         	}
         }
     }
-    
+     
+    /**
+     * 
+     * Map's refresh
+     * 
+     */
     
     public void updatePanel() {
 		repaint();
