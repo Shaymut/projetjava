@@ -4,7 +4,7 @@ public class DoorClosed extends MotionlessElement{
 
 	/**
 	 * 
-	 * Caractère utilisé pour la BDD
+	 * character used for BDD
 	 * 
 	 * @see DoorClosed#DoorClosed(Position) 
 	 */
@@ -13,7 +13,7 @@ public class DoorClosed extends MotionlessElement{
 	
 	/**
 	 * 
-	 * Permeabilité de l'objet
+	 * Permeability of the object
 	 * 
 	 * @see DoorClosed#DoorClosed(Position)
 	 */
@@ -22,9 +22,11 @@ public class DoorClosed extends MotionlessElement{
 	
 	/**
 	 * 
-	 * Constructeur DoorClosed
+	 * Constructor DoorClosed
 	 * 
-	 * @param position
+	 * @param {@link Position#Position(Position)}
+	 * We get the position of this object
+	 * @see {@link Position#Position(Position)}
 	 */
 	
 	DoorClosed(Position position) {

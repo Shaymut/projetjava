@@ -2,20 +2,36 @@ package model;
 
 public class Lorann extends MobileElement{
 	
-	public  boolean HaveASpell;
-	static char sprite = 'L';
-	static Permeability permeability = Permeability.PENETRABLE;
-	Position positionL;
-	Map mapNiveau;
+	/**
+	 * 
+	 * character used for BDD
+	 * 
+	 * @see Lorann#Lorann(Position) 
+	 */
 
-	Lorann(Position position, Map map) {
+	static char sprite = 'L';
+	
+	/**
+	 * 
+	 * Permeability of the object 
+	 * 
+	 * @see Lorann#Lorann(Position) 
+	 */
+	static Permeability permeability = Permeability.PENETRABLE;
+
+	/**
+	 * 
+	 * Constructor HorizontalBone
+	 * 
+	 * @param {@link Position#Position(Position)}
+	 * We get the position of this object
+	 * @see {@link Position#Position(Position)}
+	 */
+	Lorann(Position position) {
 		super(permeability, sprite, position);
-		this.mapNiveau = map;
 	}
 	
-	public boolean HaveASpell() {
-		return true;
-	}
+
 	
 }
 	

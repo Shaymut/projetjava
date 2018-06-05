@@ -4,15 +4,50 @@ import java.util.List;
 
 public class Map {
 	
+	/**
+	 * 
+	 * @see Map#CreateMap(List)
+	 */
 	static Element[][] mapNiveau = new Element[20][12];
+	
+	/**
+	 * 
+	 * @see Map#CreateMap(List)
+	 */
 	MotionlessElementFactory motionlessElementFactory = new MotionlessElementFactory();
-	MobileElementFactory mobileElementFactory = new MobileElementFactory();
+	
+	/**
+	 * 
+	 * @see Map#CreateMap(List)
+	 */
 	Lorann lorann;
+	
+	/**
+	 * 
+	 * @see Map#CreateMap(List)
+	 */
 	EvilRandom evilRandom;
+	/**
+	 * 
+	 * @see Map#CreateMap(List)
+	 */
 	EvilHorizontal evilHorizontal;
+	/**
+	 * 
+	 * @see Map#CreateMap(List)
+	 */
 	EvilVertical evilVertical;
+	/**
+	 * 
+	 * @see Map#CreateMap(List)
+	 */
 	EvilPingPong evilPingPong;
+	/**
+	 * 
+	 * @see Map#CreateMap(List)
+	 */
 	Spell spell;
+	
 
 	public void CreateMap(List<Tile> ListTiles) {
 		for (Tile tile : ListTiles) {
@@ -27,7 +62,7 @@ public class Map {
 				mapNiveau[tile.getX()][tile.getY()] = motionlessElementFactory.createMotionlessElement(tile.getSprite(), new Position(tile.getX(),tile.getY()));
 			}
 			else if(tile.getSprite() == 'L') {
-				mapNiveau[tile.getX()][tile.getY()] = lorann = new Lorann(new Position(tile.getX(),tile.getY()), this);
+				mapNiveau[tile.getX()][tile.getY()] = lorann = new Lorann(new Position(tile.getX(),tile.getY()));
 			}
 			else if(tile.getSprite() == 'B') {
 				mapNiveau[tile.getX()][tile.getY()] = evilRandom = new EvilRandom(new Position(tile.getX(),tile.getY()));
