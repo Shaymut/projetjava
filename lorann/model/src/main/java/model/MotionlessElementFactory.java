@@ -2,7 +2,24 @@ package model;
 
 public class MotionlessElementFactory {
 	
+	/**
+	 * 
+	 * Creation of elements
+	 * 
+	 * @see MotionlessElementFactory#createMotionlessElement(char, Position)
+	 * 
+	 */
+	
 	Element element = null;
+	
+	/**
+	 * 
+	 * Factory creating elements for the map
+	 * 
+	 * @param sprite
+	 * @param position
+	 * @return elements
+	 */
 	
 	public Element createMotionlessElement(char sprite, Position position) {
 		switch(sprite) {
