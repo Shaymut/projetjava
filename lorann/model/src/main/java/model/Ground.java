@@ -7,6 +7,5 @@ public class Ground extends MotionlessElement{
 	
 	public Ground(Position position) {
 		super(permeability, sprite, position);
-		System.out.println("Création d'un objet Ground");
 	}
 }

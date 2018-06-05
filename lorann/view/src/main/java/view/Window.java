@@ -17,7 +17,6 @@ public class Window extends JFrame implements KeyListener{
    
     IController controller;
     
-    public String Touche;
     private Order order = Order.NONE;
 
     public Window(String name, int x, int y, Element[][] mapNiveau) {
@@ -59,35 +58,55 @@ public class Window extends JFrame implements KeyListener{
 	public void keyPressed(KeyEvent e) {
 		if(e.getKeyCode() == KeyEvent.VK_NUMPAD6)  { //Flèche droite
 			this.order = Order.RIGHT;
-			Touche = "Right";
-			
+			/*if (controller.getHaveSpell()){
+				controller.setLastOrder(order);
+			}*/
 		}else if(e.getKeyCode() == KeyEvent.VK_NUMPAD4) {
 			this.order = Order.LEFT;
-			
+			/*if (controller.getHaveSpell()){
+				controller.setLastOrder(order);
+			}*/
 		}else if(e.getKeyCode() == KeyEvent.VK_NUMPAD2) {
 			this.order = Order.DOWN;
-			
+			/*if (controller.getHaveSpell()){
+				controller.setLastOrder(order);
+			}*/
 		}else if(e.getKeyCode() == KeyEvent.VK_NUMPAD8) {
 			this.order = Order.UP;
-			
+			/*if (controller.getHaveSpell()){
+				controller.setLastOrder(order);
+			}*/
 		}else if(e.getKeyCode() == KeyEvent.VK_NUMPAD5) {
 			this.order = Order.SPACE;
-			
-			System.out.println("FIRE!");
+			System.out.println("FIRE !");
+			/*if (controller.getHaveSpell()){
+				controller.fire();
+			}*/
 		}else if(e.getKeyCode() == KeyEvent.VK_NUMPAD7) {
 			this.order = Order.LEFT_UP;
-			
+			/*if (controller.getHaveSpell()){
+				controller.setLastOrder(order);
+			}*/
 		}else if(e.getKeyCode() == KeyEvent.VK_NUMPAD9) {
 			this.order = Order.RIGHT_UP;
-
+			/*if (controller.getHaveSpell()){
+				controller.setLastOrder(order);
+			}*/
 		}else if(e.getKeyCode() == KeyEvent.VK_NUMPAD1) {
 			this.order = Order.LEFT_DOWN;
-			
+			/*if (controller.getHaveSpell()){
+				controller.setLastOrder(order);
+			}*/
 		}else if(e.getKeyCode() == KeyEvent.VK_NUMPAD3) {
 			this.order = Order.RIGHT_DOWN;
-			
+			/*if (controller.getHaveSpell()){
+				controller.setLastOrder(order);
+			}*/
 		}else {
 			this.order = Order.NONE;
+			/*if (controller.getHaveSpell()){
+				controller.setLastOrder(order);
+			}*/
 		}
 		controller.updatemoveLorann();
 	

@@ -1,7 +1,6 @@
 package view;
 
 import javax.swing.JOptionPane;
-import javax.swing.SwingUtilities;
 
 import controller.IController;
 import model.*;
@@ -55,6 +54,7 @@ public class ViewFacade implements IView {
 		}
 	}
     
+    @Override
     public void setController(IController controller) {
     	this.controller = controller;
     	frame.setController(controller);

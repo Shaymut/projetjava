@@ -41,12 +41,17 @@ public class Collision {
 					controller.setEvilPingPongMove(1);
 					break;
 				}
-			}
-			System.out.println("BLOCK");
+			}/*else if (MotionElement.getSprite() == 'P') {
+				if (controller.getSpellMoveDirectionLorann()) {
+					controller.setSpellMoveDirectionLorann(false);
+				}else {
+					controller.setSpellMoveDirectionLorann(true);
+				}
+				System.out.println("BLOOCKK");
+			}*/
 			
 			
 		}else if (this.mapNiveau[x][y].getPermeability() == Permeability.PENETRABLE) {
-			System.out.println("PENETRABLE");
 			if (MotionElement.getSprite() == 'L') {
 				controller.lorannMove(x, y);
 				
@@ -56,7 +61,6 @@ public class Collision {
 					controller.evilRandomMove(x,y);
 					controller.died();
 				}else if (this.mapNiveau[x][y].getSprite() == 'O') {
-					System.out.println("BLOCK");
 				}else {
 					controller.evilRandomMove(x,y);
 				}
@@ -67,7 +71,6 @@ public class Collision {
 				controller.evilHorizontalMove(x, y);
 				controller.died();
 			}else if (this.mapNiveau[x][y].getSprite() == 'O') {
-				System.out.println("BLOCK");
 			}else {
 				controller.evilHorizontalMove(x,y);
 				}
@@ -78,7 +81,6 @@ public class Collision {
 					controller.evilVerticalMove(x, y);
 					controller.died();
 				}else if (this.mapNiveau[x][y].getSprite() == 'O') {
-					System.out.println("BLOCK");
 				}else {
 					controller.evilVerticalMove(x,y);
 				}
@@ -89,19 +91,25 @@ public class Collision {
 					controller.evilPingPongMove(x, y);
 					controller.died();
 				}else if (this.mapNiveau[x][y].getSprite() == 'O') {
-					System.out.println("BLOCK");
 				}else {
 					controller.evilPingPongMove(x,y);
 				}
 			}
-			
+			/*else if (MotionElement.getSprite() == 'P') {
+				if (this.mapNiveau[x][y].getSprite() == 'L') {
+					controller.remove(MotionElement.getX(), MotionElement.getY());
+					controller.setHaveSpell(true);
+				}else if (this.mapNiveau[x][y].getSprite() == 'O') {
+				}else {
+					controller.SpellMove(x, y);
+				}
+			}*/
 			
 			
 			
 			
 			
 		}else if (this.mapNiveau[x][y].getPermeability() == Permeability.COLLECTABLE) {
-			System.out.println("COLLECTABLE");
 			if (MotionElement.getSprite() == 'L') {
 				if (this.mapNiveau[x][y].getSprite() == 'E') {
 					controller.replaceDoor();
@@ -139,7 +147,6 @@ public class Collision {
 					break;
 				}
 			}	
-			System.out.println("BLOCK");
 			
 			
 			
@@ -180,7 +187,6 @@ public class Collision {
 						break;
 					}
 				}
-				System.out.println("BLOCK");
 			}
 			
 			
@@ -222,7 +228,6 @@ public class Collision {
 						break;
 					}
 				}
-				System.out.println("BLOCK");
 			}
 		}
 }

@@ -1,5 +1,7 @@
 package controller;
 
+import view.Order;
+
 /**
  * <h1>The Interface IController.</h1>
  * 
@@ -35,4 +37,12 @@ public interface IController {
 	public void evilPingPongMove(int x, int y );
 	public int getEvilPingPongMove();
 	public void setEvilPingPongMove(int nextMove);
+	
+	public boolean getHaveSpell();
+	public void setHaveSpell(boolean haveSpell);
+	public boolean getSpellMoveDirectionLorann();
+	public void setSpellMoveDirectionLorann(boolean spellMoveDirectionLorann);
+	public void setLastOrder(Order lastOrder);
+	public void fire();
+	public void SpellMove(int x, int y);
 }

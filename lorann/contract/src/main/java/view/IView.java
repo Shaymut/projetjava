@@ -1,5 +1,6 @@
 package view;
 
+import controller.IController;
 import model.*;
 
 /**
@@ -27,5 +28,7 @@ public interface IView {
     Order getOrder();
     
     void killFrame();
+
+	void setController(IController controller);
    
 }

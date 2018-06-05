@@ -40,8 +40,6 @@ public class Map {
 			}
 			else if (tile.getSprite() == 'J') {
 				mapNiveau[tile.getX()][tile.getY()] = evilPingPong = new EvilPingPong(new Position(tile.getX(),tile.getY()));
-			}else if(tile.getSprite() == 'P') {
-				mapNiveau[tile.getX()][tile.getY()] = spell = new Spell(new Position(tile.getX(),tile.getY()));
 			}
 		}
 	}
