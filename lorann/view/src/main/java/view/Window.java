@@ -17,6 +17,7 @@ public class Window extends JFrame implements KeyListener{
    
     IController controller;
     
+    public String Touche;
     private Order order = Order.NONE;
 
     public Window(String name, int x, int y, Element[][] mapNiveau) {
@@ -58,28 +59,34 @@ public class Window extends JFrame implements KeyListener{
 	public void keyPressed(KeyEvent e) {
 		if(e.getKeyCode() == KeyEvent.VK_NUMPAD6)  { //Flèche droite
 			this.order = Order.RIGHT;
+			Touche = "Right";
 			
 		}else if(e.getKeyCode() == KeyEvent.VK_NUMPAD4) {
 			this.order = Order.LEFT;
+			Touche = "Left";
 			
 		}else if(e.getKeyCode() == KeyEvent.VK_NUMPAD2) {
 			this.order = Order.DOWN;
-		
+			Touche = "Down";
 		}else if(e.getKeyCode() == KeyEvent.VK_NUMPAD8) {
 			this.order = Order.UP;
-		
+			Touche = "UP";
 		}else if(e.getKeyCode() == KeyEvent.VK_NUMPAD5) {
 			this.order = Order.SPACE;
 			
 			System.out.println("FIRE!");
 		}else if(e.getKeyCode() == KeyEvent.VK_NUMPAD7) {
 			this.order = Order.LEFT_UP;
+			Touche = "Left-Up";
 		}else if(e.getKeyCode() == KeyEvent.VK_NUMPAD9) {
 			this.order = Order.RIGHT_UP;
+			Touche = "Right-Up";
 		}else if(e.getKeyCode() == KeyEvent.VK_NUMPAD1) {
 			this.order = Order.LEFT_DOWN;
+			Touche = "Left-Down";
 		}else if(e.getKeyCode() == KeyEvent.VK_NUMPAD3) {
 			this.order = Order.RIGHT_DOWN;
+			Touche = "Right-Down";
 		}else {
 			this.order = Order.NONE;
 		}

@@ -37,4 +37,5 @@ public interface IModel {
 	Element getEvilHorizontal();
 	Element getEvilVertical();
 	Element getEvilPingPong();
+	Element getSpell();
 }

@@ -12,6 +12,7 @@ public class Map {
 	EvilHorizontal evilHorizontal;
 	EvilVertical evilVertical;
 	EvilPingPong evilPingPong;
+	Spell spell;
 
 	public void CreateMap(List<Tile> ListTiles) {
 		for (Tile tile : ListTiles) {
@@ -21,12 +22,9 @@ public class Map {
 				tile.getSprite() == 'X' || 
 				tile.getSprite() == 'G' ||
 				tile.getSprite() == 'E' || 
-				tile.getSprite() == 'C' ||
+				tile.getSprite() == 'C' || 
 				tile.getSprite() == 'O') {
 				mapNiveau[tile.getX()][tile.getY()] = motionlessElementFactory.createMotionlessElement(tile.getSprite(), new Position(tile.getX(),tile.getY()));
-			}
-			else if (tile.getSprite() == 'P'){
-				mapNiveau[tile.getX()][tile.getY()] = mobileElementFactory.createMobileElement(tile.getSprite(), new Position(tile.getX(),tile.getY()));
 			}
 			else if(tile.getSprite() == 'L') {
 				mapNiveau[tile.getX()][tile.getY()] = lorann = new Lorann(new Position(tile.getX(),tile.getY()), this);
@@ -42,6 +40,8 @@ public class Map {
 			}
 			else if (tile.getSprite() == 'J') {
 				mapNiveau[tile.getX()][tile.getY()] = evilPingPong = new EvilPingPong(new Position(tile.getX(),tile.getY()));
+			}else if(tile.getSprite() == 'P') {
+				mapNiveau[tile.getX()][tile.getY()] = spell = new Spell(new Position(tile.getX(),tile.getY()));
 			}
 		}
 	}
@@ -82,5 +82,8 @@ public class Map {
 		return evilPingPong;
 	}
 
+	public Spell getSpell() {
+		return spell;
+	}
 
 }

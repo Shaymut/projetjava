@@ -76,5 +76,9 @@ public final class ModelFacade implements IModel {
 		return Niveau.getEvilPingPong();
 	}
 	
+	public Element getSpell() {
+		return Niveau.getSpell();
+	}
+	
 
 }

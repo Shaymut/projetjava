@@ -31,6 +31,8 @@ public class ControllerFacade implements IController {
     private boolean evilStart = false;
     private Element lorann;
     
+    private Element spell;
+    
     private Element evilRandom;
     
     private Element evilHorizontal;
@@ -89,8 +91,7 @@ public class ControllerFacade implements IController {
         this.evilVertical = this.getModel().getEvilVertical();
         this.evilPingPong = this.getModel().getEvilPingPong();
         this.getView().setLorann(this.lorann);
-        System.out.println("-------------------ETAT NUMBER ONE " + isEvilStart());
-        EvilStart();
+       timer();
        
     }
     /*
@@ -102,15 +103,15 @@ public class ControllerFacade implements IController {
         return this.view;
     }
     
-    public void EvilStart() {
+   /* public void EvilStart() {
     while(true) {
-    	System.out.println(isEvilStart());
+    	System.out.println("Commence à bouger pour commencer le jeu ! :)");
     	if(evilStart == true) {
     		timer();
     	
     	}
     }
-    }
+    }*/
     /**
      * Gets the model.
      *
@@ -303,6 +304,48 @@ public class ControllerFacade implements IController {
 		return this.evilPingPongMove;
 	}
 	
+	public void Spell(int x, int y) {
+		Element temp = this.mapNiveau[x][y];
+		int tempX = this.spell.getX();
+		int tempY = this.spell.getY();
+		this.mapNiveau[x][y] = spell;
+		this.mapNiveau[tempX][tempY] = temp;
+		spell.setPosition(new Position(x,y));
+		this.getModel().setMap(this.mapNiveau);
+		this.getView().displayMap(this.mapNiveau);
+		this.getViewFacade().setMap(mapNiveau);
+		
+	}
+	
+	public void Spell() {
+		if(this.getViewFacade().getOrder() == Order.SPACE) {
+			if (this.getViewFacade().getOrder() == Order.RIGHT) {
+				new Collision(this.getModel().getMap(), this.getModel().getSpell(), this.getModel().getSpell().getX() + 1, this.getModel().getSpell().getY(), this);
+			}else if (this.getViewFacade().getOrder() == Order.LEFT) {
+				new Collision(this.getModel().getMap(), this.getModel().getSpell(), this.getModel().getSpell().getX() - 1, this.getModel().getSpell().getY(), this);
+			}else if (this.getViewFacade().getOrder() == Order.UP) {
+				new Collision(this.getModel().getMap(), this.getModel().getSpell(), this.getModel().getSpell().getX(), this.getModel().getSpell().getY() - 1, this);
+			}else if (this.getViewFacade().getOrder() == Order.DOWN) {
+				new Collision(this.getModel().getMap(), this.getModel().getSpell(), this.getModel().getSpell().getX(), this.getModel().getSpell().getY() + 1, this);
+			}else if (this.getViewFacade().getOrder() == Order.LEFT_UP) {
+				new Collision(this.getModel().getMap(), this.getModel().getSpell(), this.getModel().getSpell().getX() - 1, this.getModel().getSpell().getY() - 1, this);
+			}else if (this.getViewFacade().getOrder() == Order.RIGHT_UP) {
+				new Collision(this.getModel().getMap(), this.getModel().getSpell(), this.getModel().getSpell().getX() + 1, this.getModel().getSpell().getY() - 1, this);
+			}else if (this.getViewFacade().getOrder() == Order.LEFT_DOWN) {
+				new Collision(this.getModel().getMap(), this.getModel().getSpell(), this.getModel().getSpell().getX() - 1, this.getModel().getSpell().getY() + 1, this);
+			}else if (this.getViewFacade().getOrder() == Order.RIGHT_DOWN) {
+				new Collision(this.getModel().getMap(), this.getModel().getSpell(), this.getModel().getSpell().getX() + 1, this.getModel().getSpell().getY() + 1, this);
+			}
+		}
+		
+	}
+	public Element getSpell() {
+		return spell;
+	}
+
+	public void setSpell(Element spell) {
+		this.spell = spell;
+	}
 	@Override
 	public void remove(int x, int y) {
 		this.mapNiveau[x][y] = new Ground(new Position(x, y));
@@ -378,6 +421,8 @@ public class ControllerFacade implements IController {
 	public void setEvilStart(boolean evilStart) {
 		this.evilStart = evilStart;
 	}
+
+
 
 
 
