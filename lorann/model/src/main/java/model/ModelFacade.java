@@ -65,7 +65,7 @@ public final class ModelFacade implements IModel {
 	@Override
 	public Element getEvilHorizontal() {
 		return Niveau.getEvilHorizontal();
-	}
+	} 
 	
 	public Element getEvilVertical() {
 		return Niveau.getEvilVertical();
