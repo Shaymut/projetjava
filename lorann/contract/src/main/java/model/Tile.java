@@ -139,5 +139,4 @@ public class Tile {
     public String toString() {
         return this.getId() + " : " + this.getSprite() + " : " + this.getX() + " : " + this.getY() + " : " + this.getIDMap();
     }
-    
 }
